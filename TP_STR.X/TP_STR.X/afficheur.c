@@ -315,6 +315,56 @@ void clear_text(void)
     }
 }
 
+void clear_line(unsigned char line) {
+    unsigned char column;
+    for (column = 0; column < 40; column++) {
+        goto_lico(line, column);
+        draw_char(' ');
+    }
+}
+void draw_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+    unsigned char x, y;
+
+    // Dessine les lignes horizontales du carré
+    for (x = x1; x <= x2; x++) {
+        plot1(x, y1); // Met un pixel sur le bord supérieur
+        plot1(x, y2); // Met un pixel sur le bord inférieur
+    }
+
+    // Dessine les lignes verticales du carré
+    for (y = y1; y <= y2; y++) {
+        plot1(x1, y); // Met un pixel sur le bord gauche
+        plot1(x2, y); // Met un pixel sur le bord droit
+    }
+}
+void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+    unsigned char x, y;
+
+    // Dessine chaque ligne horizontale entre les deux points
+    for (y = y1; y <= y2; y++) {
+        for (x = x1; x <= x2; x++) {
+            plot1(x, y); // Met un pixel pour remplir le carré
+        }
+    }
+}
+
+void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+    unsigned char x, y;
+
+    // Efface les lignes horizontales du carré (sauf les coins)
+    for (x = x1 + 1; x < x2; x++) {
+        plot0(x, y1); // Efface un pixel sur le bord supérieur (sauf le coin gauche et le coin droit)
+        plot0(x, y2); // Efface un pixel sur le bord inférieur (sauf le coin gauche et le coin droit)
+    }
+
+    // Efface les lignes verticales du carré (sauf les coins)
+    for (y = y1 + 1; y < y2; y++) {
+        plot0(x1, y); // Efface un pixel sur le bord gauche (sauf le coin supérieur et le coin inférieur)
+        plot0(x2, y); // Efface un pixel sur le bord droit (sauf le coin supérieur et le coin inférieur)
+    }
+}
+
+
 void clear_graphics(void)
 {
     unsigned int add;

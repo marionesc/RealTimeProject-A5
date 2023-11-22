@@ -32,9 +32,17 @@
 "307
 [v _clear_text clear_text `(v  1 e 1 0 ]
 "318
-[v _clear_graphics clear_graphics `(v  1 e 1 0 ]
+[v _clear_line clear_line `(v  1 e 1 0 ]
+"325
+[v _draw_square draw_square `(v  1 e 1 0 ]
 "340
+[v _draw_filled_square draw_filled_square `(v  1 e 1 0 ]
+"368
+[v _clear_graphics clear_graphics `(v  1 e 1 0 ]
+"390
 [v _plot1 plot1 `(v  1 e 1 0 ]
+"411
+[v _plot0 plot0 `(v  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
@@ -163,7 +171,7 @@
 [v _PADCFG1bits PADCFG1bits `VES379  1 e 1 @3923 ]
 "5352
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @3941 ]
-[s S793 . 1 `uc 1 RB0 1 0 :1:0 
+[s S809 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -173,7 +181,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "7941
-[s S802 . 1 `uc 1 INT0 1 0 :1:0 
+[s S818 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -182,29 +190,29 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S811 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S827 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S818 . 1 `uc 1 . 1 0 :3:0 
+[s S834 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T1G 1 0 :1:5 
 ]
-[s S823 . 1 `uc 1 . 1 0 :5:0 
+[s S839 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 PGM 1 0 :1:5 
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S828 . 1 `uc 1 . 1 0 :3:0 
+[s S844 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S831 . 1 `S793 1 . 1 0 `S802 1 . 1 0 `S811 1 . 1 0 `S818 1 . 1 0 `S823 1 . 1 0 `S828 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES831  1 e 1 @3969 ]
-[s S1912 . 1 `uc 1 RD0 1 0 :1:0 
+[u S847 . 1 `S809 1 . 1 0 `S818 1 . 1 0 `S827 1 . 1 0 `S834 1 . 1 0 `S839 1 . 1 0 `S844 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES847  1 e 1 @3969 ]
+[s S1965 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -214,7 +222,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "8319
-[s S1921 . 1 `uc 1 AD0 1 0 :1:0 
+[s S1974 . 1 `uc 1 AD0 1 0 :1:0 
 `uc 1 AD1 1 0 :1:1 
 `uc 1 AD2 1 0 :1:2 
 `uc 1 AD3 1 0 :1:3 
@@ -223,7 +231,7 @@
 `uc 1 AD6 1 0 :1:6 
 `uc 1 AD7 1 0 :1:7 
 ]
-[s S1930 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S1983 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -232,10 +240,10 @@
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S1939 . 1 `uc 1 . 1 0 :7:0 
+[s S1992 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_SS2 1 0 :1:7 
 ]
-[s S1942 . 1 `uc 1 CTPLS 1 0 :1:0 
+[s S1995 . 1 `uc 1 CTPLS 1 0 :1:0 
 `uc 1 T5CKI 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 SDO2 1 0 :1:4 
@@ -243,18 +251,18 @@
 `uc 1 SCK2 1 0 :1:6 
 `uc 1 nSS2 1 0 :1:7 
 ]
-[s S1950 . 1 `uc 1 . 1 0 :1:0 
+[s S2003 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 T7G 1 0 :1:1 
 `uc 1 . 1 0 :3:2 
 `uc 1 SDA2 1 0 :1:5 
 `uc 1 SCL2 1 0 :1:6 
 ]
-[s S1956 . 1 `uc 1 . 1 0 :7:0 
+[s S2009 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S1959 . 1 `S1912 1 . 1 0 `S1921 1 . 1 0 `S1930 1 . 1 0 `S1939 1 . 1 0 `S1942 1 . 1 0 `S1950 1 . 1 0 `S1956 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1959  1 e 1 @3971 ]
-[s S883 . 1 `uc 1 RE0 1 0 :1:0 
+[u S2012 . 1 `S1965 1 . 1 0 `S1974 1 . 1 0 `S1983 1 . 1 0 `S1992 1 . 1 0 `S1995 1 . 1 0 `S2003 1 . 1 0 `S2009 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES2012  1 e 1 @3971 ]
+[s S899 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
@@ -264,7 +272,7 @@
 `uc 1 RE7 1 0 :1:7 
 ]
 "8582
-[s S892 . 1 `uc 1 AD8 1 0 :1:0 
+[s S908 . 1 `uc 1 AD8 1 0 :1:0 
 `uc 1 AD9 1 0 :1:1 
 `uc 1 AD10 1 0 :1:2 
 `uc 1 AD11 1 0 :1:3 
@@ -273,7 +281,7 @@
 `uc 1 AD14 1 0 :1:6 
 `uc 1 AD15 1 0 :1:7 
 ]
-[s S901 . 1 `uc 1 P2D 1 0 :1:0 
+[s S917 . 1 `uc 1 P2D 1 0 :1:0 
 `uc 1 P2C 1 0 :1:1 
 `uc 1 P2B 1 0 :1:2 
 `uc 1 P3C 1 0 :1:3 
@@ -282,7 +290,7 @@
 `uc 1 P1B 1 0 :1:6 
 `uc 1 P2A 1 0 :1:7 
 ]
-[s S910 . 1 `uc 1 . 1 0 :2:0 
+[s S926 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CCP10 1 0 :1:2 
 `uc 1 CCP9 1 0 :1:3 
 `uc 1 CCP8 1 0 :1:4 
@@ -290,20 +298,20 @@
 `uc 1 CCP6 1 0 :1:6 
 `uc 1 CCP2 1 0 :1:7 
 ]
-[s S918 . 1 `uc 1 NOT_RD 1 0 :1:0 
+[s S934 . 1 `uc 1 NOT_RD 1 0 :1:0 
 ]
-[s S920 . 1 `uc 1 . 1 0 :1:0 
+[s S936 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_WR 1 0 :1:1 
 ]
-[s S923 . 1 `uc 1 . 1 0 :2:0 
+[s S939 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_CS 1 0 :1:2 
 ]
-[s S926 . 1 `uc 1 nRD 1 0 :1:0 
+[s S942 . 1 `uc 1 nRD 1 0 :1:0 
 `uc 1 nWR 1 0 :1:1 
 `uc 1 nCS 1 0 :1:2 
 `uc 1 REFO 1 0 :1:3 
 ]
-[s S931 . 1 `uc 1 PD2 1 0 :1:0 
+[s S947 . 1 `uc 1 PD2 1 0 :1:0 
 `uc 1 PC2 1 0 :1:1 
 `uc 1 CS 1 0 :1:2 
 `uc 1 CCP9E 1 0 :1:3 
@@ -312,7 +320,7 @@
 `uc 1 CCP6E 1 0 :1:6 
 `uc 1 CCP2E 1 0 :1:7 
 ]
-[s S940 . 1 `uc 1 RDE 1 0 :1:0 
+[s S956 . 1 `uc 1 RDE 1 0 :1:0 
 `uc 1 WRE 1 0 :1:1 
 `uc 1 PB2 1 0 :1:2 
 `uc 1 PC3E 1 0 :1:3 
@@ -321,8 +329,8 @@
 `uc 1 PB1E 1 0 :1:6 
 `uc 1 PA2E 1 0 :1:7 
 ]
-[u S949 . 1 `S883 1 . 1 0 `S892 1 . 1 0 `S901 1 . 1 0 `S910 1 . 1 0 `S918 1 . 1 0 `S920 1 . 1 0 `S923 1 . 1 0 `S926 1 . 1 0 `S931 1 . 1 0 `S940 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES949  1 e 1 @3972 ]
+[u S965 . 1 `S899 1 . 1 0 `S908 1 . 1 0 `S917 1 . 1 0 `S926 1 . 1 0 `S934 1 . 1 0 `S936 1 . 1 0 `S939 1 . 1 0 `S942 1 . 1 0 `S947 1 . 1 0 `S956 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES965  1 e 1 @3972 ]
 "9248
 [v _PORTH PORTH `VEuc  1 e 1 @3975 ]
 [s S202 . 1 `uc 1 LATC0 1 0 :1:0 
@@ -346,7 +354,7 @@
 ]
 [u S220 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
 [v _LATCbits LATCbits `VES220  1 e 1 @3979 ]
-[s S1867 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1920 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -356,7 +364,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "9933
-[s S1876 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1929 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -365,8 +373,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1885 . 1 `S1867 1 . 1 0 `S1876 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1885  1 e 1 @3980 ]
+[u S1938 . 1 `S1920 1 . 1 0 `S1929 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1938  1 e 1 @3980 ]
 [s S242 . 1 `uc 1 LATG0 1 0 :1:0 
 `uc 1 LATG1 1 0 :1:1 
 `uc 1 LATG2 1 0 :1:2 
@@ -386,7 +394,7 @@
 [v _LATH LATH `VEuc  1 e 1 @3984 ]
 "10420
 [v _LATJ LATJ `VEuc  1 e 1 @3985 ]
-[s S1587 . 1 `uc 1 LATJ0 1 0 :1:0 
+[s S1609 . 1 `uc 1 LATJ0 1 0 :1:0 
 `uc 1 LATJ1 1 0 :1:1 
 `uc 1 LATJ2 1 0 :1:2 
 `uc 1 LATJ3 1 0 :1:3 
@@ -396,7 +404,7 @@
 `uc 1 LATJ7 1 0 :1:7 
 ]
 "10447
-[s S1596 . 1 `uc 1 LJ0 1 0 :1:0 
+[s S1618 . 1 `uc 1 LJ0 1 0 :1:0 
 `uc 1 LJ1 1 0 :1:1 
 `uc 1 LJ2 1 0 :1:2 
 `uc 1 LJ3 1 0 :1:3 
@@ -405,8 +413,8 @@
 `uc 1 LJ6 1 0 :1:6 
 `uc 1 LJ7 1 0 :1:7 
 ]
-[u S1605 . 1 `S1587 1 . 1 0 `S1596 1 . 1 0 ]
-[v _LATJbits LATJbits `VES1605  1 e 1 @3985 ]
+[u S1627 . 1 `S1609 1 . 1 0 `S1618 1 . 1 0 ]
+[v _LATJbits LATJbits `VES1627  1 e 1 @3985 ]
 [s S270 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -444,7 +452,7 @@
 [v _TRISH TRISH `VEuc  1 e 1 @3993 ]
 "11005
 [v _TRISJ TRISJ `VEuc  1 e 1 @3994 ]
-[s S1297 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1319 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR1GIF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -454,18 +462,18 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "11309
-[s S1306 . 1 `uc 1 . 1 0 :3:0 
+[s S1328 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S1311 . 1 `S1297 1 . 1 0 `S1306 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1311  1 e 1 @3998 ]
+[u S1333 . 1 `S1319 1 . 1 0 `S1328 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1333  1 e 1 @3998 ]
 "12210
 [v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
 "12548
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
-[s S1330 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1352 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -475,17 +483,17 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "12593
-[s S1339 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1361 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1343 . 1 `uc 1 . 1 0 :6:0 
+[s S1365 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S1346 . 1 `uc 1 . 1 0 :6:0 
+[s S1368 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S1349 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1371 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -494,8 +502,8 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S1358 . 1 `S1330 1 . 1 0 `S1339 1 . 1 0 `S1343 1 . 1 0 `S1346 1 . 1 0 `S1349 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES1358  1 e 1 @4012 ]
+[u S1380 . 1 `S1352 1 . 1 0 `S1361 1 . 1 0 `S1365 1 . 1 0 `S1368 1 . 1 0 `S1371 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES1380  1 e 1 @4012 ]
 "12836
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "12912
@@ -738,7 +746,7 @@
 [v _initialisation_du_systeme initialisation_du_systeme `(v  1 e 1 0 ]
 {
 "133
-[v initialisation_du_systeme@temp temp `uc  1 a 1 27 ]
+[v initialisation_du_systeme@temp temp `uc  1 a 1 31 ]
 "177
 } 0
 "23 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\main.c
@@ -799,7 +807,7 @@
 "3 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\T3.c
 [v _tache3 tache3 `(v  1 e 1 0 ]
 {
-"50
+"55
 } 0
 "3 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\T2.c
 [v _tache2 tache2 `(v  1 e 1 0 ]
@@ -836,21 +844,110 @@
 [v _tache1 tache1 `(v  1 e 1 0 ]
 {
 "5
-[v tache1@i i `uc  1 a 1 14 ]
-"124
+[v tache1@i i `uc  1 a 1 20 ]
+"153
 } 0
-"340 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
+"60 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\main.c
+[v _lecture_8bit_analogique lecture_8bit_analogique `(uc  1 e 1 0 ]
+{
+[v lecture_8bit_analogique@channel channel `uc  1 a 1 wreg ]
+"62
+[v lecture_8bit_analogique@ret ret `uc  1 a 1 0 ]
+"60
+[v lecture_8bit_analogique@channel channel `uc  1 a 1 wreg ]
+"65
+[v lecture_8bit_analogique@channel channel `uc  1 a 1 1 ]
+"83
+} 0
+"164 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
+[v _initialisation_afficheur initialisation_afficheur `(v  1 e 1 0 ]
+{
+"167
+[v initialisation_afficheur@error_count error_count `uc  1 a 1 8 ]
+"226
+} 0
+"30
+[v _check_status_ok check_status_ok `(uc  1 e 1 0 ]
+{
+"32
+[v check_status_ok@res res `uc  1 a 1 0 ]
+"51
+} 0
+"4 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\rxtx.c
+[v _init_rxtx init_rxtx `(v  1 e 1 0 ]
+{
+"15
+} 0
+"242 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
+[v _draw_string draw_string `(v  1 e 1 0 ]
+{
+[v draw_string@tableau tableau `*.32uc  1 p 2 7 ]
+"250
+} 0
+"325
+[v _draw_square draw_square `(v  1 e 1 0 ]
+{
+[v draw_square@x1 x1 `uc  1 a 1 wreg ]
+"326
+[v draw_square@y y `uc  1 a 1 19 ]
+[v draw_square@x x `uc  1 a 1 18 ]
+"325
+[v draw_square@x1 x1 `uc  1 a 1 wreg ]
+[v draw_square@y1 y1 `uc  1 p 1 14 ]
+[v draw_square@x2 x2 `uc  1 p 1 15 ]
+[v draw_square@y2 y2 `uc  1 p 1 16 ]
+"329
+[v draw_square@x1 x1 `uc  1 a 1 17 ]
+"339
+} 0
+"252
+[v _draw_hex8 draw_hex8 `(v  1 e 1 0 ]
+{
+[v draw_hex8@octet octet `uc  1 a 1 wreg ]
+"254
+[v draw_hex8@c c `uc  1 a 1 8 ]
+"252
+[v draw_hex8@octet octet `uc  1 a 1 wreg ]
+"256
+[v draw_hex8@octet octet `uc  1 a 1 7 ]
+"272
+} 0
+"340
+[v _draw_filled_square draw_filled_square `(v  1 e 1 0 ]
+{
+[v draw_filled_square@x1 x1 `uc  1 a 1 wreg ]
+"341
+[v draw_filled_square@y y `uc  1 a 1 19 ]
+[v draw_filled_square@x x `uc  1 a 1 18 ]
+"340
+[v draw_filled_square@x1 x1 `uc  1 a 1 wreg ]
+[v draw_filled_square@y1 y1 `uc  1 p 1 14 ]
+[v draw_filled_square@x2 x2 `uc  1 p 1 15 ]
+[v draw_filled_square@y2 y2 `uc  1 p 1 16 ]
+"344
+[v draw_filled_square@x1 x1 `uc  1 a 1 17 ]
+"349
+} 0
+"390
 [v _plot1 plot1 `(v  1 e 1 0 ]
 {
 [v plot1@x x `uc  1 a 1 wreg ]
-"342
+"392
 [v plot1@add add `ui  1 a 2 11 ]
-"340
+"390
 [v plot1@x x `uc  1 a 1 wreg ]
 [v plot1@y y `uc  1 p 1 8 ]
-"344
+"394
 [v plot1@x x `uc  1 a 1 13 ]
-"359
+"409
+} 0
+"90
+[v _command command `(uc  1 e 1 0 ]
+{
+[v command@cmd cmd `uc  1 a 1 wreg ]
+[v command@cmd cmd `uc  1 a 1 wreg ]
+[v command@cmd cmd `uc  1 a 1 4 ]
+"104
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -876,46 +973,26 @@
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"60 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\main.c
-[v _lecture_8bit_analogique lecture_8bit_analogique `(uc  1 e 1 0 ]
+"307 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
+[v _clear_text clear_text `(v  1 e 1 0 ]
 {
-[v lecture_8bit_analogique@channel channel `uc  1 a 1 wreg ]
-"62
-[v lecture_8bit_analogique@ret ret `uc  1 a 1 0 ]
-"60
-[v lecture_8bit_analogique@channel channel `uc  1 a 1 wreg ]
-"65
-[v lecture_8bit_analogique@channel channel `uc  1 a 1 1 ]
-"82
+"309
+[v clear_text@add add `ui  1 a 2 8 ]
+"316
 } 0
-"164 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
-[v _initialisation_afficheur initialisation_afficheur `(v  1 e 1 0 ]
+"318
+[v _clear_line clear_line `(v  1 e 1 0 ]
 {
-"167
-[v initialisation_afficheur@error_count error_count `uc  1 a 1 8 ]
-"226
+[v clear_line@line line `uc  1 a 1 wreg ]
+"319
+[v clear_line@column column `uc  1 a 1 15 ]
+"318
+[v clear_line@line line `uc  1 a 1 wreg ]
+"320
+[v clear_line@line line `uc  1 a 1 14 ]
+"324
 } 0
-"90
-[v _command command `(uc  1 e 1 0 ]
-{
-[v command@cmd cmd `uc  1 a 1 wreg ]
-[v command@cmd cmd `uc  1 a 1 wreg ]
-[v command@cmd cmd `uc  1 a 1 4 ]
-"104
-} 0
-"30
-[v _check_status_ok check_status_ok `(uc  1 e 1 0 ]
-{
-"32
-[v check_status_ok@res res `uc  1 a 1 0 ]
-"51
-} 0
-"4 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\rxtx.c
-[v _init_rxtx init_rxtx `(v  1 e 1 0 ]
-{
-"15
-} 0
-"295 C:\Users\Solène\Downloads\Temps réel\TP_STR.X\TP_STR.X\afficheur.c
+"295
 [v _goto_lico goto_lico `(v  1 e 1 0 ]
 {
 [v goto_lico@ligne ligne `uc  1 a 1 wreg ]
@@ -928,24 +1005,6 @@
 [v goto_lico@ligne ligne `uc  1 a 1 11 ]
 "305
 } 0
-"242
-[v _draw_string draw_string `(v  1 e 1 0 ]
-{
-[v draw_string@tableau tableau `*.32uc  1 p 2 7 ]
-"250
-} 0
-"252
-[v _draw_hex8 draw_hex8 `(v  1 e 1 0 ]
-{
-[v draw_hex8@octet octet `uc  1 a 1 wreg ]
-"254
-[v draw_hex8@c c `uc  1 a 1 8 ]
-"252
-[v draw_hex8@octet octet `uc  1 a 1 wreg ]
-"256
-[v draw_hex8@octet octet `uc  1 a 1 7 ]
-"272
-} 0
 "228
 [v _draw_char draw_char `(v  1 e 1 0 ]
 {
@@ -955,19 +1014,12 @@
 [v draw_char@dccar dccar `uc  1 a 1 7 ]
 "240
 } 0
-"307
-[v _clear_text clear_text `(v  1 e 1 0 ]
-{
-"309
-[v clear_text@add add `ui  1 a 2 8 ]
-"316
-} 0
-"318
+"368
 [v _clear_graphics clear_graphics `(v  1 e 1 0 ]
 {
-"320
+"370
 [v clear_graphics@add add `ui  1 a 2 8 ]
-"327
+"377
 } 0
 "128
 [v _d2command d2command `(uc  1 e 1 0 ]

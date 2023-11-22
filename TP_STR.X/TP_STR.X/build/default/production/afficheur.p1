@@ -62,6 +62,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATJ `Vuc ~T0 @X0 0 e@3985 ]
 "11005
 [v _TRISJ `Vuc ~T0 @X0 0 e@3994 ]
+"49 afficheur.h
+[v _plot1 `(v ~T0 @X0 0 ef2`uc`uc ]
+"50
+[v _plot0 `(v ~T0 @X0 0 ef2`uc`uc ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7431,6 +7435,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 48: void clear_cgram(void);
 [; ;afficheur.h: 49: void plot1(unsigned char x, unsigned char y);
 [; ;afficheur.h: 50: void plot0(unsigned char x, unsigned char y);
+[; ;afficheur.h: 51: void clear_line(unsigned char line);
+[; ;afficheur.h: 52: void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 53: void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 "4 afficheur.c
 [v _write_d_aff `(v ~T0 @X0 1 ef1`uc ]
 "5
@@ -8381,242 +8389,462 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 896 ]
 }
 "318
-[v _clear_graphics `(v ~T0 @X0 1 ef ]
-"319
+[v _clear_line `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;afficheur.c: 318: void clear_graphics(void)
-[; ;afficheur.c: 319: {
-[e :U _clear_graphics ]
+[; ;afficheur.c: 318: void clear_line(unsigned char line) {
+[e :U _clear_line ]
+[v _line `uc ~T0 @X0 1 r1 ]
 [f ]
+"319
+[v _column `uc ~T0 @X0 1 a ]
+[; ;afficheur.c: 319: unsigned char column;
+[; ;afficheur.c: 320: for (column = 0; column < 40; column++) {
 "320
-[v _add `ui ~T0 @X0 1 a ]
-[; ;afficheur.c: 320: unsigned int add;
-[; ;afficheur.c: 322: d2command(0,0x80,0x24);
-"322
-[e ( _d2command (3 , , -> -> 0 `i `uc -> -> 128 `i `uc -> -> 36 `i `uc ]
-[; ;afficheur.c: 323: for (add=0x8000;add!=0xF800;add++)
-"323
 {
-[e = _add -> 32768 `ui ]
-[e $ != _add -> 63488 `ui 901  ]
+[e = _column -> -> 0 `i `uc ]
+[e $ < -> _column `i -> 40 `i 901  ]
 [e $U 902  ]
-"324
 [e :U 901 ]
-[; ;afficheur.c: 324: {
 {
-[; ;afficheur.c: 325: d1command(0x00,0xC0);
-"325
-[e ( _d1command (2 , -> -> 0 `i `uc -> -> 192 `i `uc ]
-"326
-}
+[; ;afficheur.c: 321: goto_lico(line, column);
+"321
+[e ( _goto_lico (2 , _line _column ]
+[; ;afficheur.c: 322: draw_char(' ');
+"322
+[e ( _draw_char (1 -> -> 32 `ui `uc ]
 "323
-[e ++ _add -> -> 1 `i `ui ]
-[e $ != _add -> 63488 `ui 901  ]
-[e :U 902 ]
-"326
 }
-[; ;afficheur.c: 326: }
-[; ;afficheur.c: 327: }
-"327
+"320
+[e ++ _column -> -> 1 `i `uc ]
+[e $ < -> _column `i -> 40 `i 901  ]
+[e :U 902 ]
+"323
+}
+[; ;afficheur.c: 323: }
+[; ;afficheur.c: 324: }
+"324
 [e :UE 900 ]
 }
-"329
-[v _clear_cgram `(v ~T0 @X0 1 ef ]
-"330
+"325
+[v _draw_square `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;afficheur.c: 329: void clear_cgram(void)
-[; ;afficheur.c: 330: {
-[e :U _clear_cgram ]
+[; ;afficheur.c: 325: void draw_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+[e :U _draw_square ]
+[v _x1 `uc ~T0 @X0 1 r1 ]
+[v _y1 `uc ~T0 @X0 1 r2 ]
+[v _x2 `uc ~T0 @X0 1 r3 ]
+[v _y2 `uc ~T0 @X0 1 r4 ]
 [f ]
-"331
-[v _add `ui ~T0 @X0 1 a ]
-[; ;afficheur.c: 331: unsigned int add;
-[; ;afficheur.c: 333: d2command(0,0xF8,0x24);
-"333
-[e ( _d2command (3 , , -> -> 0 `i `uc -> -> 248 `i `uc -> -> 36 `i `uc ]
-[; ;afficheur.c: 334: for (add=0xF800;add!=0x0000;add++)
-"334
+"326
+[v _x `uc ~T0 @X0 1 a ]
+[v _y `uc ~T0 @X0 1 a ]
+[; ;afficheur.c: 326: unsigned char x, y;
+[; ;afficheur.c: 329: for (x = x1; x <= x2; x++) {
+"329
 {
-[e = _add -> 63488 `ui ]
-[e $ != _add -> -> 0 `i `ui 905  ]
-[e $U 906  ]
-"335
+[e = _x _x1 ]
+[e $U 908  ]
 [e :U 905 ]
-[; ;afficheur.c: 335: {
 {
-[; ;afficheur.c: 336: d1command(0x00,0xC0);
-"336
-[e ( _d1command (2 , -> -> 0 `i `uc -> -> 192 `i `uc ]
-"337
+[; ;afficheur.c: 330: plot1(x, y1);
+"330
+[e ( _plot1 (2 , _x _y1 ]
+[; ;afficheur.c: 331: plot1(x, y2);
+"331
+[e ( _plot1 (2 , _x _y2 ]
+"332
 }
-"334
-[e ++ _add -> -> 1 `i `ui ]
-[e $ != _add -> -> 0 `i `ui 905  ]
+"329
+[e ++ _x -> -> 1 `i `uc ]
+[e :U 908 ]
+[e $ <= -> _x `i -> _x2 `i 905  ]
 [e :U 906 ]
-"337
+"332
 }
-[; ;afficheur.c: 337: }
-[; ;afficheur.c: 338: }
+[; ;afficheur.c: 332: }
+[; ;afficheur.c: 335: for (y = y1; y <= y2; y++) {
+"335
+{
+[e = _y _y1 ]
+[e $U 912  ]
+[e :U 909 ]
+{
+[; ;afficheur.c: 336: plot1(x1, y);
+"336
+[e ( _plot1 (2 , _x1 _y ]
+[; ;afficheur.c: 337: plot1(x2, y);
+"337
+[e ( _plot1 (2 , _x2 _y ]
 "338
+}
+"335
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 912 ]
+[e $ <= -> _y `i -> _y2 `i 909  ]
+[e :U 910 ]
+"338
+}
+[; ;afficheur.c: 338: }
+[; ;afficheur.c: 339: }
+"339
 [e :UE 904 ]
 }
 "340
-[v _plot1 `(v ~T0 @X0 1 ef2`uc`uc ]
-"341
+[v _draw_filled_square `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;afficheur.c: 340: void plot1(unsigned char x, unsigned char y)
-[; ;afficheur.c: 341: {
-[e :U _plot1 ]
-"340
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-"341
+[; ;afficheur.c: 340: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+[e :U _draw_filled_square ]
+[v _x1 `uc ~T0 @X0 1 r1 ]
+[v _y1 `uc ~T0 @X0 1 r2 ]
+[v _x2 `uc ~T0 @X0 1 r3 ]
+[v _y2 `uc ~T0 @X0 1 r4 ]
 [f ]
-"342
-[v _add `ui ~T0 @X0 1 a ]
-[; ;afficheur.c: 342: unsigned int add;
-[; ;afficheur.c: 344: add=40*y+x/6;
+"341
+[v _x `uc ~T0 @X0 1 a ]
+[v _y `uc ~T0 @X0 1 a ]
+[; ;afficheur.c: 341: unsigned char x, y;
+[; ;afficheur.c: 344: for (y = y1; y <= y2; y++) {
 "344
-[e = _add -> + * -> 40 `i -> _y `i / -> _x `i -> 6 `i `ui ]
-[; ;afficheur.c: 345: d2command((char)(add&0xff),(char)(add>>8),0x24);
-"345
-[e ( _d2command (3 , , -> & _add -> -> 255 `i `ui `uc -> >> _add -> 8 `i `uc -> -> 36 `i `uc ]
-[; ;afficheur.c: 347: switch(x%6)
-"347
-[e $U 910  ]
-[; ;afficheur.c: 348: {
-"348
 {
-[; ;afficheur.c: 350: case 0: command(0xFD); break;
-"350
-[e :U 911 ]
-[e ( _command (1 -> -> 253 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 351: case 1: command(0xFC); break;
-"351
-[e :U 912 ]
-[e ( _command (1 -> -> 252 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 352: case 2: command(0xFB); break;
-"352
-[e :U 913 ]
-[e ( _command (1 -> -> 251 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 353: case 3: command(0xFA); break;
-"353
+[e = _y _y1 ]
+[e $U 917  ]
 [e :U 914 ]
-[e ( _command (1 -> -> 250 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 354: case 4: command(0xF9); break;
-"354
-[e :U 915 ]
-[e ( _command (1 -> -> 249 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 355: case 5: command(0xF8); break;
-"355
-[e :U 916 ]
-[e ( _command (1 -> -> 248 `i `uc ]
-[e $U 909  ]
-[; ;afficheur.c: 356: default:break;
-"356
-[e :U 917 ]
-[e $U 909  ]
-"357
-}
-[; ;afficheur.c: 357: }
-[e $U 909  ]
-"347
-[e :U 910 ]
-[e [\ % -> _x `i -> 6 `i , $ -> 0 `i 911
- , $ -> 1 `i 912
- , $ -> 2 `i 913
- , $ -> 3 `i 914
- , $ -> 4 `i 915
- , $ -> 5 `i 916
- 917 ]
-"357
-[e :U 909 ]
-[; ;afficheur.c: 359: }
-"359
-[e :UE 908 ]
-}
-"361
-[v _plot0 `(v ~T0 @X0 1 ef2`uc`uc ]
-"362
 {
-[; ;afficheur.c: 361: void plot0(unsigned char x, unsigned char y)
-[; ;afficheur.c: 362: {
-[e :U _plot0 ]
-"361
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-"362
+[; ;afficheur.c: 345: for (x = x1; x <= x2; x++) {
+"345
+{
+[e = _x _x1 ]
+[e $U 921  ]
+[e :U 918 ]
+{
+[; ;afficheur.c: 346: plot1(x, y);
+"346
+[e ( _plot1 (2 , _x _y ]
+"347
+}
+"345
+[e ++ _x -> -> 1 `i `uc ]
+[e :U 921 ]
+[e $ <= -> _x `i -> _x2 `i 918  ]
+[e :U 919 ]
+"347
+}
+"348
+}
+"344
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 917 ]
+[e $ <= -> _y `i -> _y2 `i 914  ]
+[e :U 915 ]
+"348
+}
+[; ;afficheur.c: 347: }
+[; ;afficheur.c: 348: }
+[; ;afficheur.c: 349: }
+"349
+[e :UE 913 ]
+}
+"351
+[v _clear_square `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
+{
+[; ;afficheur.c: 351: void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+[e :U _clear_square ]
+[v _x1 `uc ~T0 @X0 1 r1 ]
+[v _y1 `uc ~T0 @X0 1 r2 ]
+[v _x2 `uc ~T0 @X0 1 r3 ]
+[v _y2 `uc ~T0 @X0 1 r4 ]
 [f ]
+"352
+[v _x `uc ~T0 @X0 1 a ]
+[v _y `uc ~T0 @X0 1 a ]
+[; ;afficheur.c: 352: unsigned char x, y;
+[; ;afficheur.c: 355: for (x = x1 + 1; x < x2; x++) {
+"355
+{
+[e = _x -> + -> _x1 `i -> 1 `i `uc ]
+[e $U 926  ]
+[e :U 923 ]
+{
+[; ;afficheur.c: 356: plot0(x, y1);
+"356
+[e ( _plot0 (2 , _x _y1 ]
+[; ;afficheur.c: 357: plot0(x, y2);
+"357
+[e ( _plot0 (2 , _x _y2 ]
+"358
+}
+"355
+[e ++ _x -> -> 1 `i `uc ]
+[e :U 926 ]
+[e $ < -> _x `i -> _x2 `i 923  ]
+[e :U 924 ]
+"358
+}
+[; ;afficheur.c: 358: }
+[; ;afficheur.c: 361: for (y = y1 + 1; y < y2; y++) {
+"361
+{
+[e = _y -> + -> _y1 `i -> 1 `i `uc ]
+[e $U 930  ]
+[e :U 927 ]
+{
+[; ;afficheur.c: 362: plot0(x1, y);
+"362
+[e ( _plot0 (2 , _x1 _y ]
+[; ;afficheur.c: 363: plot0(x2, y);
 "363
-[v _add `ui ~T0 @X0 1 a ]
-[; ;afficheur.c: 363: unsigned int add;
-[; ;afficheur.c: 365: add=40*y+x/6;
+[e ( _plot0 (2 , _x2 _y ]
+"364
+}
+"361
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 930 ]
+[e $ < -> _y `i -> _y2 `i 927  ]
+[e :U 928 ]
+"364
+}
+[; ;afficheur.c: 364: }
+[; ;afficheur.c: 365: }
 "365
-[e = _add -> + * -> 40 `i -> _y `i / -> _x `i -> 6 `i `ui ]
-[; ;afficheur.c: 366: d2command((char)(add&0xff),(char)(add>>8),0x24);
-"366
-[e ( _d2command (3 , , -> & _add -> -> 255 `i `ui `uc -> >> _add -> 8 `i `uc -> -> 36 `i `uc ]
-[; ;afficheur.c: 368: switch(x%6)
+[e :UE 922 ]
+}
 "368
-[e $U 920  ]
-[; ;afficheur.c: 369: {
+[v _clear_graphics `(v ~T0 @X0 1 ef ]
 "369
 {
-[; ;afficheur.c: 371: case 0: command(0xF5); break;
-"371
-[e :U 921 ]
-[e ( _command (1 -> -> 245 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 372: case 1: command(0xF4); break;
+[; ;afficheur.c: 368: void clear_graphics(void)
+[; ;afficheur.c: 369: {
+[e :U _clear_graphics ]
+[f ]
+"370
+[v _add `ui ~T0 @X0 1 a ]
+[; ;afficheur.c: 370: unsigned int add;
+[; ;afficheur.c: 372: d2command(0,0x80,0x24);
 "372
-[e :U 922 ]
-[e ( _command (1 -> -> 244 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 373: case 2: command(0xF3); break;
+[e ( _d2command (3 , , -> -> 0 `i `uc -> -> 128 `i `uc -> -> 36 `i `uc ]
+[; ;afficheur.c: 373: for (add=0x8000;add!=0xF800;add++)
 "373
-[e :U 923 ]
-[e ( _command (1 -> -> 243 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 374: case 3: command(0xF2); break;
+{
+[e = _add -> 32768 `ui ]
+[e $ != _add -> 63488 `ui 932  ]
+[e $U 933  ]
 "374
-[e :U 924 ]
-[e ( _command (1 -> -> 242 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 375: case 4: command(0xF1); break;
+[e :U 932 ]
+[; ;afficheur.c: 374: {
+{
+[; ;afficheur.c: 375: d1command(0x00,0xC0);
 "375
-[e :U 925 ]
-[e ( _command (1 -> -> 241 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 376: case 5: command(0xF0); break;
+[e ( _d1command (2 , -> -> 0 `i `uc -> -> 192 `i `uc ]
 "376
-[e :U 926 ]
-[e ( _command (1 -> -> 240 `i `uc ]
-[e $U 919  ]
-[; ;afficheur.c: 377: default:break;
-"377
-[e :U 927 ]
-[e $U 919  ]
-"378
 }
-[; ;afficheur.c: 378: }
-[e $U 919  ]
-"368
-[e :U 920 ]
-[e [\ % -> _x `i -> 6 `i , $ -> 0 `i 921
- , $ -> 1 `i 922
- , $ -> 2 `i 923
- , $ -> 3 `i 924
- , $ -> 4 `i 925
- , $ -> 5 `i 926
- 927 ]
-"378
-[e :U 919 ]
-[; ;afficheur.c: 380: }
+"373
+[e ++ _add -> -> 1 `i `ui ]
+[e $ != _add -> 63488 `ui 932  ]
+[e :U 933 ]
+"376
+}
+[; ;afficheur.c: 376: }
+[; ;afficheur.c: 377: }
+"377
+[e :UE 931 ]
+}
+"379
+[v _clear_cgram `(v ~T0 @X0 1 ef ]
 "380
-[e :UE 918 ]
+{
+[; ;afficheur.c: 379: void clear_cgram(void)
+[; ;afficheur.c: 380: {
+[e :U _clear_cgram ]
+[f ]
+"381
+[v _add `ui ~T0 @X0 1 a ]
+[; ;afficheur.c: 381: unsigned int add;
+[; ;afficheur.c: 383: d2command(0,0xF8,0x24);
+"383
+[e ( _d2command (3 , , -> -> 0 `i `uc -> -> 248 `i `uc -> -> 36 `i `uc ]
+[; ;afficheur.c: 384: for (add=0xF800;add!=0x0000;add++)
+"384
+{
+[e = _add -> 63488 `ui ]
+[e $ != _add -> -> 0 `i `ui 936  ]
+[e $U 937  ]
+"385
+[e :U 936 ]
+[; ;afficheur.c: 385: {
+{
+[; ;afficheur.c: 386: d1command(0x00,0xC0);
+"386
+[e ( _d1command (2 , -> -> 0 `i `uc -> -> 192 `i `uc ]
+"387
+}
+"384
+[e ++ _add -> -> 1 `i `ui ]
+[e $ != _add -> -> 0 `i `ui 936  ]
+[e :U 937 ]
+"387
+}
+[; ;afficheur.c: 387: }
+[; ;afficheur.c: 388: }
+"388
+[e :UE 935 ]
+}
+"390
+[v _plot1 `(v ~T0 @X0 1 ef2`uc`uc ]
+"391
+{
+[; ;afficheur.c: 390: void plot1(unsigned char x, unsigned char y)
+[; ;afficheur.c: 391: {
+[e :U _plot1 ]
+"390
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+"391
+[f ]
+"392
+[v _add `ui ~T0 @X0 1 a ]
+[; ;afficheur.c: 392: unsigned int add;
+[; ;afficheur.c: 394: add=40*y+x/6;
+"394
+[e = _add -> + * -> 40 `i -> _y `i / -> _x `i -> 6 `i `ui ]
+[; ;afficheur.c: 395: d2command((char)(add&0xff),(char)(add>>8),0x24);
+"395
+[e ( _d2command (3 , , -> & _add -> -> 255 `i `ui `uc -> >> _add -> 8 `i `uc -> -> 36 `i `uc ]
+[; ;afficheur.c: 397: switch(x%6)
+"397
+[e $U 941  ]
+[; ;afficheur.c: 398: {
+"398
+{
+[; ;afficheur.c: 400: case 0: command(0xFD); break;
+"400
+[e :U 942 ]
+[e ( _command (1 -> -> 253 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 401: case 1: command(0xFC); break;
+"401
+[e :U 943 ]
+[e ( _command (1 -> -> 252 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 402: case 2: command(0xFB); break;
+"402
+[e :U 944 ]
+[e ( _command (1 -> -> 251 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 403: case 3: command(0xFA); break;
+"403
+[e :U 945 ]
+[e ( _command (1 -> -> 250 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 404: case 4: command(0xF9); break;
+"404
+[e :U 946 ]
+[e ( _command (1 -> -> 249 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 405: case 5: command(0xF8); break;
+"405
+[e :U 947 ]
+[e ( _command (1 -> -> 248 `i `uc ]
+[e $U 940  ]
+[; ;afficheur.c: 406: default:break;
+"406
+[e :U 948 ]
+[e $U 940  ]
+"407
+}
+[; ;afficheur.c: 407: }
+[e $U 940  ]
+"397
+[e :U 941 ]
+[e [\ % -> _x `i -> 6 `i , $ -> 0 `i 942
+ , $ -> 1 `i 943
+ , $ -> 2 `i 944
+ , $ -> 3 `i 945
+ , $ -> 4 `i 946
+ , $ -> 5 `i 947
+ 948 ]
+"407
+[e :U 940 ]
+[; ;afficheur.c: 409: }
+"409
+[e :UE 939 ]
+}
+"411
+[v _plot0 `(v ~T0 @X0 1 ef2`uc`uc ]
+"412
+{
+[; ;afficheur.c: 411: void plot0(unsigned char x, unsigned char y)
+[; ;afficheur.c: 412: {
+[e :U _plot0 ]
+"411
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+"412
+[f ]
+"413
+[v _add `ui ~T0 @X0 1 a ]
+[; ;afficheur.c: 413: unsigned int add;
+[; ;afficheur.c: 415: add=40*y+x/6;
+"415
+[e = _add -> + * -> 40 `i -> _y `i / -> _x `i -> 6 `i `ui ]
+[; ;afficheur.c: 416: d2command((char)(add&0xff),(char)(add>>8),0x24);
+"416
+[e ( _d2command (3 , , -> & _add -> -> 255 `i `ui `uc -> >> _add -> 8 `i `uc -> -> 36 `i `uc ]
+[; ;afficheur.c: 418: switch(x%6)
+"418
+[e $U 951  ]
+[; ;afficheur.c: 419: {
+"419
+{
+[; ;afficheur.c: 421: case 0: command(0xF5); break;
+"421
+[e :U 952 ]
+[e ( _command (1 -> -> 245 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 422: case 1: command(0xF4); break;
+"422
+[e :U 953 ]
+[e ( _command (1 -> -> 244 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 423: case 2: command(0xF3); break;
+"423
+[e :U 954 ]
+[e ( _command (1 -> -> 243 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 424: case 3: command(0xF2); break;
+"424
+[e :U 955 ]
+[e ( _command (1 -> -> 242 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 425: case 4: command(0xF1); break;
+"425
+[e :U 956 ]
+[e ( _command (1 -> -> 241 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 426: case 5: command(0xF0); break;
+"426
+[e :U 957 ]
+[e ( _command (1 -> -> 240 `i `uc ]
+[e $U 950  ]
+[; ;afficheur.c: 427: default:break;
+"427
+[e :U 958 ]
+[e $U 950  ]
+"428
+}
+[; ;afficheur.c: 428: }
+[e $U 950  ]
+"418
+[e :U 951 ]
+[e [\ % -> _x `i -> 6 `i , $ -> 0 `i 952
+ , $ -> 1 `i 953
+ , $ -> 2 `i 954
+ , $ -> 3 `i 955
+ , $ -> 4 `i 956
+ , $ -> 5 `i 957
+ 958 ]
+"428
+[e :U 950 ]
+[; ;afficheur.c: 430: }
+"430
+[e :UE 949 ]
 }

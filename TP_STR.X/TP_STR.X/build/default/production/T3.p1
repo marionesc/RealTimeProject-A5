@@ -7302,6 +7302,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 48: void clear_cgram(void);
 [; ;afficheur.h: 49: void plot1(unsigned char x, unsigned char y);
 [; ;afficheur.h: 50: void plot0(unsigned char x, unsigned char y);
+[; ;afficheur.h: 51: void clear_line(unsigned char line);
+[; ;afficheur.h: 52: void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 53: void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7451,106 +7455,106 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;T3.c: 18: }
 [; ;T3.c: 19: }
 [; ;T3.c: 20: }
-[; ;T3.c: 21: if (TP_appui==1)
-"21
-[e $ ! == -> _TP_appui `i -> 1 `i 831  ]
-[; ;T3.c: 22: {
-"22
-{
-[; ;T3.c: 23: if ((TP_x>=215)&&(TP_x<221))
-"23
-[e $ ! && >= -> _TP_x `i -> 215 `i < -> _TP_x `i -> 221 `i 832  ]
-[; ;T3.c: 24: {
+[; ;T3.c: 24: if (TP_appui==1)
 "24
-{
-[; ;T3.c: 25: if ((TP_y>=113)&&(TP_y<121))
+[e $ ! == -> _TP_appui `i -> 1 `i 831  ]
+[; ;T3.c: 25: {
 "25
-[e $ ! && >= -> _TP_y `i -> 113 `i < -> _TP_y `i -> 121 `i 833  ]
-[; ;T3.c: 26: {
-"26
 {
-[; ;T3.c: 27: LATCbits.LATC1=1;
+[; ;T3.c: 26: if ((TP_x>=215)&&(TP_x<221))
+"26
+[e $ ! && >= -> _TP_x `i -> 215 `i < -> _TP_x `i -> 221 `i 832  ]
+[; ;T3.c: 27: {
 "27
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+{
+[; ;T3.c: 28: if ((TP_y>=113)&&(TP_y<121))
 "28
+[e $ ! && >= -> _TP_y `i -> 113 `i < -> _TP_y `i -> 121 `i 833  ]
+[; ;T3.c: 29: {
+"29
+{
+[; ;T3.c: 30: LATCbits.LATC1=1;
+"30
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"31
 }
 [e :U 833 ]
-[; ;T3.c: 28: }
-[; ;T3.c: 29: if ((TP_y>=121)&&(TP_y<127))
-"29
-[e $ ! && >= -> _TP_y `i -> 121 `i < -> _TP_y `i -> 127 `i 834  ]
-[; ;T3.c: 30: {
-"30
-{
-[; ;T3.c: 31: LATCbits.LATC1=0;
-"31
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;T3.c: 31: }
+[; ;T3.c: 32: if ((TP_y>=121)&&(TP_y<127))
 "32
+[e $ ! && >= -> _TP_y `i -> 121 `i < -> _TP_y `i -> 127 `i 834  ]
+[; ;T3.c: 33: {
+"33
+{
+[; ;T3.c: 34: LATCbits.LATC1=0;
+"34
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+"35
 }
 [e :U 834 ]
-"33
+"36
 }
 [e :U 832 ]
-"34
+"37
 }
 [e :U 831 ]
-[; ;T3.c: 32: }
-[; ;T3.c: 33: }
-[; ;T3.c: 34: }
-[; ;T3.c: 35: if (TP_appui==1)
-"35
-[e $ ! == -> _TP_appui `i -> 1 `i 835  ]
-[; ;T3.c: 36: {
-"36
-{
-[; ;T3.c: 37: if ((TP_x>=227)&&(TP_x<233))
-"37
-[e $ ! && >= -> _TP_x `i -> 227 `i < -> _TP_x `i -> 233 `i 836  ]
-[; ;T3.c: 38: {
+[; ;T3.c: 35: }
+[; ;T3.c: 36: }
+[; ;T3.c: 37: }
+[; ;T3.c: 38: if (TP_appui==1)
 "38
-{
-[; ;T3.c: 39: if ((TP_y>=113)&&(TP_y<121))
+[e $ ! == -> _TP_appui `i -> 1 `i 835  ]
+[; ;T3.c: 39: {
 "39
-[e $ ! && >= -> _TP_y `i -> 113 `i < -> _TP_y `i -> 121 `i 837  ]
-[; ;T3.c: 40: {
-"40
 {
-[; ;T3.c: 41: LATGbits.LATG0=1;
+[; ;T3.c: 40: if ((TP_x>=227)&&(TP_x<233))
+"40
+[e $ ! && >= -> _TP_x `i -> 227 `i < -> _TP_x `i -> 233 `i 836  ]
+[; ;T3.c: 41: {
 "41
-[e = . . _LATGbits 0 0 -> -> 1 `i `uc ]
+{
+[; ;T3.c: 42: if ((TP_y>=113)&&(TP_y<121))
 "42
+[e $ ! && >= -> _TP_y `i -> 113 `i < -> _TP_y `i -> 121 `i 837  ]
+[; ;T3.c: 43: {
+"43
+{
+[; ;T3.c: 44: LATGbits.LATG0=1;
+"44
+[e = . . _LATGbits 0 0 -> -> 1 `i `uc ]
+"45
 }
 [e :U 837 ]
-[; ;T3.c: 42: }
-[; ;T3.c: 43: if ((TP_y>=121)&&(TP_y<127))
-"43
-[e $ ! && >= -> _TP_y `i -> 121 `i < -> _TP_y `i -> 127 `i 838  ]
-[; ;T3.c: 44: {
-"44
-{
-[; ;T3.c: 45: LATGbits.LATG0=0;
-"45
-[e = . . _LATGbits 0 0 -> -> 0 `i `uc ]
+[; ;T3.c: 45: }
+[; ;T3.c: 46: if ((TP_y>=121)&&(TP_y<127))
 "46
+[e $ ! && >= -> _TP_y `i -> 121 `i < -> _TP_y `i -> 127 `i 838  ]
+[; ;T3.c: 47: {
+"47
+{
+[; ;T3.c: 48: LATGbits.LATG0=0;
+"48
+[e = . . _LATGbits 0 0 -> -> 0 `i `uc ]
+"49
 }
 [e :U 838 ]
-"47
+"50
 }
 [e :U 836 ]
-"48
+"51
 }
 [e :U 835 ]
-"49
+"54
 }
 [e :U 824 ]
 "5
 [e $U 825  ]
 [e :U 826 ]
-[; ;T3.c: 46: }
-[; ;T3.c: 47: }
-[; ;T3.c: 48: }
 [; ;T3.c: 49: }
 [; ;T3.c: 50: }
-"50
+[; ;T3.c: 51: }
+[; ;T3.c: 54: }
+[; ;T3.c: 55: }
+"55
 [e :UE 823 ]
 }

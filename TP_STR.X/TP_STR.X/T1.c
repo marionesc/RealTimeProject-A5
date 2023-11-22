@@ -25,6 +25,8 @@ void tache1(void)
     goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
     TP_appui=0;
+        draw_square(90,30,190,90);
+        draw_filled_square(90,30,190,90);
 
     while(1)
     {
@@ -105,6 +107,33 @@ void tache1(void)
 
         goto_lico(13,0);
         draw_string("BIG MUM");
+        
+        //draw_square(90,30,190,90);
+        //draw_filled_square(90,30,190,90);
+        
+        if (TP_appui==1)
+        {
+            if((TP_x>=50)&&(TP_x<150))
+            {
+                if ((TP_y>=10)&&(TP_y<50))
+                {
+                    
+                    clear_line(14);
+                    goto_lico(14,0);
+                    draw_string("LUFFY             ");
+                    //delai_us_char(100);
+                }
+            } else
+        {
+           // clear_text();
+             clear_line(14); // Efface la première ligne
+             goto_lico(14,0);
+           //  draw_string("TOM LE ....");
+
+        }   
+        }  
+        
+        
         
         
         if (TP_appui==1)

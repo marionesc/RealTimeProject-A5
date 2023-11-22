@@ -18,6 +18,9 @@ void tache3(void)
                 }
             }
         }
+        
+        
+        
         if (TP_appui==1)
         {
             if ((TP_x>=215)&&(TP_x<221))
@@ -46,5 +49,7 @@ void tache3(void)
                 }
             }
         }
+        
+
     }
 }

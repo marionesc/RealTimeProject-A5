@@ -48,9 +48,10 @@ extern "C" {
     void clear_cgram(void);
     void plot1(unsigned char x, unsigned char y);
     void plot0(unsigned char x, unsigned char y);
-
-
-
+    void clear_line(unsigned char line);
+    void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+    void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+    void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 #ifdef	__cplusplus
 }
 #endif

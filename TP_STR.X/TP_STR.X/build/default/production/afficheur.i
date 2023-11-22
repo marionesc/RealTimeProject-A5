@@ -11359,6 +11359,10 @@ void clear_graphics(void);
 void clear_cgram(void);
 void plot1(unsigned char x, unsigned char y);
 void plot0(unsigned char x, unsigned char y);
+void clear_line(unsigned char line);
+void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11674,6 +11678,56 @@ for (add=0;add!=0x8000;add++)
 d1command(0x00,0xC0);
 }
 }
+
+void clear_line(unsigned char line) {
+unsigned char column;
+for (column = 0; column < 40; column++) {
+goto_lico(line, column);
+draw_char(' ');
+}
+}
+void draw_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+unsigned char x, y;
+
+
+for (x = x1; x <= x2; x++) {
+plot1(x, y1);
+plot1(x, y2);
+}
+
+
+for (y = y1; y <= y2; y++) {
+plot1(x1, y);
+plot1(x2, y);
+}
+}
+void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+unsigned char x, y;
+
+
+for (y = y1; y <= y2; y++) {
+for (x = x1; x <= x2; x++) {
+plot1(x, y);
+}
+}
+}
+
+void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
+unsigned char x, y;
+
+
+for (x = x1 + 1; x < x2; x++) {
+plot0(x, y1);
+plot0(x, y2);
+}
+
+
+for (y = y1 + 1; y < y2; y++) {
+plot0(x1, y);
+plot0(x2, y);
+}
+}
+
 
 void clear_graphics(void)
 {

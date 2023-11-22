@@ -7330,6 +7330,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 48: void clear_cgram(void);
 [; ;afficheur.h: 49: void plot1(unsigned char x, unsigned char y);
 [; ;afficheur.h: 50: void plot0(unsigned char x, unsigned char y);
+[; ;afficheur.h: 51: void clear_line(unsigned char line);
+[; ;afficheur.h: 52: void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 53: void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+[; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;

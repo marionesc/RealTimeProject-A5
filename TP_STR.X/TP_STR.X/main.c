@@ -8,7 +8,7 @@ void main()
     initialisation_des_ports();
     initialisation_du_systeme();
     Init(SEM_CAN);
-
+   
         // Démarrage du système
     T0CONbits.TMR0ON=1; //Démarrage du Timer0
     T0IF=1; // Forçage du déclenchement de la première IT
@@ -77,6 +77,7 @@ unsigned char lecture_8bit_analogique(unsigned char channel)
     else
         ret=ADRESH;
     //V(SEM_CAN);
+   //draw_square(90,30,190,90);
 
     return ret;
 }

@@ -11305,6 +11305,10 @@ void clear_graphics(void);
 void clear_cgram(void);
 void plot1(unsigned char x, unsigned char y);
 void plot0(unsigned char x, unsigned char y);
+void clear_line(unsigned char line);
+void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
+void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11386,6 +11390,8 @@ goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');dra
 goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
 TP_appui=0;
+draw_square(90,30,190,90);
+draw_filled_square(90,30,190,90);
 
 while(1)
 {
@@ -11466,6 +11472,33 @@ draw_hex8(lecture_8bit_analogique(11));
 
 goto_lico(13,0);
 draw_string("BIG MUM");
+
+
+
+
+if (TP_appui==1)
+{
+if((TP_x>=50)&&(TP_x<150))
+{
+if ((TP_y>=10)&&(TP_y<50))
+{
+
+clear_line(14);
+goto_lico(14,0);
+draw_string("LUFFY             ");
+
+}
+} else
+{
+
+clear_line(14);
+goto_lico(14,0);
+
+
+}
+}
+
+
 
 
 if (TP_appui==1)

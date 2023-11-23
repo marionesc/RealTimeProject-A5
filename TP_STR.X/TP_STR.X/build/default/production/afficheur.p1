@@ -124,6 +124,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S394 . . . . . . . . . . . ]
 "8582
 [v _PORTEbits `VS394 ~T0 @X0 0 e@3972 ]
+[v F38 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\builtins.h
+[v __delay `JF38 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7482,7 +7486,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBRT7=OFF ]
 "49
 [p x EBRTB=OFF ]
-[; ;main.h: 143: unsigned char lecture_8bit_analogique(unsigned char channel);
+[; ;main.h: 145: unsigned char lecture_8bit_analogique(unsigned char channel);
 [; ;afficheur.h: 32: void write_d_aff(unsigned char data);
 [; ;afficheur.h: 33: void write_c_aff(unsigned char command);
 [; ;afficheur.h: 34: unsigned char check_status_ok();
@@ -7508,7 +7512,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
+[; ;afficheur.h: 57: void increment (unsigned int vitesse);
 [; ;afficheur.h: 58: void vitesseAdmin(unsigned int a);
+[; ;afficheur.h: 59: void delay(unsigned int milliseconds);
 "4 afficheur.c
 [v _write_d_aff `(v ~T0 @X0 1 ef1`uc ]
 "5
@@ -9060,6 +9066,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.c: 476: }
 "476
 [e :UE 961 ]
+}
+"477
+[v _delay `(v ~T0 @X0 1 ef1`ui ]
+{
+[; ;afficheur.c: 477: void delay(unsigned int milliseconds) {
+[e :U _delay ]
+[v _milliseconds `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;afficheur.c: 478: for (unsigned int i = 0; i < milliseconds; i++) {
+"478
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $U 976  ]
+[e :U 973 ]
+{
+[; ;afficheur.c: 479: _delay((unsigned long)((1)*(48000000/4000.0)));
+"479
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"480
+}
+"478
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 976 ]
+[e $ < _i _milliseconds 973  ]
+[e :U 974 ]
+"480
+}
+[; ;afficheur.c: 480: }
+[; ;afficheur.c: 481: }
+"481
+[e :UE 972 ]
 }
 [a 2C 82 79 85 69 83 66 89 71 78 79 76 69 83 0 ]
 [a 1C 65 84 84 69 78 84 73 79 78 32 118 111 117 115 32 101 116 101 115 32 112 108 101 105 110 33 33 33 0 ]

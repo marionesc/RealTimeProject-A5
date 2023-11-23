@@ -11313,8 +11313,9 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
-
+void increment (unsigned int vitesse);
 void vitesseAdmin(unsigned int a);
+void delay(unsigned int milliseconds);
 
 # 17 "stid.h"
 unsigned char lecture_normale(unsigned char * stid_id);
@@ -11358,7 +11359,7 @@ void tache6(void);
 #pragma config CONFIG7L = 0xFF
 #pragma config CONFIG7H = 0x40
 
-# 143
+# 145
 unsigned char lecture_8bit_analogique(unsigned char channel);
 
 # 22 "semaphore.h"

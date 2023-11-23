@@ -474,3 +474,8 @@ void vitesseAdmin(unsigned int a){
                 }
         }
 }
+void delay(unsigned int milliseconds) {
+    for (unsigned int i = 0; i < milliseconds; i++) {
+        __delay_ms(1);
+    }
+}

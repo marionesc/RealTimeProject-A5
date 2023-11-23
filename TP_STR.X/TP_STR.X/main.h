@@ -78,6 +78,7 @@ extern "C" {
 #define     UART_RX     LATCbits.LATC6
 #define     UART_TX     LATCbits.LATC7
 
+
 //PORTD
 #define     STID_CODE       PORTDbits.RD0
 #define     STID_SENS_DATA  TRISDbits.TRISD1
@@ -137,6 +138,7 @@ extern "C" {
 #define     TEMPERATURE_HUILE   3
 #define     JOYSTICK_X          10
 #define     JOYSTICK_Y          11
+#define _XTAL_FREQ 48000000
 
 
 // Prototypes

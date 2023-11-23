@@ -12,14 +12,14 @@
   0h - 3h		(dist/default/production\TP_STR.X.production.hex)
   8h - 343h		(dist/default/production\TP_STR.X.production.hex)
   1000h - 10D8h		(dist/default/production\TP_STR.X.production.hex)
-  10DAh - 23FBh		(dist/default/production\TP_STR.X.production.hex)
+  10DAh - 243Dh		(dist/default/production\TP_STR.X.production.hex)
   200000h - 200007h		(dist/default/production\TP_STR.X.production.hex)
   300000h - 30000Dh		(dist/default/production\TP_STR.X.production.hex)
  Unused ranges:
   4h - 7h
   344h - FFFh
   10D9h - 10D9h
-  23FCh - 1FFFFFh
+  243Eh - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -402,7 +402,11 @@
 000023C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000023D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000023E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000023F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+000023F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002400 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002410 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002420 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

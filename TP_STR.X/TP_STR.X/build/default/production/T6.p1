@@ -7297,7 +7297,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
+[; ;afficheur.h: 57: void increment (unsigned int vitesse);
 [; ;afficheur.h: 58: void vitesseAdmin(unsigned int a);
+[; ;afficheur.h: 59: void delay(unsigned int milliseconds);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7385,7 +7387,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBRT7=OFF ]
 "49
 [p x EBRTB=OFF ]
-[; ;main.h: 143: unsigned char lecture_8bit_analogique(unsigned char channel);
+[; ;main.h: 145: unsigned char lecture_8bit_analogique(unsigned char channel);
 [; ;T6.h: 16: void tache6(void);
 "3 T6.c
 [v _tache6 `(v ~T0 @X0 1 ef ]

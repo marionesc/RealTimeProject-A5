@@ -11313,8 +11313,9 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
-
+void increment (unsigned int vitesse);
 void vitesseAdmin(unsigned int a);
+void delay(unsigned int milliseconds);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11364,7 +11365,7 @@ void tache6(void);
 #pragma config CONFIG7L = 0xFF
 #pragma config CONFIG7H = 0x40
 
-# 143
+# 145
 unsigned char lecture_8bit_analogique(unsigned char channel);
 
 # 16 "T1.h"
@@ -11416,7 +11417,16 @@ draw_string("AR");
 else{
 draw_string("N ");
 
+_delay((unsigned long)((100)*(48000000/4000.0)));
+if(vitesse>0){
+vitesse=vitesse-1;
+
+goto_lico(5,0);
+draw_string("Vitesse:");
+draw_dec8(vitesse);
 }
+}
+
 goto_lico(7,0);
 if (PORTEbits.RE4==0){
 draw_string("((!))");
@@ -11460,7 +11470,6 @@ else {
 
 goto_lico(5,0);
 draw_string("Vitesse:");
-
 draw_dec8(vitesse);
 
 goto_lico(6,0);
@@ -11480,7 +11489,7 @@ draw_string(" AUCUN              ");
 else
 {
 
-# 117
+# 125
 if(Personne==2)
 {
 
@@ -11498,7 +11507,7 @@ draw_string("AUCUN");
 }
 }
 
-# 140
+# 148
 goto_lico(9,0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
@@ -11513,7 +11522,7 @@ draw_string("VIDE");
 goto_lico(5,31);
 draw_string("CHARGE");
 
-# 160
+# 168
 if (TP_appui==1)
 {
 goto_lico(0,20);

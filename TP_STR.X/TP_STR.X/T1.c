@@ -44,8 +44,17 @@ void tache1(void)
                 draw_string("AR");
             else{
                 draw_string("N ");
-        
-            }
+
+                    __delay_ms(100);
+                    if(vitesse>0){
+                    vitesse=vitesse-1;
+                   
+                    goto_lico(5,0);
+                    draw_string("Vitesse:");
+                    draw_dec8(vitesse);
+                    }
+                }
+            
                     goto_lico(7,0);
                 if (FREIN_A_MAIN==0){
                     draw_string("((!))");
@@ -89,7 +98,6 @@ void tache1(void)
       
         goto_lico(5,0);
         draw_string("Vitesse:");
-        
         draw_dec8(vitesse);
         
         goto_lico(6,0);

@@ -440,3 +440,30 @@ void vide(void){
     goto_lico(14,0);
     draw_string("ROUESBYGNOLES");
 }
+
+void vitesse1(void){
+            if (MARCHE_AVANT==0 || MARCHE_ARRIERE==0){
+                    goto_lico(7,0);
+                if (FREIN_A_MAIN==0){
+                    draw_string("((!))");
+                }
+                else{
+                    draw_string("     ");
+                if(TEST==1){
+                    
+                    if (VITESSE_PLUS==0 && vitesse < 15)
+                        vitesse++;
+                    if (VITESSE_MOINS == 0 && vitesse > 0) {
+                        vitesse--;
+                    }
+                } else{
+                    if (VITESSE_PLUS==0 && vitesse < 25)
+                        vitesse++;
+                    if (VITESSE_MOINS == 0 && vitesse > 0) {
+                        vitesse--;
+                    }
+                }  
+                }
+        }
+
+}

@@ -19,7 +19,9 @@ void tache1(void)
     vitesse=0;
     batterie=15;
     n_octet_badge=0;
-
+    TEST=0;
+    Operator=0;
+    
     goto_lico(13,34);draw_char('R');draw_char(' ');draw_char('V');draw_char(' ');draw_char('B');
     goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');draw_char('0');
     goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
@@ -29,7 +31,7 @@ void tache1(void)
         draw_square(120,20,170,60);
         //draw_filled_square(90,30,190,90);
         draw_string(2);
-        TEST=0;
+
     while(1)
     {
 
@@ -52,11 +54,11 @@ void tache1(void)
 
         goto_lico(2,0);
         draw_string("Temp. Eau:");
-        draw_hex8(lecture_8bit_analogique(TEMPERATURE_EAU));
+        draw_dec8(lecture_8bit_analogique(TEMPERATURE_EAU));
 
         goto_lico(3,0);
         draw_string("Temp. Huile:");
-        draw_hex8(lecture_8bit_analogique(TEMPERATURE_HUILE));
+        draw_dec8(lecture_8bit_analogique(TEMPERATURE_HUILE));
 
         goto_lico(4,0);
         draw_string("Choc:");
@@ -64,27 +66,22 @@ void tache1(void)
             draw_char('1');
         else
             draw_char('0');
+        
+        if(Operator == 2) {
+            vitesse1();
 
+        }
+        else if(Operator ==1){
+            vitesse1();
+        }
+        else {
+        
+        }
+      
         goto_lico(5,0);
         draw_string("Vitesse:");
         
-        if(TEST==1){
-        if (VITESSE_PLUS==0 && vitesse < 15)
-            vitesse++;
-        if (VITESSE_MOINS == 0 && vitesse > 0) {
-            vitesse--;
-        }
-        } else{
-        if (VITESSE_PLUS==0 && vitesse < 25)
-            vitesse++;
-        if (VITESSE_MOINS == 0 && vitesse > 0) {
-            vitesse--;
-        }
-        }  
-        
-        
-        
-        draw_hex8(vitesse);
+        draw_dec8(vitesse);
         
         goto_lico(6,0);
         draw_string("Batterie:");
@@ -92,26 +89,45 @@ void tache1(void)
             batterie++;
         if (BATTERIE_MOINS==0 && batterie > 0)
             batterie--;
-        draw_hex8(batterie);
+        draw_dec8(batterie);
 
-        goto_lico(7,0);
-        if (FREIN_A_MAIN==0)
-            draw_string("((!))");
-        else
-            draw_string("     ");
+    
 
         goto_lico(8,0);
         draw_string("Badge:");
         if (n_octet_badge==0)
             draw_string(" AUCUN              ");
         else
-        {
+        {/*
             for (i=0;i<n_octet_badge;i++)
             {
                 draw_hex8(badge[i]);
+                
             }
-        }
+           */        
+        if(Operator==2)
+        {
 
+            draw_string("Operator");
+
+        }
+        else if(Operator==1)
+        {
+ 
+            draw_string(" ADMIN");
+        } 
+        else if (Operator==0){
+
+            draw_string("AUCUN");
+        }
+        }
+        
+        //goto_lico(12,0);
+       // draw_dec8(Valeur);
+        
+
+
+        
         goto_lico(9,0);
         draw_string("X-Joystick:");
         draw_hex8(lecture_8bit_analogique(JOYSTICK_X));
@@ -120,12 +136,11 @@ void tache1(void)
         draw_string("Y-Joystick:");
         draw_hex8(lecture_8bit_analogique(JOYSTICK_Y));
 
-        goto_lico(13,0);
-        draw_string("BIG MUM");
+
         goto_lico(5,22);
         draw_string("VIDE");
         goto_lico(5,31);
-        draw_string("CHARGER");
+        draw_string("CHARGE");
         //draw_square(90,30,190,90);
         //draw_filled_square(90,30,190,90);
 

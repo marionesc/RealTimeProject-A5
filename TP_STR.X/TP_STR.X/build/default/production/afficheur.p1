@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6356 `(v ~T0 @X0 0 tf ]
+[v F6358 `(v ~T0 @X0 0 tf ]
 "10308 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
 [v _LATH `Vuc ~T0 @X0 0 e@3984 ]
 "10943
@@ -66,6 +66,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _plot1 `(v ~T0 @X0 0 ef2`uc`uc ]
 "50
 [v _plot0 `(v ~T0 @X0 0 ef2`uc`uc ]
+"7896 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
+[s S374 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S374 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"7906
+[s S375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S375 . INT0 INT1 INT2 INT3 KBI0 KBI1 KBI2 KBI3 ]
+"7916
+[s S376 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S376 . FLT0 . CTED1 CTED2 . T3CKI ]
+"7924
+[s S377 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S377 . . CCP2_P2A . T1G ]
+"7930
+[s S378 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S378 . . PGM PGC PGD ]
+"7936
+[s S379 :3 `uc 1 :1 `uc 1 ]
+[n S379 . . CCP2_PA2 ]
+"7895
+[u S373 `S374 1 `S375 1 `S376 1 `S377 1 `S378 1 `S379 1 ]
+[n S373 . . . . . . . ]
+"7941
+[v _PORTBbits `VS373 ~T0 @X0 0 e@3969 ]
+"8505
+[s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S395 . RE0 RE1 RE2 RE3 RE4 RE5 RE6 RE7 ]
+"8515
+[s S396 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S396 . AD8 AD9 AD10 AD11 AD12 AD13 AD14 AD15 ]
+"8525
+[s S397 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S397 . P2D P2C P2B P3C P3B P1C P1B P2A ]
+"8535
+[s S398 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S398 . . CCP10 CCP9 CCP8 CCP7 CCP6 CCP2 ]
+"8544
+[s S399 :1 `uc 1 ]
+[n S399 . NOT_RD ]
+"8547
+[s S400 :1 `uc 1 :1 `uc 1 ]
+[n S400 . . NOT_WR ]
+"8551
+[s S401 :2 `uc 1 :1 `uc 1 ]
+[n S401 . . NOT_CS ]
+"8555
+[s S402 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S402 . nRD nWR nCS REFO ]
+"8561
+[s S403 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S403 . PD2 PC2 CS CCP9E CCP8E CCP7E CCP6E CCP2E ]
+"8571
+[s S404 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S404 . RDE WRE PB2 PC3E PB3E PC1E PB1E PA2E ]
+"8504
+[u S394 `S395 1 `S396 1 `S397 1 `S398 1 `S399 1 `S400 1 `S401 1 `S402 1 `S403 1 `S404 1 ]
+[n S394 . . . . . . . . . . . ]
+"8582
+[v _PORTEbits `VS394 ~T0 @X0 0 e@3972 ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7282,54 +7340,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 "52
 [v _TEST `uc ~T0 @X0 1 e@129 ]
 [; ;variables_globales.h: 52: unsigned char TEST __at(0x81);
-"56
-[v _fptr `*F6356 ~T0 @X0 1 e ]
-[; ;variables_globales.h: 56: void (*fptr)(void);
+"53
+[v _Operator `uc ~T0 @X0 1 e@130 ]
+[; ;variables_globales.h: 53: unsigned char Operator __at(0x82);
+"54
+[v _Valeur `uc ~T0 @X0 1 e@131 ]
+[; ;variables_globales.h: 54: unsigned char Valeur __at(0x83);
 "57
-[v _val_tos `us ~T0 @X0 1 e ]
-[; ;variables_globales.h: 57: unsigned short int val_tos;
+[v _fptr `*F6358 ~T0 @X0 1 e ]
+[; ;variables_globales.h: 57: void (*fptr)(void);
 "58
-[v _puc `*uc ~T0 @X0 1 e ]
-[; ;variables_globales.h: 58: unsigned char * puc;
+[v _val_tos `us ~T0 @X0 1 e ]
+[; ;variables_globales.h: 58: unsigned short int val_tos;
 "59
+[v _puc `*uc ~T0 @X0 1 e ]
+[; ;variables_globales.h: 59: unsigned char * puc;
+"60
 [v _tc `uc ~T0 @X0 -> 3 `i e ]
-[; ;variables_globales.h: 59: unsigned char tc[3];
-"67
-[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
-[; ;variables_globales.h: 67: unsigned char contexte1[66] __at(0x100);
+[; ;variables_globales.h: 60: unsigned char tc[3];
 "68
-[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
-[; ;variables_globales.h: 68: unsigned char contexte2[66] __at(0x200);
+[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
+[; ;variables_globales.h: 68: unsigned char contexte1[66] __at(0x100);
 "69
-[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
-[; ;variables_globales.h: 69: unsigned char contexte3[66] __at(0x300);
+[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
+[; ;variables_globales.h: 69: unsigned char contexte2[66] __at(0x200);
 "70
-[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
-[; ;variables_globales.h: 70: unsigned char contexte4[66] __at(0x400);
+[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
+[; ;variables_globales.h: 70: unsigned char contexte3[66] __at(0x300);
 "71
-[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
-[; ;variables_globales.h: 71: unsigned char contexte5[66] __at(0x500);
+[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
+[; ;variables_globales.h: 71: unsigned char contexte4[66] __at(0x400);
 "72
+[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
+[; ;variables_globales.h: 72: unsigned char contexte5[66] __at(0x500);
+"73
 [v _contexte6 `uc ~T0 @X0 -> 66 `i e@1536 ]
-[; ;variables_globales.h: 72: unsigned char contexte6[66] __at(0x600);
-"75
-[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
-[; ;variables_globales.h: 75: unsigned char STKPTR_T1 __at(0x103);
+[; ;variables_globales.h: 73: unsigned char contexte6[66] __at(0x600);
 "76
-[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
-[; ;variables_globales.h: 76: unsigned char STKPTR_T2 __at(0x203);
+[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
+[; ;variables_globales.h: 76: unsigned char STKPTR_T1 __at(0x103);
 "77
-[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
-[; ;variables_globales.h: 77: unsigned char STKPTR_T3 __at(0x303);
+[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
+[; ;variables_globales.h: 77: unsigned char STKPTR_T2 __at(0x203);
 "78
-[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
-[; ;variables_globales.h: 78: unsigned char STKPTR_T4 __at(0x403);
+[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
+[; ;variables_globales.h: 78: unsigned char STKPTR_T3 __at(0x303);
 "79
-[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
-[; ;variables_globales.h: 79: unsigned char STKPTR_T5 __at(0x503);
+[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
+[; ;variables_globales.h: 79: unsigned char STKPTR_T4 __at(0x403);
 "80
+[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
+[; ;variables_globales.h: 80: unsigned char STKPTR_T5 __at(0x503);
+"81
 [v _STKPTR_T6 `uc ~T0 @X0 1 e@1539 ]
-[; ;variables_globales.h: 80: unsigned char STKPTR_T6 __at(0x603);
+[; ;variables_globales.h: 81: unsigned char STKPTR_T6 __at(0x603);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7444,6 +7508,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
+[; ;afficheur.h: 57: void vitesse1(void);
 "4 afficheur.c
 [v _write_d_aff `(v ~T0 @X0 1 ef1`uc ]
 "5
@@ -8885,5 +8950,100 @@ Version 3.2 HI-TECH Software Intermediate Code
 "442
 [e :UE 960 ]
 }
+"444
+[v _vitesse1 `(v ~T0 @X0 1 ef ]
+{
+[; ;afficheur.c: 444: void vitesse1(void){
+[e :U _vitesse1 ]
+[f ]
+[; ;afficheur.c: 445: if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
+"445
+[e $ ! || == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 962  ]
+{
+[; ;afficheur.c: 446: goto_lico(7,0);
+"446
+[e ( _goto_lico (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+[; ;afficheur.c: 447: if (PORTEbits.RE4==0){
+"447
+[e $ ! == -> . . _PORTEbits 0 4 `i -> 0 `i 963  ]
+{
+[; ;afficheur.c: 448: draw_string("((!))");
+"448
+[e ( _draw_string (1 -> :s 3C `*uc ]
+"449
+}
+[; ;afficheur.c: 449: }
+[e $U 964  ]
+"450
+[e :U 963 ]
+[; ;afficheur.c: 450: else{
+{
+[; ;afficheur.c: 451: draw_string("     ");
+"451
+[e ( _draw_string (1 -> :s 4C `*uc ]
+[; ;afficheur.c: 452: if(TEST==1){
+"452
+[e $ ! == -> _TEST `i -> 1 `i 965  ]
+{
+[; ;afficheur.c: 453: if (PORTEbits.RE0==0 && vitesse < 15)
+"453
+[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i -> 15 `i 966  ]
+[; ;afficheur.c: 454: vitesse++;
+"454
+[e ++ _vitesse -> -> 1 `i `uc ]
+[e :U 966 ]
+[; ;afficheur.c: 455: if (PORTEbits.RE1 == 0 && vitesse > 0) {
+"455
+[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 967  ]
+{
+[; ;afficheur.c: 456: vitesse--;
+"456
+[e -- _vitesse -> -> 1 `i `uc ]
+"457
+}
+[e :U 967 ]
+"458
+}
+[; ;afficheur.c: 457: }
+[; ;afficheur.c: 458: } else{
+[e $U 968  ]
+[e :U 965 ]
+{
+[; ;afficheur.c: 459: if (PORTEbits.RE0==0 && vitesse < 25)
+"459
+[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i -> 25 `i 969  ]
+[; ;afficheur.c: 460: vitesse++;
+"460
+[e ++ _vitesse -> -> 1 `i `uc ]
+[e :U 969 ]
+[; ;afficheur.c: 461: if (PORTEbits.RE1 == 0 && vitesse > 0) {
+"461
+[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 970  ]
+{
+[; ;afficheur.c: 462: vitesse--;
+"462
+[e -- _vitesse -> -> 1 `i `uc ]
+"463
+}
+[e :U 970 ]
+"464
+}
+[e :U 968 ]
+"465
+}
+[e :U 964 ]
+"466
+}
+[e :U 962 ]
+[; ;afficheur.c: 463: }
+[; ;afficheur.c: 464: }
+[; ;afficheur.c: 465: }
+[; ;afficheur.c: 466: }
+[; ;afficheur.c: 468: }
+"468
+[e :UE 961 ]
+}
 [a 2C 82 79 85 69 83 66 89 71 78 79 76 69 83 0 ]
+[a 3C 40 40 33 41 41 0 ]
 [a 1C 65 84 84 69 78 84 73 79 78 32 118 111 117 115 32 101 116 101 115 32 112 108 101 105 110 33 33 33 0 ]
+[a 4C 32 32 32 32 32 0 ]

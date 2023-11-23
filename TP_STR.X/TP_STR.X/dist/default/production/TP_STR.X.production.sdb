@@ -27,6 +27,8 @@
 [v _draw_string draw_string `(v  1 e 1 0 ]
 "252
 [v _draw_hex8 draw_hex8 `(v  1 e 1 0 ]
+"274
+[v _draw_dec8 draw_dec8 `(v  1 e 1 0 ]
 "295
 [v _goto_lico goto_lico `(v  1 e 1 0 ]
 "307
@@ -45,6 +47,8 @@
 [v _charger charger `(v  1 e 1 0 ]
 "438
 [v _vide vide `(v  1 e 1 0 ]
+"444
+[v _vitesse1 vitesse1 `(v  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awmod.c
@@ -173,7 +177,7 @@
 [v _PADCFG1bits PADCFG1bits `VES379  1 e 1 @3923 ]
 "5352
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @3941 ]
-[s S803 . 1 `uc 1 RB0 1 0 :1:0 
+[s S807 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -183,7 +187,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "7941
-[s S812 . 1 `uc 1 INT0 1 0 :1:0 
+[s S816 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 INT3 1 0 :1:3 
@@ -192,29 +196,29 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S821 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S825 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S828 . 1 `uc 1 . 1 0 :3:0 
+[s S832 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T1G 1 0 :1:5 
 ]
-[s S833 . 1 `uc 1 . 1 0 :5:0 
+[s S837 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 PGM 1 0 :1:5 
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S838 . 1 `uc 1 . 1 0 :3:0 
+[s S842 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S841 . 1 `S803 1 . 1 0 `S812 1 . 1 0 `S821 1 . 1 0 `S828 1 . 1 0 `S833 1 . 1 0 `S838 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES841  1 e 1 @3969 ]
-[s S1981 . 1 `uc 1 RD0 1 0 :1:0 
+[u S845 . 1 `S807 1 . 1 0 `S816 1 . 1 0 `S825 1 . 1 0 `S832 1 . 1 0 `S837 1 . 1 0 `S842 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES845  1 e 1 @3969 ]
+[s S2137 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -224,7 +228,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "8319
-[s S1990 . 1 `uc 1 AD0 1 0 :1:0 
+[s S2146 . 1 `uc 1 AD0 1 0 :1:0 
 `uc 1 AD1 1 0 :1:1 
 `uc 1 AD2 1 0 :1:2 
 `uc 1 AD3 1 0 :1:3 
@@ -233,7 +237,7 @@
 `uc 1 AD6 1 0 :1:6 
 `uc 1 AD7 1 0 :1:7 
 ]
-[s S1999 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S2155 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -242,10 +246,10 @@
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S2008 . 1 `uc 1 . 1 0 :7:0 
+[s S2164 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_SS2 1 0 :1:7 
 ]
-[s S2011 . 1 `uc 1 CTPLS 1 0 :1:0 
+[s S2167 . 1 `uc 1 CTPLS 1 0 :1:0 
 `uc 1 T5CKI 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 SDO2 1 0 :1:4 
@@ -253,18 +257,18 @@
 `uc 1 SCK2 1 0 :1:6 
 `uc 1 nSS2 1 0 :1:7 
 ]
-[s S2019 . 1 `uc 1 . 1 0 :1:0 
+[s S2175 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 T7G 1 0 :1:1 
 `uc 1 . 1 0 :3:2 
 `uc 1 SDA2 1 0 :1:5 
 `uc 1 SCL2 1 0 :1:6 
 ]
-[s S2025 . 1 `uc 1 . 1 0 :7:0 
+[s S2181 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S2028 . 1 `S1981 1 . 1 0 `S1990 1 . 1 0 `S1999 1 . 1 0 `S2008 1 . 1 0 `S2011 1 . 1 0 `S2019 1 . 1 0 `S2025 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES2028  1 e 1 @3971 ]
-[s S893 . 1 `uc 1 RE0 1 0 :1:0 
+[u S2184 . 1 `S2137 1 . 1 0 `S2146 1 . 1 0 `S2155 1 . 1 0 `S2164 1 . 1 0 `S2167 1 . 1 0 `S2175 1 . 1 0 `S2181 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES2184  1 e 1 @3971 ]
+[s S901 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
@@ -274,7 +278,7 @@
 `uc 1 RE7 1 0 :1:7 
 ]
 "8582
-[s S902 . 1 `uc 1 AD8 1 0 :1:0 
+[s S910 . 1 `uc 1 AD8 1 0 :1:0 
 `uc 1 AD9 1 0 :1:1 
 `uc 1 AD10 1 0 :1:2 
 `uc 1 AD11 1 0 :1:3 
@@ -283,7 +287,7 @@
 `uc 1 AD14 1 0 :1:6 
 `uc 1 AD15 1 0 :1:7 
 ]
-[s S911 . 1 `uc 1 P2D 1 0 :1:0 
+[s S919 . 1 `uc 1 P2D 1 0 :1:0 
 `uc 1 P2C 1 0 :1:1 
 `uc 1 P2B 1 0 :1:2 
 `uc 1 P3C 1 0 :1:3 
@@ -292,7 +296,7 @@
 `uc 1 P1B 1 0 :1:6 
 `uc 1 P2A 1 0 :1:7 
 ]
-[s S920 . 1 `uc 1 . 1 0 :2:0 
+[s S928 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CCP10 1 0 :1:2 
 `uc 1 CCP9 1 0 :1:3 
 `uc 1 CCP8 1 0 :1:4 
@@ -300,20 +304,20 @@
 `uc 1 CCP6 1 0 :1:6 
 `uc 1 CCP2 1 0 :1:7 
 ]
-[s S928 . 1 `uc 1 NOT_RD 1 0 :1:0 
+[s S936 . 1 `uc 1 NOT_RD 1 0 :1:0 
 ]
-[s S930 . 1 `uc 1 . 1 0 :1:0 
+[s S938 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_WR 1 0 :1:1 
 ]
-[s S933 . 1 `uc 1 . 1 0 :2:0 
+[s S941 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_CS 1 0 :1:2 
 ]
-[s S936 . 1 `uc 1 nRD 1 0 :1:0 
+[s S944 . 1 `uc 1 nRD 1 0 :1:0 
 `uc 1 nWR 1 0 :1:1 
 `uc 1 nCS 1 0 :1:2 
 `uc 1 REFO 1 0 :1:3 
 ]
-[s S941 . 1 `uc 1 PD2 1 0 :1:0 
+[s S949 . 1 `uc 1 PD2 1 0 :1:0 
 `uc 1 PC2 1 0 :1:1 
 `uc 1 CS 1 0 :1:2 
 `uc 1 CCP9E 1 0 :1:3 
@@ -322,7 +326,7 @@
 `uc 1 CCP6E 1 0 :1:6 
 `uc 1 CCP2E 1 0 :1:7 
 ]
-[s S950 . 1 `uc 1 RDE 1 0 :1:0 
+[s S958 . 1 `uc 1 RDE 1 0 :1:0 
 `uc 1 WRE 1 0 :1:1 
 `uc 1 PB2 1 0 :1:2 
 `uc 1 PC3E 1 0 :1:3 
@@ -331,8 +335,8 @@
 `uc 1 PB1E 1 0 :1:6 
 `uc 1 PA2E 1 0 :1:7 
 ]
-[u S959 . 1 `S893 1 . 1 0 `S902 1 . 1 0 `S911 1 . 1 0 `S920 1 . 1 0 `S928 1 . 1 0 `S930 1 . 1 0 `S933 1 . 1 0 `S936 1 . 1 0 `S941 1 . 1 0 `S950 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES959  1 e 1 @3972 ]
+[u S967 . 1 `S901 1 . 1 0 `S910 1 . 1 0 `S919 1 . 1 0 `S928 1 . 1 0 `S936 1 . 1 0 `S938 1 . 1 0 `S941 1 . 1 0 `S944 1 . 1 0 `S949 1 . 1 0 `S958 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES967  1 e 1 @3972 ]
 "9248
 [v _PORTH PORTH `VEuc  1 e 1 @3975 ]
 [s S202 . 1 `uc 1 LATC0 1 0 :1:0 
@@ -356,7 +360,7 @@
 ]
 [u S220 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
 [v _LATCbits LATCbits `VES220  1 e 1 @3979 ]
-[s S1936 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S2092 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -366,7 +370,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "9933
-[s S1945 . 1 `uc 1 LD0 1 0 :1:0 
+[s S2101 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -375,8 +379,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1954 . 1 `S1936 1 . 1 0 `S1945 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1954  1 e 1 @3980 ]
+[u S2110 . 1 `S2092 1 . 1 0 `S2101 1 . 1 0 ]
+[v _LATDbits LATDbits `VES2110  1 e 1 @3980 ]
 [s S242 . 1 `uc 1 LATG0 1 0 :1:0 
 `uc 1 LATG1 1 0 :1:1 
 `uc 1 LATG2 1 0 :1:2 
@@ -396,7 +400,7 @@
 [v _LATH LATH `VEuc  1 e 1 @3984 ]
 "10420
 [v _LATJ LATJ `VEuc  1 e 1 @3985 ]
-[s S1619 . 1 `uc 1 LATJ0 1 0 :1:0 
+[s S1644 . 1 `uc 1 LATJ0 1 0 :1:0 
 `uc 1 LATJ1 1 0 :1:1 
 `uc 1 LATJ2 1 0 :1:2 
 `uc 1 LATJ3 1 0 :1:3 
@@ -406,7 +410,7 @@
 `uc 1 LATJ7 1 0 :1:7 
 ]
 "10447
-[s S1628 . 1 `uc 1 LJ0 1 0 :1:0 
+[s S1653 . 1 `uc 1 LJ0 1 0 :1:0 
 `uc 1 LJ1 1 0 :1:1 
 `uc 1 LJ2 1 0 :1:2 
 `uc 1 LJ3 1 0 :1:3 
@@ -415,8 +419,8 @@
 `uc 1 LJ6 1 0 :1:6 
 `uc 1 LJ7 1 0 :1:7 
 ]
-[u S1637 . 1 `S1619 1 . 1 0 `S1628 1 . 1 0 ]
-[v _LATJbits LATJbits `VES1637  1 e 1 @3985 ]
+[u S1662 . 1 `S1644 1 . 1 0 `S1653 1 . 1 0 ]
+[v _LATJbits LATJbits `VES1662  1 e 1 @3985 ]
 [s S270 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -454,7 +458,7 @@
 [v _TRISH TRISH `VEuc  1 e 1 @3993 ]
 "11005
 [v _TRISJ TRISJ `VEuc  1 e 1 @3994 ]
-[s S1326 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S1345 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR1GIF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -464,18 +468,18 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "11309
-[s S1335 . 1 `uc 1 . 1 0 :3:0 
+[s S1354 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S1340 . 1 `S1326 1 . 1 0 `S1335 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1340  1 e 1 @3998 ]
+[u S1359 . 1 `S1345 1 . 1 0 `S1354 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1359  1 e 1 @3998 ]
 "12210
 [v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
 "12548
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
-[s S1359 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1378 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -485,17 +489,17 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "12593
-[s S1368 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1387 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1372 . 1 `uc 1 . 1 0 :6:0 
+[s S1391 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S1375 . 1 `uc 1 . 1 0 :6:0 
+[s S1394 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S1378 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1397 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -504,8 +508,8 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S1387 . 1 `S1359 1 . 1 0 `S1368 1 . 1 0 `S1372 1 . 1 0 `S1375 1 . 1 0 `S1378 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES1387  1 e 1 @4012 ]
+[u S1406 . 1 `S1378 1 . 1 0 `S1387 1 . 1 0 `S1391 1 . 1 0 `S1394 1 . 1 0 `S1397 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES1406  1 e 1 @4012 ]
 "12836
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "12912
@@ -711,35 +715,39 @@
 [v _RXTX_libre RXTX_libre `uc  1 e 1 @128 ]
 "52
 [v _TEST TEST `uc  1 e 1 @129 ]
-"56
-[v _fptr fptr `*.38(v  1 e 3 0 ]
+"53
+[v _Operator Operator `uc  1 e 1 @130 ]
+"54
+[v _Valeur Valeur `uc  1 e 1 @131 ]
 "57
-[v _val_tos val_tos `us  1 e 2 0 ]
+[v _fptr fptr `*.38(v  1 e 3 0 ]
 "58
+[v _val_tos val_tos `us  1 e 2 0 ]
+"59
 [v _puc puc `*.39uc  1 e 2 0 ]
-"67
-[v _contexte1 contexte1 `[66]uc  1 e 66 @256 ]
 "68
-[v _contexte2 contexte2 `[66]uc  1 e 66 @512 ]
+[v _contexte1 contexte1 `[66]uc  1 e 66 @256 ]
 "69
-[v _contexte3 contexte3 `[66]uc  1 e 66 @768 ]
+[v _contexte2 contexte2 `[66]uc  1 e 66 @512 ]
 "70
-[v _contexte4 contexte4 `[66]uc  1 e 66 @1024 ]
+[v _contexte3 contexte3 `[66]uc  1 e 66 @768 ]
 "71
-[v _contexte5 contexte5 `[66]uc  1 e 66 @1280 ]
+[v _contexte4 contexte4 `[66]uc  1 e 66 @1024 ]
 "72
+[v _contexte5 contexte5 `[66]uc  1 e 66 @1280 ]
+"73
 [v _contexte6 contexte6 `[66]uc  1 e 66 @1536 ]
-"75
-[v _STKPTR_T1 STKPTR_T1 `uc  1 e 1 @259 ]
 "76
-[v _STKPTR_T2 STKPTR_T2 `uc  1 e 1 @515 ]
+[v _STKPTR_T1 STKPTR_T1 `uc  1 e 1 @259 ]
 "77
-[v _STKPTR_T3 STKPTR_T3 `uc  1 e 1 @771 ]
+[v _STKPTR_T2 STKPTR_T2 `uc  1 e 1 @515 ]
 "78
-[v _STKPTR_T4 STKPTR_T4 `uc  1 e 1 @1027 ]
+[v _STKPTR_T3 STKPTR_T3 `uc  1 e 1 @771 ]
 "79
-[v _STKPTR_T5 STKPTR_T5 `uc  1 e 1 @1283 ]
+[v _STKPTR_T4 STKPTR_T4 `uc  1 e 1 @1027 ]
 "80
+[v _STKPTR_T5 STKPTR_T5 `uc  1 e 1 @1283 ]
+"81
 [v _STKPTR_T6 STKPTR_T6 `uc  1 e 1 @1539 ]
 "6 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -750,7 +758,7 @@
 [v _initialisation_du_systeme initialisation_du_systeme `(v  1 e 1 0 ]
 {
 "133
-[v initialisation_du_systeme@temp temp `uc  1 a 1 33 ]
+[v initialisation_du_systeme@temp temp `uc  1 a 1 32 ]
 "177
 } 0
 "23 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\main.c
@@ -774,7 +782,7 @@
 {
 "5
 [v tache6@n n `uc  1 a 1 8 ]
-"25
+"36
 } 0
 "5 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\stid.c
 [v _lecture_normale lecture_normale `(uc  1 e 1 0 ]
@@ -847,11 +855,14 @@
 "3 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\T1.c
 [v _tache1 tache1 `(v  1 e 1 0 ]
 {
-"5
-[v tache1@i i `uc  1 a 1 20 ]
-"159
+"174
 } 0
-"438 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\afficheur.c
+"444 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\afficheur.c
+[v _vitesse1 vitesse1 `(v  1 e 1 0 ]
+{
+"468
+} 0
+"438
 [v _vide vide `(v  1 e 1 0 ]
 {
 "442
@@ -935,6 +946,35 @@
 [v ___awmod@divisor divisor `i  1 p 2 2 ]
 "34
 } 0
+"252 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\afficheur.c
+[v _draw_hex8 draw_hex8 `(v  1 e 1 0 ]
+{
+[v draw_hex8@octet octet `uc  1 a 1 wreg ]
+"254
+[v draw_hex8@c c `uc  1 a 1 8 ]
+"252
+[v draw_hex8@octet octet `uc  1 a 1 wreg ]
+"256
+[v draw_hex8@octet octet `uc  1 a 1 7 ]
+"272
+} 0
+"274
+[v _draw_dec8 draw_dec8 `(v  1 e 1 0 ]
+{
+[v draw_dec8@octet octet `uc  1 a 1 wreg ]
+"276
+[v draw_dec8@c c `uc  1 a 1 13 ]
+"278
+[v draw_dec8@dix dix `uc  1 a 1 12 ]
+"277
+[v draw_dec8@cent cent `uc  1 a 1 11 ]
+"280
+[v draw_dec8@unit unit `uc  1 a 1 9 ]
+"274
+[v draw_dec8@octet octet `uc  1 a 1 wreg ]
+[v draw_dec8@octet octet `uc  1 a 1 10 ]
+"293
+} 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
@@ -948,19 +988,7 @@
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"252 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\afficheur.c
-[v _draw_hex8 draw_hex8 `(v  1 e 1 0 ]
-{
-[v draw_hex8@octet octet `uc  1 a 1 wreg ]
-"254
-[v draw_hex8@c c `uc  1 a 1 8 ]
-"252
-[v draw_hex8@octet octet `uc  1 a 1 wreg ]
-"256
-[v draw_hex8@octet octet `uc  1 a 1 7 ]
-"272
-} 0
-"307
+"307 C:\Users\Solène\Desktop\RealTimeProject-A5\TP_STR.X\TP_STR.X\afficheur.c
 [v _clear_text clear_text `(v  1 e 1 0 ]
 {
 "309

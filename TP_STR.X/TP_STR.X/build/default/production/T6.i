@@ -11262,7 +11262,8 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-
+unsigned char Operator __at(0x82);
+unsigned char Valeur __at(0x83);
 
 
 void (*fptr)(void);
@@ -11270,7 +11271,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 67
+# 68
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11312,6 +11313,7 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
+void vitesse1(void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11373,21 +11375,32 @@ void tache6(void)
 unsigned char n;
 while(1)
 {
-n=lecture_normale(badge);
-if (n>0)
+n = lecture_normale(badge);
+if (n > 0)
 {
-if(n<10)
+if (n == 4)
 {
-n_octet_badge=n;
+n_octet_badge = n;
+
+
+Operator = 2;
+}
+else if (n == 8)
+{
+n_octet_badge = n;
+Operator = 1;
 }
 else
 {
-n_octet_badge=0;
+n_octet_badge = 0;
+
+
 }
 }
 else
 {
-n_octet_badge=0;
+n_octet_badge = 0;
+Operator = 0;
 }
 }
 }

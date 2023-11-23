@@ -11262,7 +11262,8 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-
+unsigned char Operator __at(0x82);
+unsigned char Valeur __at(0x83);
 
 
 void (*fptr)(void);
@@ -11270,7 +11271,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 67
+# 68
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11366,6 +11367,7 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
+void vitesse1(void);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11806,4 +11808,30 @@ void vide(void){
 
 goto_lico(14,0);
 draw_string("ROUESBYGNOLES");
+}
+
+void vitesse1(void){
+if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
+goto_lico(7,0);
+if (PORTEbits.RE4==0){
+draw_string("((!))");
+}
+else{
+draw_string("     ");
+if(TEST==1){
+if (PORTEbits.RE0==0 && vitesse < 15)
+vitesse++;
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
+vitesse--;
+}
+} else{
+if (PORTEbits.RE0==0 && vitesse < 25)
+vitesse++;
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
+vitesse--;
+}
+}
+}
+}
+
 }

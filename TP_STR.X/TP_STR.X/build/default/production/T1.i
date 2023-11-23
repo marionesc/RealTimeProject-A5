@@ -11262,7 +11262,8 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-
+unsigned char Operator __at(0x82);
+unsigned char Valeur __at(0x83);
 
 
 void (*fptr)(void);
@@ -11270,7 +11271,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 67
+# 68
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11312,6 +11313,7 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
+void vitesse1(void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11387,6 +11389,8 @@ LATCbits.LATC2=0;LATCbits.LATC1=0;LATGbits.LATG0=0;
 vitesse=0;
 batterie=15;
 n_octet_badge=0;
+TEST=0;
+Operator=0;
 
 goto_lico(13,34);draw_char('R');draw_char(' ');draw_char('V');draw_char(' ');draw_char('B');
 goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');draw_char('0');
@@ -11397,7 +11401,7 @@ draw_square(180,20,230,60);
 draw_square(120,20,170,60);
 
 draw_string(2);
-TEST=0;
+
 while(1)
 {
 
@@ -11420,11 +11424,11 @@ else
 
 goto_lico(2,0);
 draw_string("Temp. Eau:");
-draw_hex8(lecture_8bit_analogique(2));
+draw_dec8(lecture_8bit_analogique(2));
 
 goto_lico(3,0);
 draw_string("Temp. Huile:");
-draw_hex8(lecture_8bit_analogique(3));
+draw_dec8(lecture_8bit_analogique(3));
 
 goto_lico(4,0);
 draw_string("Choc:");
@@ -11433,26 +11437,21 @@ draw_char('1');
 else
 draw_char('0');
 
+if(Operator == 2) {
+vitesse1();
+
+}
+else if(Operator ==1){
+vitesse1();
+}
+else {
+
+}
+
 goto_lico(5,0);
 draw_string("Vitesse:");
 
-if(TEST==1){
-if (PORTEbits.RE0==0 && vitesse < 15)
-vitesse++;
-if (PORTEbits.RE1 == 0 && vitesse > 0) {
-vitesse--;
-}
-} else{
-if (PORTEbits.RE0==0 && vitesse < 25)
-vitesse++;
-if (PORTEbits.RE1 == 0 && vitesse > 0) {
-vitesse--;
-}
-}
-
-
-
-draw_hex8(vitesse);
+draw_dec8(vitesse);
 
 goto_lico(6,0);
 draw_string("Batterie:");
@@ -11460,13 +11459,9 @@ if (PORTEbits.RE2==0 && batterie < 100)
 batterie++;
 if (PORTEbits.RE3==0 && batterie > 0)
 batterie--;
-draw_hex8(batterie);
+draw_dec8(batterie);
 
-goto_lico(7,0);
-if (PORTEbits.RE4==0)
-draw_string("((!))");
-else
-draw_string("     ");
+
 
 goto_lico(8,0);
 draw_string("Badge:");
@@ -11474,12 +11469,26 @@ if (n_octet_badge==0)
 draw_string(" AUCUN              ");
 else
 {
-for (i=0;i<n_octet_badge;i++)
+
+# 108
+if(Operator==2)
 {
-draw_hex8(badge[i]);
+
+draw_string("Operator");
+
+}
+else if(Operator==1)
+{
+
+draw_string(" ADMIN");
+}
+else if (Operator==0){
+
+draw_string("AUCUN");
 }
 }
 
+# 131
 goto_lico(9,0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
@@ -11488,14 +11497,13 @@ goto_lico(10,0);
 draw_string("Y-Joystick:");
 draw_hex8(lecture_8bit_analogique(11));
 
-goto_lico(13,0);
-draw_string("BIG MUM");
+
 goto_lico(5,22);
 draw_string("VIDE");
 goto_lico(5,31);
-draw_string("CHARGER");
+draw_string("CHARGE");
 
-# 136
+# 151
 if (TP_appui==1)
 {
 goto_lico(0,20);

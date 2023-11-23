@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6356 `(v ~T0 @X0 0 tf ]
+[v F6358 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
 "4 main.c
 [v _initialisation_des_ports `(v ~T0 @X0 0 ef ]
@@ -7393,54 +7393,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 "52
 [v _TEST `uc ~T0 @X0 1 e@129 ]
 [; ;variables_globales.h: 52: unsigned char TEST __at(0x81);
-"56
-[v _fptr `*F6356 ~T0 @X0 1 e ]
-[; ;variables_globales.h: 56: void (*fptr)(void);
+"53
+[v _Operator `uc ~T0 @X0 1 e@130 ]
+[; ;variables_globales.h: 53: unsigned char Operator __at(0x82);
+"54
+[v _Valeur `uc ~T0 @X0 1 e@131 ]
+[; ;variables_globales.h: 54: unsigned char Valeur __at(0x83);
 "57
-[v _val_tos `us ~T0 @X0 1 e ]
-[; ;variables_globales.h: 57: unsigned short int val_tos;
+[v _fptr `*F6358 ~T0 @X0 1 e ]
+[; ;variables_globales.h: 57: void (*fptr)(void);
 "58
-[v _puc `*uc ~T0 @X0 1 e ]
-[; ;variables_globales.h: 58: unsigned char * puc;
+[v _val_tos `us ~T0 @X0 1 e ]
+[; ;variables_globales.h: 58: unsigned short int val_tos;
 "59
+[v _puc `*uc ~T0 @X0 1 e ]
+[; ;variables_globales.h: 59: unsigned char * puc;
+"60
 [v _tc `uc ~T0 @X0 -> 3 `i e ]
-[; ;variables_globales.h: 59: unsigned char tc[3];
-"67
-[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
-[; ;variables_globales.h: 67: unsigned char contexte1[66] __at(0x100);
+[; ;variables_globales.h: 60: unsigned char tc[3];
 "68
-[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
-[; ;variables_globales.h: 68: unsigned char contexte2[66] __at(0x200);
+[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
+[; ;variables_globales.h: 68: unsigned char contexte1[66] __at(0x100);
 "69
-[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
-[; ;variables_globales.h: 69: unsigned char contexte3[66] __at(0x300);
+[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
+[; ;variables_globales.h: 69: unsigned char contexte2[66] __at(0x200);
 "70
-[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
-[; ;variables_globales.h: 70: unsigned char contexte4[66] __at(0x400);
+[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
+[; ;variables_globales.h: 70: unsigned char contexte3[66] __at(0x300);
 "71
-[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
-[; ;variables_globales.h: 71: unsigned char contexte5[66] __at(0x500);
+[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
+[; ;variables_globales.h: 71: unsigned char contexte4[66] __at(0x400);
 "72
+[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
+[; ;variables_globales.h: 72: unsigned char contexte5[66] __at(0x500);
+"73
 [v _contexte6 `uc ~T0 @X0 -> 66 `i e@1536 ]
-[; ;variables_globales.h: 72: unsigned char contexte6[66] __at(0x600);
-"75
-[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
-[; ;variables_globales.h: 75: unsigned char STKPTR_T1 __at(0x103);
+[; ;variables_globales.h: 73: unsigned char contexte6[66] __at(0x600);
 "76
-[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
-[; ;variables_globales.h: 76: unsigned char STKPTR_T2 __at(0x203);
+[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
+[; ;variables_globales.h: 76: unsigned char STKPTR_T1 __at(0x103);
 "77
-[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
-[; ;variables_globales.h: 77: unsigned char STKPTR_T3 __at(0x303);
+[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
+[; ;variables_globales.h: 77: unsigned char STKPTR_T2 __at(0x203);
 "78
-[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
-[; ;variables_globales.h: 78: unsigned char STKPTR_T4 __at(0x403);
+[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
+[; ;variables_globales.h: 78: unsigned char STKPTR_T3 __at(0x303);
 "79
-[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
-[; ;variables_globales.h: 79: unsigned char STKPTR_T5 __at(0x503);
+[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
+[; ;variables_globales.h: 79: unsigned char STKPTR_T4 __at(0x403);
 "80
+[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
+[; ;variables_globales.h: 80: unsigned char STKPTR_T5 __at(0x503);
+"81
 [v _STKPTR_T6 `uc ~T0 @X0 1 e@1539 ]
-[; ;variables_globales.h: 80: unsigned char STKPTR_T6 __at(0x603);
+[; ;variables_globales.h: 81: unsigned char STKPTR_T6 __at(0x603);
 [; ;afficheur.h: 32: void write_d_aff(unsigned char data);
 [; ;afficheur.h: 33: void write_c_aff(unsigned char command);
 [; ;afficheur.h: 34: unsigned char check_status_ok();
@@ -7466,6 +7472,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
+[; ;afficheur.h: 57: void vitesse1(void);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;

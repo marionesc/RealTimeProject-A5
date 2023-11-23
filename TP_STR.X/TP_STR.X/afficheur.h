@@ -55,6 +55,7 @@ extern "C" {
     void charger (void);
     void vide (void);
     void vitesse1(void);
+    void vitesseAdmin(void);
     
 #ifdef	__cplusplus
 }

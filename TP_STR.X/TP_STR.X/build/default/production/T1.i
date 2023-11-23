@@ -11314,6 +11314,7 @@ void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, un
 void charger (void);
 void vide (void);
 void vitesse1(void);
+void vitesseAdmin(void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11415,6 +11416,15 @@ draw_string("AR");
 else
 draw_string("N ");
 
+
+goto_lico(7,0);
+if (PORTEbits.RE4==0){
+draw_string("((!))");
+}
+else{
+draw_string("     ");
+}
+
 goto_lico(1,0);
 draw_string("Siege:");
 if (PORTBbits.RB2==0)
@@ -11442,7 +11452,7 @@ vitesse1();
 
 }
 else if(Operator ==1){
-vitesse1();
+vitesseAdmin();
 }
 else {
 
@@ -11470,7 +11480,7 @@ draw_string(" AUCUN              ");
 else
 {
 
-# 108
+# 117
 if(Operator==2)
 {
 
@@ -11488,7 +11498,7 @@ draw_string("AUCUN");
 }
 }
 
-# 131
+# 140
 goto_lico(9,0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
@@ -11503,7 +11513,7 @@ draw_string("VIDE");
 goto_lico(5,31);
 draw_string("CHARGE");
 
-# 151
+# 160
 if (TP_appui==1)
 {
 goto_lico(0,20);

@@ -11314,6 +11314,7 @@ void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, un
 void charger (void);
 void vide (void);
 void vitesse1(void);
+void vitesseAdmin(void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

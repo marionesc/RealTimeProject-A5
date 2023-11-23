@@ -44,7 +44,16 @@ void tache1(void)
                 draw_string("AR");
             else
                 draw_string("N ");
-
+        
+        
+                    goto_lico(7,0);
+                if (FREIN_A_MAIN==0){
+                    draw_string("((!))");
+                }
+                else{
+                    draw_string("     ");
+                }
+        
         goto_lico(1,0);
         draw_string("Siege:");
         if (SIEGE==0)
@@ -72,7 +81,7 @@ void tache1(void)
 
         }
         else if(Operator ==1){
-            vitesse1();
+            vitesseAdmin();
         }
         else {
         

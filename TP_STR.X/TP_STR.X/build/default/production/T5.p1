@@ -7329,6 +7329,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
 [; ;afficheur.h: 57: void vitesse1(void);
+[; ;afficheur.h: 58: void vitesseAdmin(void);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;

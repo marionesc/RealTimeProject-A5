@@ -11368,6 +11368,7 @@ void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, un
 void charger (void);
 void vide (void);
 void vitesse1(void);
+void vitesseAdmin(void);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11812,13 +11813,11 @@ draw_string("ROUESBYGNOLES");
 
 void vitesse1(void){
 if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
-goto_lico(7,0);
-if (PORTEbits.RE4==0){
-draw_string("((!))");
-}
-else{
-draw_string("     ");
+
+
+if (PORTEbits.RE4==1){
 if(TEST==1){
+
 if (PORTEbits.RE0==0 && vitesse < 15)
 vitesse++;
 if (PORTEbits.RE1 == 0 && vitesse > 0) {
@@ -11833,5 +11832,27 @@ vitesse--;
 }
 }
 }
-
 }
+void vitesseAdmin(void){
+if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
+
+
+if (PORTEbits.RE4==1){
+if(TEST==1){
+
+if (PORTEbits.RE0==0 && vitesse < 50)
+vitesse++;
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
+vitesse--;
+}
+} else{
+if (PORTEbits.RE0==0 && vitesse < 80)
+vitesse++;
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
+vitesse--;
+}
+}
+}
+}
+}
+

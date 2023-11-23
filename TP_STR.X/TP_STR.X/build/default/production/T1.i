@@ -11435,20 +11435,30 @@ draw_char('0');
 
 goto_lico(5,0);
 draw_string("Vitesse:");
-if (PORTEbits.RE0==0)
+
+if(TEST==1){
+if (PORTEbits.RE0==0 && vitesse < 15)
 vitesse++;
-if (PORTEbits.RE1==0)
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
 vitesse--;
-if(vitesse <=0){
-vitesse ==0;
 }
+} else{
+if (PORTEbits.RE0==0 && vitesse < 25)
+vitesse++;
+if (PORTEbits.RE1 == 0 && vitesse > 0) {
+vitesse--;
+}
+}
+
+
+
 draw_hex8(vitesse);
 
 goto_lico(6,0);
 draw_string("Batterie:");
-if (PORTEbits.RE2==0)
+if (PORTEbits.RE2==0 && batterie < 100)
 batterie++;
-if (PORTEbits.RE3==0)
+if (PORTEbits.RE3==0 && batterie > 0)
 batterie--;
 draw_hex8(batterie);
 
@@ -11485,7 +11495,7 @@ draw_string("VIDE");
 goto_lico(5,31);
 draw_string("CHARGER");
 
-# 126
+# 136
 if (TP_appui==1)
 {
 goto_lico(0,20);

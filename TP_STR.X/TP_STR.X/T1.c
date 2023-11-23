@@ -67,20 +67,30 @@ void tache1(void)
 
         goto_lico(5,0);
         draw_string("Vitesse:");
-        if (VITESSE_PLUS==0)
+        
+        if(TEST==1){
+        if (VITESSE_PLUS==0 && vitesse < 15)
             vitesse++;
-        if (VITESSE_MOINS==0)
+        if (VITESSE_MOINS == 0 && vitesse > 0) {
             vitesse--;
-        if(vitesse <=0){
-            vitesse ==0;
         }
+        } else{
+        if (VITESSE_PLUS==0 && vitesse < 25)
+            vitesse++;
+        if (VITESSE_MOINS == 0 && vitesse > 0) {
+            vitesse--;
+        }
+        }  
+        
+        
+        
         draw_hex8(vitesse);
-
+        
         goto_lico(6,0);
         draw_string("Batterie:");
-        if (BATTERIE_PLUS==0)
+        if (BATTERIE_PLUS==0 && batterie < 100)
             batterie++;
-        if (BATTERIE_MOINS==0)
+        if (BATTERIE_MOINS==0 && batterie > 0)
             batterie--;
         draw_hex8(batterie);
 

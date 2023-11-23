@@ -11262,7 +11262,7 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-unsigned char Operator __at(0x82);
+unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
 
 
@@ -11313,8 +11313,8 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
-void vitesse1(void);
-void vitesseAdmin(void);
+
+void vitesseAdmin(unsigned int a);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11391,7 +11391,7 @@ vitesse=0;
 batterie=15;
 n_octet_badge=0;
 TEST=0;
-Operator=0;
+Personne=0;
 
 goto_lico(13,34);draw_char('R');draw_char(' ');draw_char('V');draw_char(' ');draw_char('B');
 goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');draw_char('0');
@@ -11413,10 +11413,10 @@ draw_string("AV");
 else
 if (PORTBbits.RB1==0)
 draw_string("AR");
-else
+else{
 draw_string("N ");
 
-
+}
 goto_lico(7,0);
 if (PORTEbits.RE4==0){
 draw_string("((!))");
@@ -11447,12 +11447,12 @@ draw_char('1');
 else
 draw_char('0');
 
-if(Operator == 2) {
-vitesse1();
+if(Personne == 2) {
+vitesseAdmin(Personne);
 
 }
-else if(Operator ==1){
-vitesseAdmin();
+else if(Personne ==1){
+vitesseAdmin(Personne);
 }
 else {
 
@@ -11481,18 +11481,18 @@ else
 {
 
 # 117
-if(Operator==2)
+if(Personne==2)
 {
 
 draw_string("Operator");
 
 }
-else if(Operator==1)
+else if(Personne==1)
 {
 
 draw_string(" ADMIN");
 }
-else if (Operator==0){
+else if (Personne==0){
 
 draw_string("AUCUN");
 }

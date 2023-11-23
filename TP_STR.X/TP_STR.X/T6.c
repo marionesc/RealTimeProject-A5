@@ -13,12 +13,12 @@ void tache6(void)
                 n_octet_badge = n;
                 // goto_lico(12,0);
                 // draw_hex8(n);
-                Operator = 2;
+                Personne = 2;
             }
             else if (n == 8) // 
             {
                 n_octet_badge = n;
-                Operator = 1;
+                Personne = 1;
             }
             else
             {
@@ -30,7 +30,7 @@ void tache6(void)
         else
         {
             n_octet_badge = 0;
-            Operator = 0;
+            Personne = 0;
         }
     }
 }

@@ -11262,7 +11262,7 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-unsigned char Operator __at(0x82);
+unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
 
 
@@ -11367,8 +11367,8 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
-void vitesse1(void);
-void vitesseAdmin(void);
+
+void vitesseAdmin(unsigned int a);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11811,20 +11811,31 @@ goto_lico(14,0);
 draw_string("ROUESBYGNOLES");
 }
 
-void vitesse1(void){
+
+void vitesseAdmin(unsigned int a){
+int b ;
+int c;
+if (a==1){
+b =50;
+c = 80;
+}
+if(a==2){
+b =15;
+c = 25;
+}
 if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
 
 
 if (PORTEbits.RE4==1){
 if(TEST==1){
 
-if (PORTEbits.RE0==0 && vitesse < 15)
+if (PORTEbits.RE0==0 && vitesse < b)
 vitesse++;
 if (PORTEbits.RE1 == 0 && vitesse > 0) {
 vitesse--;
 }
 } else{
-if (PORTEbits.RE0==0 && vitesse < 25)
+if (PORTEbits.RE0==0 && vitesse < c)
 vitesse++;
 if (PORTEbits.RE1 == 0 && vitesse > 0) {
 vitesse--;
@@ -11833,26 +11844,3 @@ vitesse--;
 }
 }
 }
-void vitesseAdmin(void){
-if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
-
-
-if (PORTEbits.RE4==1){
-if(TEST==1){
-
-if (PORTEbits.RE0==0 && vitesse < 50)
-vitesse++;
-if (PORTEbits.RE1 == 0 && vitesse > 0) {
-vitesse--;
-}
-} else{
-if (PORTEbits.RE0==0 && vitesse < 80)
-vitesse++;
-if (PORTEbits.RE1 == 0 && vitesse > 0) {
-vitesse--;
-}
-}
-}
-}
-}
-

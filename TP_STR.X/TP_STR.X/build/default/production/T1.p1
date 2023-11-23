@@ -118,10 +118,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _draw_dec8 `(v ~T0 @X0 0 ef1`uc ]
 "143 main.h
 [v _lecture_8bit_analogique `(uc ~T0 @X0 0 ef1`uc ]
-"57 afficheur.h
-[v _vitesse1 `(v ~T0 @X0 0 ef ]
-"58
-[v _vitesseAdmin `(v ~T0 @X0 0 ef ]
+"58 afficheur.h
+[v _vitesseAdmin `(v ~T0 @X0 0 ef1`ui ]
 "43
 [v _draw_hex8 `(v ~T0 @X0 0 ef1`uc ]
 "49
@@ -7352,8 +7350,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TEST `uc ~T0 @X0 1 e@129 ]
 [; ;variables_globales.h: 52: unsigned char TEST __at(0x81);
 "53
-[v _Operator `uc ~T0 @X0 1 e@130 ]
-[; ;variables_globales.h: 53: unsigned char Operator __at(0x82);
+[v _Personne `uc ~T0 @X0 1 e@130 ]
+[; ;variables_globales.h: 53: unsigned char Personne __at(0x82);
 "54
 [v _Valeur `uc ~T0 @X0 1 e@131 ]
 [; ;variables_globales.h: 54: unsigned char Valeur __at(0x83);
@@ -7430,8 +7428,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
-[; ;afficheur.h: 57: void vitesse1(void);
-[; ;afficheur.h: 58: void vitesseAdmin(void);
+[; ;afficheur.h: 58: void vitesseAdmin(unsigned int a);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7576,9 +7573,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;T1.c: 22: TEST=0;
 "22
 [e = _TEST -> -> 0 `i `uc ]
-[; ;T1.c: 23: Operator=0;
+[; ;T1.c: 23: Personne=0;
 "23
-[e = _Operator -> -> 0 `i `uc ]
+[e = _Personne -> -> 0 `i `uc ]
 [; ;T1.c: 25: goto_lico(13,34);draw_char('R');draw_char(' ');draw_char('V');draw_char(' ');draw_char('B');
 "25
 [e ( _goto_lico (2 , -> -> 13 `i `uc -> -> 34 `i `uc ]
@@ -7646,12 +7643,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 830  ]
 "45
 [e :U 829 ]
-[; ;T1.c: 45: else
+[; ;T1.c: 45: else{
+{
 [; ;T1.c: 46: draw_string("N ");
 "46
 [e ( _draw_string (1 -> :s 4C `*uc ]
+"48
+}
 [e :U 830 ]
 [e :U 828 ]
+[; ;T1.c: 48: }
 [; ;T1.c: 49: goto_lico(7,0);
 "49
 [e ( _goto_lico (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
@@ -7739,25 +7740,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 "77
 [e ( _draw_char (1 -> -> 48 `ui `uc ]
 [e :U 836 ]
-[; ;T1.c: 79: if(Operator == 2) {
+[; ;T1.c: 79: if(Personne == 2) {
 "79
-[e $ ! == -> _Operator `i -> 2 `i 837  ]
+[e $ ! == -> _Personne `i -> 2 `i 837  ]
 {
-[; ;T1.c: 80: vitesse1();
+[; ;T1.c: 80: vitesseAdmin(Personne);
 "80
-[e ( _vitesse1 ..  ]
+[e ( _vitesseAdmin (1 -> _Personne `ui ]
 "82
 }
 [; ;T1.c: 82: }
 [e $U 838  ]
 "83
 [e :U 837 ]
-[; ;T1.c: 83: else if(Operator ==1){
-[e $ ! == -> _Operator `i -> 1 `i 839  ]
+[; ;T1.c: 83: else if(Personne ==1){
+[e $ ! == -> _Personne `i -> 1 `i 839  ]
 {
-[; ;T1.c: 84: vitesseAdmin();
+[; ;T1.c: 84: vitesseAdmin(Personne);
 "84
-[e ( _vitesseAdmin ..  ]
+[e ( _vitesseAdmin (1 -> _Personne `ui ]
 "85
 }
 [; ;T1.c: 85: }
@@ -7822,9 +7823,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;T1.c: 110: {
 "110
 {
-[; ;T1.c: 117: if(Operator==2)
+[; ;T1.c: 117: if(Personne==2)
 "117
-[e $ ! == -> _Operator `i -> 2 `i 845  ]
+[e $ ! == -> _Personne `i -> 2 `i 845  ]
 [; ;T1.c: 118: {
 "118
 {
@@ -7837,8 +7838,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 846  ]
 "123
 [e :U 845 ]
-[; ;T1.c: 123: else if(Operator==1)
-[e $ ! == -> _Operator `i -> 1 `i 847  ]
+[; ;T1.c: 123: else if(Personne==1)
+[e $ ! == -> _Personne `i -> 1 `i 847  ]
 [; ;T1.c: 124: {
 "124
 {
@@ -7851,8 +7852,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 848  ]
 "128
 [e :U 847 ]
-[; ;T1.c: 128: else if (Operator==0){
-[e $ ! == -> _Operator `i -> 0 `i 849  ]
+[; ;T1.c: 128: else if (Personne==0){
+[e $ ! == -> _Personne `i -> 0 `i 849  ]
 {
 [; ;T1.c: 130: draw_string("AUCUN");
 "130

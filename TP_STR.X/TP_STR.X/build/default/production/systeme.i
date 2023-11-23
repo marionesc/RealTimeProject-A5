@@ -11258,7 +11258,7 @@ unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
-unsigned char Operator __at(0x82);
+unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
 
 
@@ -11309,8 +11309,8 @@ void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void charger (void);
 void vide (void);
-void vitesse1(void);
-void vitesseAdmin(void);
+
+void vitesseAdmin(unsigned int a);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

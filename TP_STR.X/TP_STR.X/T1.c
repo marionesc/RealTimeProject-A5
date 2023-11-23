@@ -20,7 +20,7 @@ void tache1(void)
     batterie=15;
     n_octet_badge=0;
     TEST=0;
-    Operator=0;
+    Personne=0;
     
     goto_lico(13,34);draw_char('R');draw_char(' ');draw_char('V');draw_char(' ');draw_char('B');
     goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');draw_char('0');
@@ -42,10 +42,10 @@ void tache1(void)
         else
             if (MARCHE_ARRIERE==0)
                 draw_string("AR");
-            else
+            else{
                 draw_string("N ");
         
-        
+            }
                     goto_lico(7,0);
                 if (FREIN_A_MAIN==0){
                     draw_string("((!))");
@@ -76,12 +76,12 @@ void tache1(void)
         else
             draw_char('0');
         
-        if(Operator == 2) {
-            vitesse1();
+        if(Personne == 2) {
+            vitesseAdmin(Personne);
 
         }
-        else if(Operator ==1){
-            vitesseAdmin();
+        else if(Personne ==1){
+            vitesseAdmin(Personne);
         }
         else {
         
@@ -114,18 +114,18 @@ void tache1(void)
                 
             }
            */        
-        if(Operator==2)
+        if(Personne==2)
         {
 
             draw_string("Operator");
 
         }
-        else if(Operator==1)
+        else if(Personne==1)
         {
  
             draw_string(" ADMIN");
         } 
-        else if (Operator==0){
+        else if (Personne==0){
 
             draw_string("AUCUN");
         }

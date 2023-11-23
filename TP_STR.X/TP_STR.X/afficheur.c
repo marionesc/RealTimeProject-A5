@@ -441,20 +441,31 @@ void vide(void){
     draw_string("ROUESBYGNOLES");
 }
 
-void vitesse1(void){
+
+void vitesseAdmin(unsigned int a){
+    int b ;
+    int c;
+    if (a==1){
+         b =50;
+         c = 80;
+    }
+    if(a==2){
+         b =15;
+         c = 25;
+    }
             if (MARCHE_AVANT==0 || MARCHE_ARRIERE==0){
               
 
                 if (FREIN_A_MAIN==1){
                 if(TEST==1){
                     
-                    if (VITESSE_PLUS==0 && vitesse < 15)
+                    if (VITESSE_PLUS==0 && vitesse < b)
                         vitesse++;
                     if (VITESSE_MOINS == 0 && vitesse > 0) {
                         vitesse--;
                     }
                 } else{
-                    if (VITESSE_PLUS==0 && vitesse < 25)
+                    if (VITESSE_PLUS==0 && vitesse < c)
                         vitesse++;
                     if (VITESSE_MOINS == 0 && vitesse > 0) {
                         vitesse--;
@@ -463,26 +474,3 @@ void vitesse1(void){
                 }
         }
 }
-void vitesseAdmin(void){
-            if (MARCHE_AVANT==0 || MARCHE_ARRIERE==0){
-              
-
-                if (FREIN_A_MAIN==1){
-                if(TEST==1){
-                    
-                    if (VITESSE_PLUS==0 && vitesse < 50)
-                        vitesse++;
-                    if (VITESSE_MOINS == 0 && vitesse > 0) {
-                        vitesse--;
-                    }
-                } else{
-                    if (VITESSE_PLUS==0 && vitesse < 80)
-                        vitesse++;
-                    if (VITESSE_MOINS == 0 && vitesse > 0) {
-                        vitesse--;
-                    }
-                }  
-                }
-        }
-}
-

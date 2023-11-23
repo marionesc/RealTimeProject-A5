@@ -7250,8 +7250,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TEST `uc ~T0 @X0 1 e@129 ]
 [; ;variables_globales.h: 52: unsigned char TEST __at(0x81);
 "53
-[v _Operator `uc ~T0 @X0 1 e@130 ]
-[; ;variables_globales.h: 53: unsigned char Operator __at(0x82);
+[v _Personne `uc ~T0 @X0 1 e@130 ]
+[; ;variables_globales.h: 53: unsigned char Personne __at(0x82);
 "54
 [v _Valeur `uc ~T0 @X0 1 e@131 ]
 [; ;variables_globales.h: 54: unsigned char Valeur __at(0x83);
@@ -7328,8 +7328,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 54: void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 [; ;afficheur.h: 55: void charger (void);
 [; ;afficheur.h: 56: void vide (void);
-[; ;afficheur.h: 57: void vitesse1(void);
-[; ;afficheur.h: 58: void vitesseAdmin(void);
+[; ;afficheur.h: 58: void vitesseAdmin(unsigned int a);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;

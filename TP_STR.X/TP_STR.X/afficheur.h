@@ -54,8 +54,8 @@ extern "C" {
     void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
     void charger (void);
     void vide (void);
-    void vitesse1(void);
-    void vitesseAdmin(void);
+
+    void vitesseAdmin(unsigned int a);
     
 #ifdef	__cplusplus
 }

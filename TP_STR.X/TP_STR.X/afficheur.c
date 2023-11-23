@@ -428,3 +428,15 @@ void plot0(unsigned char x, unsigned char y)
     }
 
 }
+
+void charger (void){
+    //clear_line(14);
+    goto_lico(14,0);
+    draw_string("ATTENTION vous etes plein!!!");
+                    //delai_us_char(100);
+}
+void vide(void){
+    //clear_line(14);
+    goto_lico(14,0);
+    draw_string("ROUESBYGNOLES");
+}

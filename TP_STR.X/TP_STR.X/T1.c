@@ -25,9 +25,11 @@ void tache1(void)
     goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
     TP_appui=0;
-        draw_square(90,30,190,90);
-        draw_filled_square(90,30,190,90);
-
+      draw_square(180,20,230,60);
+        draw_square(120,20,170,60);
+        //draw_filled_square(90,30,190,90);
+        draw_string(2);
+        TEST=0;
     while(1)
     {
 
@@ -69,6 +71,9 @@ void tache1(void)
             vitesse++;
         if (VITESSE_MOINS==0)
             vitesse--;
+        if(vitesse <=0){
+            vitesse ==0;
+        }
         draw_hex8(vitesse);
 
         goto_lico(6,0);
@@ -107,31 +112,13 @@ void tache1(void)
 
         goto_lico(13,0);
         draw_string("BIG MUM");
-        
+        goto_lico(5,22);
+        draw_string("VIDE");
+        goto_lico(5,31);
+        draw_string("CHARGER");
         //draw_square(90,30,190,90);
         //draw_filled_square(90,30,190,90);
-        
-        if (TP_appui==1)
-        {
-            if((TP_x>=50)&&(TP_x<150))
-            {
-                if ((TP_y>=10)&&(TP_y<50))
-                {
-                    
-                    clear_line(14);
-                    goto_lico(14,0);
-                    draw_string("LUFFY             ");
-                    //delai_us_char(100);
-                }
-            } else
-        {
-           // clear_text();
-             clear_line(14); // Efface la première ligne
-             goto_lico(14,0);
-           //  draw_string("TOM LE ....");
 
-        }   
-        }  
         
         
         
@@ -149,5 +136,14 @@ void tache1(void)
         {
             Nop();
         }
+        if (TEST==1){
+            charger();
+        }
+        if(TEST==0){
+            clear_line(14);
+            vide();
+            TEST=3;
+        }
+        
     }
 }

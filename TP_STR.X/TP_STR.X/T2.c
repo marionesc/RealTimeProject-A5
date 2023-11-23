@@ -76,6 +76,11 @@ void tache2(void)
         {
             TP_appui=0;
         }
+        
+
+        
+        
+        
     }
 }
 

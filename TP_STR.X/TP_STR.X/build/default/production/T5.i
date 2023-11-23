@@ -11261,6 +11261,7 @@ unsigned char badge[10] __at(0x75);
 unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
+unsigned char TEST __at(0x81);
 
 
 
@@ -11269,7 +11270,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 66
+# 67
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11309,6 +11310,8 @@ void clear_line(unsigned char line);
 void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
 void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+void charger (void);
+void vide (void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

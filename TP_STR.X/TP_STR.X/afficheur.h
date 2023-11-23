@@ -52,6 +52,9 @@ extern "C" {
     void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
     void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
     void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+    void charger (void);
+    void vide (void);
+    
 #ifdef	__cplusplus
 }
 #endif

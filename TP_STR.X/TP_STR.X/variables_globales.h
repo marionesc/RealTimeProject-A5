@@ -49,6 +49,7 @@ unsigned char badge[10]            __at(0x75);
 unsigned char n_octet_badge        __at(0x7F);
 
 unsigned char RXTX_libre        __at(0x80);
+unsigned char TEST              __at(0x81);
 
     //pointeur de fonction
         //il va servir a modifier la pile pour executer les taches

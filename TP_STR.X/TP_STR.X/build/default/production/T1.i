@@ -11261,6 +11261,7 @@ unsigned char badge[10] __at(0x75);
 unsigned char n_octet_badge __at(0x7F);
 
 unsigned char RXTX_libre __at(0x80);
+unsigned char TEST __at(0x81);
 
 
 
@@ -11269,7 +11270,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 66
+# 67
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11309,6 +11310,8 @@ void clear_line(unsigned char line);
 void draw_square(unsigned char , unsigned char y1, unsigned char x2, unsigned char y2);
 void clear_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
 void draw_filled_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2);
+void charger (void);
+void vide (void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11390,9 +11393,11 @@ goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');dra
 goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
 TP_appui=0;
-draw_square(90,30,190,90);
-draw_filled_square(90,30,190,90);
+draw_square(180,20,230,60);
+draw_square(120,20,170,60);
 
+draw_string(2);
+TEST=0;
 while(1)
 {
 
@@ -11434,6 +11439,9 @@ if (PORTEbits.RE0==0)
 vitesse++;
 if (PORTEbits.RE1==0)
 vitesse--;
+if(vitesse <=0){
+vitesse ==0;
+}
 draw_hex8(vitesse);
 
 goto_lico(6,0);
@@ -11472,35 +11480,12 @@ draw_hex8(lecture_8bit_analogique(11));
 
 goto_lico(13,0);
 draw_string("BIG MUM");
+goto_lico(5,22);
+draw_string("VIDE");
+goto_lico(5,31);
+draw_string("CHARGER");
 
-
-
-
-if (TP_appui==1)
-{
-if((TP_x>=50)&&(TP_x<150))
-{
-if ((TP_y>=10)&&(TP_y<50))
-{
-
-clear_line(14);
-goto_lico(14,0);
-draw_string("LUFFY             ");
-
-}
-} else
-{
-
-clear_line(14);
-goto_lico(14,0);
-
-
-}
-}
-
-
-
-
+# 126
 if (TP_appui==1)
 {
 goto_lico(0,20);
@@ -11514,5 +11499,14 @@ else
 {
 __nop();
 }
+if (TEST==1){
+charger();
+}
+if(TEST==0){
+clear_line(14);
+vide();
+TEST=3;
+}
+
 }
 }

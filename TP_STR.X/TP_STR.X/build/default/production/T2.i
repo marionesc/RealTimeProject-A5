@@ -11264,6 +11264,8 @@ unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
 unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
+unsigned char valeur_convertie __at(0x84);
+
 
 
 void (*fptr)(void);
@@ -11271,7 +11273,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 68
+# 70
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11316,6 +11318,8 @@ void vide (void);
 void increment (unsigned int vitesse);
 void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
+int Diminution (unsigned int vitesse);
+int Conversion(unsigned int a);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

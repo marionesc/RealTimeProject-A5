@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6358 `(v ~T0 @X0 0 tf ]
+[v F6359 `(v ~T0 @X0 0 tf ]
 "10308 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
 [v _LATH `Vuc ~T0 @X0 0 e@3984 ]
 "10943
@@ -124,10 +124,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S394 . . . . . . . . . . . ]
 "8582
 [v _PORTEbits `VS394 ~T0 @X0 0 e@3972 ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7350,54 +7346,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 "54
 [v _Valeur `uc ~T0 @X0 1 e@131 ]
 [; ;variables_globales.h: 54: unsigned char Valeur __at(0x83);
-"57
-[v _fptr `*F6358 ~T0 @X0 1 e ]
-[; ;variables_globales.h: 57: void (*fptr)(void);
-"58
-[v _val_tos `us ~T0 @X0 1 e ]
-[; ;variables_globales.h: 58: unsigned short int val_tos;
+"55
+[v _valeur_convertie `uc ~T0 @X0 1 e@132 ]
+[; ;variables_globales.h: 55: unsigned char valeur_convertie __at(0x84);
 "59
-[v _puc `*uc ~T0 @X0 1 e ]
-[; ;variables_globales.h: 59: unsigned char * puc;
+[v _fptr `*F6359 ~T0 @X0 1 e ]
+[; ;variables_globales.h: 59: void (*fptr)(void);
 "60
+[v _val_tos `us ~T0 @X0 1 e ]
+[; ;variables_globales.h: 60: unsigned short int val_tos;
+"61
+[v _puc `*uc ~T0 @X0 1 e ]
+[; ;variables_globales.h: 61: unsigned char * puc;
+"62
 [v _tc `uc ~T0 @X0 -> 3 `i e ]
-[; ;variables_globales.h: 60: unsigned char tc[3];
-"68
-[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
-[; ;variables_globales.h: 68: unsigned char contexte1[66] __at(0x100);
-"69
-[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
-[; ;variables_globales.h: 69: unsigned char contexte2[66] __at(0x200);
+[; ;variables_globales.h: 62: unsigned char tc[3];
 "70
-[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
-[; ;variables_globales.h: 70: unsigned char contexte3[66] __at(0x300);
+[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
+[; ;variables_globales.h: 70: unsigned char contexte1[66] __at(0x100);
 "71
-[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
-[; ;variables_globales.h: 71: unsigned char contexte4[66] __at(0x400);
+[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
+[; ;variables_globales.h: 71: unsigned char contexte2[66] __at(0x200);
 "72
-[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
-[; ;variables_globales.h: 72: unsigned char contexte5[66] __at(0x500);
+[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
+[; ;variables_globales.h: 72: unsigned char contexte3[66] __at(0x300);
 "73
+[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
+[; ;variables_globales.h: 73: unsigned char contexte4[66] __at(0x400);
+"74
+[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
+[; ;variables_globales.h: 74: unsigned char contexte5[66] __at(0x500);
+"75
 [v _contexte6 `uc ~T0 @X0 -> 66 `i e@1536 ]
-[; ;variables_globales.h: 73: unsigned char contexte6[66] __at(0x600);
-"76
-[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
-[; ;variables_globales.h: 76: unsigned char STKPTR_T1 __at(0x103);
-"77
-[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
-[; ;variables_globales.h: 77: unsigned char STKPTR_T2 __at(0x203);
+[; ;variables_globales.h: 75: unsigned char contexte6[66] __at(0x600);
 "78
-[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
-[; ;variables_globales.h: 78: unsigned char STKPTR_T3 __at(0x303);
+[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
+[; ;variables_globales.h: 78: unsigned char STKPTR_T1 __at(0x103);
 "79
-[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
-[; ;variables_globales.h: 79: unsigned char STKPTR_T4 __at(0x403);
+[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
+[; ;variables_globales.h: 79: unsigned char STKPTR_T2 __at(0x203);
 "80
-[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
-[; ;variables_globales.h: 80: unsigned char STKPTR_T5 __at(0x503);
+[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
+[; ;variables_globales.h: 80: unsigned char STKPTR_T3 __at(0x303);
 "81
+[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
+[; ;variables_globales.h: 81: unsigned char STKPTR_T4 __at(0x403);
+"82
+[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
+[; ;variables_globales.h: 82: unsigned char STKPTR_T5 __at(0x503);
+"83
 [v _STKPTR_T6 `uc ~T0 @X0 1 e@1539 ]
-[; ;variables_globales.h: 81: unsigned char STKPTR_T6 __at(0x603);
+[; ;variables_globales.h: 83: unsigned char STKPTR_T6 __at(0x603);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7515,6 +7514,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 57: void increment (unsigned int vitesse);
 [; ;afficheur.h: 58: void vitesseAdmin(unsigned int a);
 [; ;afficheur.h: 59: void delay(unsigned int milliseconds);
+[; ;afficheur.h: 60: int Diminution (unsigned int vitesse);
+[; ;afficheur.h: 61: int Conversion(unsigned int a);
 "4 afficheur.c
 [v _write_d_aff `(v ~T0 @X0 1 ef1`uc ]
 "5
@@ -9067,37 +9068,50 @@ Version 3.2 HI-TECH Software Intermediate Code
 "476
 [e :UE 961 ]
 }
-"477
-[v _delay `(v ~T0 @X0 1 ef1`ui ]
+"482
+[v _Diminution `(i ~T0 @X0 1 ef1`ui ]
 {
-[; ;afficheur.c: 477: void delay(unsigned int milliseconds) {
-[e :U _delay ]
-[v _milliseconds `ui ~T0 @X0 1 r1 ]
+[; ;afficheur.c: 482: int Diminution(unsigned int vitesse){
+[e :U _Diminution ]
+[v _vitesse `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;afficheur.c: 478: for (unsigned int i = 0; i < milliseconds; i++) {
-"478
+[; ;afficheur.c: 483: if(vitesse>0){
+"483
+[e $ ! > _vitesse -> -> 0 `i `ui 973  ]
 {
-[v _i `ui ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `ui ]
-[e $U 976  ]
+[; ;afficheur.c: 484: vitesse--;
+"484
+[e -- _vitesse -> -> 1 `i `ui ]
+"485
+}
 [e :U 973 ]
-{
-[; ;afficheur.c: 479: _delay((unsigned long)((1)*(48000000/4000.0)));
-"479
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"480
-}
-"478
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 976 ]
-[e $ < _i _milliseconds 973  ]
-[e :U 974 ]
-"480
-}
-[; ;afficheur.c: 480: }
-[; ;afficheur.c: 481: }
-"481
+[; ;afficheur.c: 485: }
+[; ;afficheur.c: 486: }
+"486
 [e :UE 972 ]
+}
+"487
+[v _Conversion `(i ~T0 @X0 1 ef1`ui ]
+{
+[; ;afficheur.c: 487: int Conversion(unsigned int a){
+[e :U _Conversion ]
+[v _a `ui ~T0 @X0 1 r1 ]
+[f ]
+"488
+[v _valeur_lue `i ~T0 @X0 1 a ]
+[; ;afficheur.c: 488: int valeur_lue = a;
+[e = _valeur_lue -> _a `i ]
+[v _valeur_convertie `i ~T0 @X0 1 a ]
+[; ;afficheur.c: 489: int valeur_convertie = (valeur_lue * 100) / 255;
+"489
+[e = _valeur_convertie / * _valeur_lue -> 100 `i -> 255 `i ]
+[; ;afficheur.c: 491: return valeur_convertie;
+"491
+[e ) _valeur_convertie ]
+[e $UE 974  ]
+[; ;afficheur.c: 492: }
+"492
+[e :UE 974 ]
 }
 [a 2C 82 79 85 69 83 66 89 71 78 79 76 69 83 0 ]
 [a 1C 65 84 84 69 78 84 73 79 78 32 118 111 117 115 32 101 116 101 115 32 112 108 101 105 110 33 33 33 0 ]

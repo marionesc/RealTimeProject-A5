@@ -325,13 +325,13 @@ void clear_line(unsigned char line) {
 void draw_square(unsigned char x1, unsigned char y1, unsigned char x2, unsigned char y2) {
     unsigned char x, y;
 
-    // Dessine les lignes horizontales du carré
+    // Dessine les lignes horizontales 
     for (x = x1; x <= x2; x++) {
         plot1(x, y1); // Met un pixel sur le bord supérieur
         plot1(x, y2); // Met un pixel sur le bord inférieur
     }
 
-    // Dessine les lignes verticales du carré
+    // Dessine les lignes verticales 
     for (y = y1; y <= y2; y++) {
         plot1(x1, y); // Met un pixel sur le bord gauche
         plot1(x2, y); // Met un pixel sur le bord droit
@@ -474,8 +474,19 @@ void vitesseAdmin(unsigned int a){
                 }
         }
 }
-void delay(unsigned int milliseconds) {
+/*void delay(unsigned int milliseconds) {
     for (unsigned int i = 0; i < milliseconds; i++) {
         __delay_ms(1);
     }
+}*/
+int Diminution(unsigned int vitesse){
+    if(vitesse>0){
+        vitesse--;
+    }
+}
+int Conversion(unsigned int a){
+    int valeur_lue = a;
+    int valeur_convertie = (valeur_lue * 100) / 255;
+    
+    return valeur_convertie;
 }

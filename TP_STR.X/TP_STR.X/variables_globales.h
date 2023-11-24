@@ -52,6 +52,8 @@ unsigned char RXTX_libre        __at(0x80);
 unsigned char TEST              __at(0x81);
 unsigned char Personne          __at(0x82);
 unsigned char Valeur            __at(0x83);
+unsigned char valeur_convertie  __at(0x84);
+
     //pointeur de fonction
         //il va servir a modifier la pile pour executer les taches
 void (*fptr)(void);

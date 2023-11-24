@@ -45,19 +45,20 @@ void tache1(void)
             else{
                 draw_string("N ");
 
-                    __delay_ms(100);
-                    if(vitesse>0){
-                    vitesse=vitesse-1;
-                   
-                    goto_lico(5,0);
+                    __delay_ms(50);
+                    vitesse=Diminution(vitesse);
+                    
+                   /* goto_lico(5,0);
                     draw_string("Vitesse:");
-                    draw_dec8(vitesse);
-                    }
+                    draw_dec8(vitesse);*/
+                    
                 }
             
                     goto_lico(7,0);
                 if (FREIN_A_MAIN==0){
                     draw_string("((!))");
+                     __delay_ms(5);
+                    vitesse=Diminution(vitesse);
                 }
                 else{
                     draw_string("     ");
@@ -72,16 +73,21 @@ void tache1(void)
 
         goto_lico(2,0);
         draw_string("Temp. Eau:");
-        draw_dec8(lecture_8bit_analogique(TEMPERATURE_EAU));
+        
+        draw_dec8(Conversion(lecture_8bit_analogique(TEMPERATURE_EAU)));
 
         goto_lico(3,0);
         draw_string("Temp. Huile:");
-        draw_dec8(lecture_8bit_analogique(TEMPERATURE_HUILE));
+        draw_dec8(Conversion(lecture_8bit_analogique(TEMPERATURE_HUILE)));
 
         goto_lico(4,0);
         draw_string("Choc:");
+        
+
         if (CHOC==0)
-            draw_char('1');
+
+             draw_char('1');            
+           //     cpt++    
         else
             draw_char('0');
         

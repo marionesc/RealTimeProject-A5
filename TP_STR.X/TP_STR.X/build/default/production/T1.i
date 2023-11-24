@@ -11264,6 +11264,8 @@ unsigned char RXTX_libre __at(0x80);
 unsigned char TEST __at(0x81);
 unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
+unsigned char valeur_convertie __at(0x84);
+
 
 
 void (*fptr)(void);
@@ -11271,7 +11273,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 68
+# 70
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11316,6 +11318,8 @@ void vide (void);
 void increment (unsigned int vitesse);
 void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
+int Diminution (unsigned int vitesse);
+int Conversion(unsigned int a);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11417,19 +11421,17 @@ draw_string("AR");
 else{
 draw_string("N ");
 
-_delay((unsigned long)((100)*(48000000/4000.0)));
-if(vitesse>0){
-vitesse=vitesse-1;
+_delay((unsigned long)((50)*(48000000/4000.0)));
+vitesse=Diminution(vitesse);
 
-goto_lico(5,0);
-draw_string("Vitesse:");
-draw_dec8(vitesse);
-}
+# 55
 }
 
 goto_lico(7,0);
 if (PORTEbits.RE4==0){
 draw_string("((!))");
+_delay((unsigned long)((5)*(48000000/4000.0)));
+vitesse=Diminution(vitesse);
 }
 else{
 draw_string("     ");
@@ -11444,16 +11446,21 @@ else
 
 goto_lico(2,0);
 draw_string("Temp. Eau:");
-draw_dec8(lecture_8bit_analogique(2));
+
+draw_dec8(Conversion(lecture_8bit_analogique(2)));
 
 goto_lico(3,0);
 draw_string("Temp. Huile:");
-draw_dec8(lecture_8bit_analogique(3));
+draw_dec8(Conversion(lecture_8bit_analogique(3)));
 
 goto_lico(4,0);
 draw_string("Choc:");
+
+
 if (PORTBbits.RB3==0)
+
 draw_char('1');
+
 else
 draw_char('0');
 
@@ -11489,7 +11496,7 @@ draw_string(" AUCUN              ");
 else
 {
 
-# 125
+# 131
 if(Personne==2)
 {
 
@@ -11507,7 +11514,7 @@ draw_string("AUCUN");
 }
 }
 
-# 148
+# 154
 goto_lico(9,0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
@@ -11522,7 +11529,7 @@ draw_string("VIDE");
 goto_lico(5,31);
 draw_string("CHARGE");
 
-# 168
+# 174
 if (TP_appui==1)
 {
 goto_lico(0,20);

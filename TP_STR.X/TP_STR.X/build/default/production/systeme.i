@@ -11316,6 +11316,7 @@ void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
+void marche (void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

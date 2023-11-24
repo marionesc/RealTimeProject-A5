@@ -11320,6 +11320,7 @@ void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
+void marche (void);
 
 # 17 "stid.h"
 unsigned char lecture_normale(unsigned char * stid_id);

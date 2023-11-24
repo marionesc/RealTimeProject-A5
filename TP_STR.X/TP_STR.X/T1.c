@@ -17,7 +17,7 @@ void tache1(void)
     LED_R=0;LED_G=0;LED_B=0;
 
     vitesse=0;
-    batterie=15;
+    //batterie=15;
     n_octet_badge=0;
     TEST=0;
     Personne=0;
@@ -35,25 +35,9 @@ void tache1(void)
     while(1)
     {
 
+        
         goto_lico(0,0);
         draw_string("Marche:");
-        if (MARCHE_AVANT==0)
-            draw_string("AV");
-        else
-            if (MARCHE_ARRIERE==0)
-                draw_string("AR");
-            else{
-                draw_string("N ");
-
-                    __delay_ms(50);
-                    vitesse=Diminution(vitesse);
-                    
-                   /* goto_lico(5,0);
-                    draw_string("Vitesse:");
-                    draw_dec8(vitesse);*/
-                    
-                }
-            
                     goto_lico(7,0);
                 if (FREIN_A_MAIN==0){
                     draw_string("((!))");
@@ -66,11 +50,15 @@ void tache1(void)
         
         goto_lico(1,0);
         draw_string("Siege:");
-        if (SIEGE==0)
+        if (SIEGE==0){
         {draw_char('1');}
-        else
+        marche();
+        }
+        else{
         {draw_char('0');}
-
+        __delay_ms(50);
+        vitesse=Diminution(vitesse);
+        }
         goto_lico(2,0);
         draw_string("Temp. Eau:");
         
@@ -108,10 +96,12 @@ void tache1(void)
         
         goto_lico(6,0);
         draw_string("Batterie:");
-        if (BATTERIE_PLUS==0 && batterie < 100)
+        if (BATTERIE_PLUS==0 && batterie < 100){
             batterie++;
-        if (BATTERIE_MOINS==0 && batterie > 0)
+        }
+        if (BATTERIE_MOINS==0 && batterie > 0){
             batterie--;
+        }
         draw_dec8(batterie);
 
     

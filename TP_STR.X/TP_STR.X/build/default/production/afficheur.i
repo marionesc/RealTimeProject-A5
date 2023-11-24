@@ -11374,6 +11374,7 @@ void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
+void marche (void);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11828,6 +11829,7 @@ if(a==2){
 b =15;
 c = 25;
 }
+if(PORTBbits.RB2==0){
 if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
 
 
@@ -11848,9 +11850,14 @@ vitesse--;
 }
 }
 }
+}else{
+
+
 }
 
-# 482
+}
+
+# 488
 int Diminution(unsigned int vitesse){
 if(vitesse>0){
 vitesse--;
@@ -11861,4 +11868,22 @@ int valeur_lue = a;
 int valeur_convertie = (valeur_lue * 100) / 255;
 
 return valeur_convertie;
+}
+
+void marche (void){
+goto_lico(0,0);
+draw_string("Marche:");
+if (PORTBbits.RB0==0)
+draw_string("AV");
+else
+if (PORTBbits.RB1==0)
+draw_string("AR");
+else{
+draw_string("N ");
+
+_delay((unsigned long)((50)*(48000000/4000.0)));
+vitesse=Diminution(vitesse);
+
+# 517
+}
 }

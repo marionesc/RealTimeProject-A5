@@ -453,6 +453,7 @@ void vitesseAdmin(unsigned int a){
          b =15;
          c = 25;
     }
+    if(SIEGE==0){
             if (MARCHE_AVANT==0 || MARCHE_ARRIERE==0){
               
 
@@ -473,6 +474,11 @@ void vitesseAdmin(unsigned int a){
                 }  
                 }
         }
+    }else{
+
+        
+    }
+        
 }
 /*void delay(unsigned int milliseconds) {
     for (unsigned int i = 0; i < milliseconds; i++) {
@@ -489,4 +495,24 @@ int Conversion(unsigned int a){
     int valeur_convertie = (valeur_lue * 100) / 255;
     
     return valeur_convertie;
+}
+
+void marche (void){
+    goto_lico(0,0);
+        draw_string("Marche:");
+        if (MARCHE_AVANT==0)
+            draw_string("AV");
+        else
+            if (MARCHE_ARRIERE==0)
+                draw_string("AR");
+            else{
+                draw_string("N ");
+
+                    __delay_ms(50);
+                    vitesse=Diminution(vitesse);
+                    
+                   /* goto_lico(5,0);
+                    draw_string("Vitesse:");
+                    draw_dec8(vitesse);*/
+                }
 }

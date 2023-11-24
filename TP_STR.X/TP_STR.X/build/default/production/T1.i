@@ -11320,6 +11320,7 @@ void vitesseAdmin(unsigned int a);
 void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
+void marche (void);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11393,7 +11394,7 @@ TXREG1='R';
 LATCbits.LATC2=0;LATCbits.LATC1=0;LATGbits.LATG0=0;
 
 vitesse=0;
-batterie=15;
+
 n_octet_badge=0;
 TEST=0;
 Personne=0;
@@ -11411,22 +11412,9 @@ draw_string(2);
 while(1)
 {
 
+
 goto_lico(0,0);
 draw_string("Marche:");
-if (PORTBbits.RB0==0)
-draw_string("AV");
-else
-if (PORTBbits.RB1==0)
-draw_string("AR");
-else{
-draw_string("N ");
-
-_delay((unsigned long)((50)*(48000000/4000.0)));
-vitesse=Diminution(vitesse);
-
-# 55
-}
-
 goto_lico(7,0);
 if (PORTEbits.RE4==0){
 draw_string("((!))");
@@ -11439,11 +11427,15 @@ draw_string("     ");
 
 goto_lico(1,0);
 draw_string("Siege:");
-if (PORTBbits.RB2==0)
+if (PORTBbits.RB2==0){
 {draw_char('1');}
-else
+marche();
+}
+else{
 {draw_char('0');}
-
+_delay((unsigned long)((50)*(48000000/4000.0)));
+vitesse=Diminution(vitesse);
+}
 goto_lico(2,0);
 draw_string("Temp. Eau:");
 
@@ -11481,10 +11473,12 @@ draw_dec8(vitesse);
 
 goto_lico(6,0);
 draw_string("Batterie:");
-if (PORTEbits.RE2==0 && batterie < 100)
+if (PORTEbits.RE2==0 && batterie < 100){
 batterie++;
-if (PORTEbits.RE3==0 && batterie > 0)
+}
+if (PORTEbits.RE3==0 && batterie > 0){
 batterie--;
+}
 draw_dec8(batterie);
 
 
@@ -11496,7 +11490,7 @@ draw_string(" AUCUN              ");
 else
 {
 
-# 131
+# 121
 if(Personne==2)
 {
 
@@ -11514,7 +11508,7 @@ draw_string("AUCUN");
 }
 }
 
-# 154
+# 144
 goto_lico(9,0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
@@ -11529,7 +11523,7 @@ draw_string("VIDE");
 goto_lico(5,31);
 draw_string("CHARGE");
 
-# 174
+# 164
 if (TP_appui==1)
 {
 goto_lico(0,20);

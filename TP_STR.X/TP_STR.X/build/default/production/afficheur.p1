@@ -124,6 +124,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S394 . . . . . . . . . . . ]
 "8582
 [v _PORTEbits `VS394 ~T0 @X0 0 e@3972 ]
+[v F38 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\builtins.h
+[v __delay `JF38 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7516,6 +7520,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 59: void delay(unsigned int milliseconds);
 [; ;afficheur.h: 60: int Diminution (unsigned int vitesse);
 [; ;afficheur.h: 61: int Conversion(unsigned int a);
+[; ;afficheur.h: 62: void marche (void);
 "4 afficheur.c
 [v _write_d_aff `(v ~T0 @X0 1 ef1`uc ]
 "5
@@ -8998,120 +9003,189 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 963 ]
 [; ;afficheur.c: 455: }
-[; ;afficheur.c: 456: if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
+[; ;afficheur.c: 456: if(PORTBbits.RB2==0){
 "456
-[e $ ! || == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 964  ]
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 964  ]
 {
-[; ;afficheur.c: 459: if (PORTEbits.RE4==1){
-"459
-[e $ ! == -> . . _PORTEbits 0 4 `i -> 1 `i 965  ]
+[; ;afficheur.c: 457: if (PORTBbits.RB0==0 || PORTBbits.RB1==0){
+"457
+[e $ ! || == -> . . _PORTBbits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 965  ]
 {
-[; ;afficheur.c: 460: if(TEST==1){
+[; ;afficheur.c: 460: if (PORTEbits.RE4==1){
 "460
-[e $ ! == -> _TEST `i -> 1 `i 966  ]
+[e $ ! == -> . . _PORTEbits 0 4 `i -> 1 `i 966  ]
 {
-[; ;afficheur.c: 462: if (PORTEbits.RE0==0 && vitesse < b)
-"462
-[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i _b 967  ]
-[; ;afficheur.c: 463: vitesse++;
+[; ;afficheur.c: 461: if(TEST==1){
+"461
+[e $ ! == -> _TEST `i -> 1 `i 967  ]
+{
+[; ;afficheur.c: 463: if (PORTEbits.RE0==0 && vitesse < b)
 "463
-[e ++ _vitesse -> -> 1 `i `uc ]
-[e :U 967 ]
-[; ;afficheur.c: 464: if (PORTEbits.RE1 == 0 && vitesse > 0) {
+[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i _b 968  ]
+[; ;afficheur.c: 464: vitesse++;
 "464
-[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 968  ]
-{
-[; ;afficheur.c: 465: vitesse--;
-"465
-[e -- _vitesse -> -> 1 `i `uc ]
-"466
-}
+[e ++ _vitesse -> -> 1 `i `uc ]
 [e :U 968 ]
+[; ;afficheur.c: 465: if (PORTEbits.RE1 == 0 && vitesse > 0) {
+"465
+[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 969  ]
+{
+[; ;afficheur.c: 466: vitesse--;
+"466
+[e -- _vitesse -> -> 1 `i `uc ]
 "467
 }
-[; ;afficheur.c: 466: }
-[; ;afficheur.c: 467: } else{
-[e $U 969  ]
-[e :U 966 ]
-{
-[; ;afficheur.c: 468: if (PORTEbits.RE0==0 && vitesse < c)
+[e :U 969 ]
 "468
-[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i _c 970  ]
-[; ;afficheur.c: 469: vitesse++;
-"469
-[e ++ _vitesse -> -> 1 `i `uc ]
-[e :U 970 ]
-[; ;afficheur.c: 470: if (PORTEbits.RE1 == 0 && vitesse > 0) {
-"470
-[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 971  ]
-{
-[; ;afficheur.c: 471: vitesse--;
-"471
-[e -- _vitesse -> -> 1 `i `uc ]
-"472
 }
+[; ;afficheur.c: 467: }
+[; ;afficheur.c: 468: } else{
+[e $U 970  ]
+[e :U 967 ]
+{
+[; ;afficheur.c: 469: if (PORTEbits.RE0==0 && vitesse < c)
+"469
+[e $ ! && == -> . . _PORTEbits 0 0 `i -> 0 `i < -> _vitesse `i _c 971  ]
+[; ;afficheur.c: 470: vitesse++;
+"470
+[e ++ _vitesse -> -> 1 `i `uc ]
 [e :U 971 ]
+[; ;afficheur.c: 471: if (PORTEbits.RE1 == 0 && vitesse > 0) {
+"471
+[e $ ! && == -> . . _PORTEbits 0 1 `i -> 0 `i > -> _vitesse `i -> 0 `i 972  ]
+{
+[; ;afficheur.c: 472: vitesse--;
+"472
+[e -- _vitesse -> -> 1 `i `uc ]
 "473
 }
-[e :U 969 ]
+[e :U 972 ]
 "474
 }
-[e :U 965 ]
+[e :U 970 ]
 "475
 }
-[e :U 964 ]
-[; ;afficheur.c: 472: }
+[e :U 966 ]
+"476
+}
+[e :U 965 ]
+"477
+}
 [; ;afficheur.c: 473: }
 [; ;afficheur.c: 474: }
 [; ;afficheur.c: 475: }
 [; ;afficheur.c: 476: }
-"476
+[; ;afficheur.c: 477: }else{
+[e $U 973  ]
+[e :U 964 ]
+{
+"480
+}
+[e :U 973 ]
+[; ;afficheur.c: 480: }
+[; ;afficheur.c: 482: }
+"482
 [e :UE 961 ]
 }
-"482
+"488
 [v _Diminution `(i ~T0 @X0 1 ef1`ui ]
 {
-[; ;afficheur.c: 482: int Diminution(unsigned int vitesse){
+[; ;afficheur.c: 488: int Diminution(unsigned int vitesse){
 [e :U _Diminution ]
 [v _vitesse `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;afficheur.c: 483: if(vitesse>0){
-"483
-[e $ ! > _vitesse -> -> 0 `i `ui 973  ]
-{
-[; ;afficheur.c: 484: vitesse--;
-"484
-[e -- _vitesse -> -> 1 `i `ui ]
-"485
-}
-[e :U 973 ]
-[; ;afficheur.c: 485: }
-[; ;afficheur.c: 486: }
-"486
-[e :UE 972 ]
-}
-"487
-[v _Conversion `(i ~T0 @X0 1 ef1`ui ]
-{
-[; ;afficheur.c: 487: int Conversion(unsigned int a){
-[e :U _Conversion ]
-[v _a `ui ~T0 @X0 1 r1 ]
-[f ]
-"488
-[v _valeur_lue `i ~T0 @X0 1 a ]
-[; ;afficheur.c: 488: int valeur_lue = a;
-[e = _valeur_lue -> _a `i ]
-[v _valeur_convertie `i ~T0 @X0 1 a ]
-[; ;afficheur.c: 489: int valeur_convertie = (valeur_lue * 100) / 255;
+[; ;afficheur.c: 489: if(vitesse>0){
 "489
-[e = _valeur_convertie / * _valeur_lue -> 100 `i -> 255 `i ]
-[; ;afficheur.c: 491: return valeur_convertie;
+[e $ ! > _vitesse -> -> 0 `i `ui 975  ]
+{
+[; ;afficheur.c: 490: vitesse--;
+"490
+[e -- _vitesse -> -> 1 `i `ui ]
 "491
-[e ) _valeur_convertie ]
-[e $UE 974  ]
+}
+[e :U 975 ]
+[; ;afficheur.c: 491: }
 [; ;afficheur.c: 492: }
 "492
 [e :UE 974 ]
 }
+"493
+[v _Conversion `(i ~T0 @X0 1 ef1`ui ]
+{
+[; ;afficheur.c: 493: int Conversion(unsigned int a){
+[e :U _Conversion ]
+[v _a `ui ~T0 @X0 1 r1 ]
+[f ]
+"494
+[v _valeur_lue `i ~T0 @X0 1 a ]
+[; ;afficheur.c: 494: int valeur_lue = a;
+[e = _valeur_lue -> _a `i ]
+[v _valeur_convertie `i ~T0 @X0 1 a ]
+[; ;afficheur.c: 495: int valeur_convertie = (valeur_lue * 100) / 255;
+"495
+[e = _valeur_convertie / * _valeur_lue -> 100 `i -> 255 `i ]
+[; ;afficheur.c: 497: return valeur_convertie;
+"497
+[e ) _valeur_convertie ]
+[e $UE 976  ]
+[; ;afficheur.c: 498: }
+"498
+[e :UE 976 ]
+}
+"500
+[v _marche `(v ~T0 @X0 1 ef ]
+{
+[; ;afficheur.c: 500: void marche (void){
+[e :U _marche ]
+[f ]
+[; ;afficheur.c: 501: goto_lico(0,0);
+"501
+[e ( _goto_lico (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;afficheur.c: 502: draw_string("Marche:");
+"502
+[e ( _draw_string (1 -> :s 3C `*uc ]
+[; ;afficheur.c: 503: if (PORTBbits.RB0==0)
+"503
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 978  ]
+[; ;afficheur.c: 504: draw_string("AV");
+"504
+[e ( _draw_string (1 -> :s 4C `*uc ]
+[e $U 979  ]
+"505
+[e :U 978 ]
+[; ;afficheur.c: 505: else
+[; ;afficheur.c: 506: if (PORTBbits.RB1==0)
+"506
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 980  ]
+[; ;afficheur.c: 507: draw_string("AR");
+"507
+[e ( _draw_string (1 -> :s 5C `*uc ]
+[e $U 981  ]
+"508
+[e :U 980 ]
+[; ;afficheur.c: 508: else{
+{
+[; ;afficheur.c: 509: draw_string("N ");
+"509
+[e ( _draw_string (1 -> :s 6C `*uc ]
+[; ;afficheur.c: 511: _delay((unsigned long)((50)*(48000000/4000.0)));
+"511
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;afficheur.c: 512: vitesse=Diminution(vitesse);
+"512
+[e = _vitesse -> ( _Diminution (1 -> _vitesse `ui `uc ]
+"517
+}
+[e :U 981 ]
+[e :U 979 ]
+[; ;afficheur.c: 517: }
+[; ;afficheur.c: 518: }
+"518
+[e :UE 977 ]
+}
+[a 4C 65 86 0 ]
 [a 2C 82 79 85 69 83 66 89 71 78 79 76 69 83 0 ]
+[a 5C 65 82 0 ]
+[a 3C 77 97 114 99 104 101 58 0 ]
 [a 1C 65 84 84 69 78 84 73 79 78 32 118 111 117 115 32 101 116 101 115 32 112 108 101 105 110 33 33 33 0 ]
+[a 6C 78 32 0 ]

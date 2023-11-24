@@ -59,6 +59,7 @@ extern "C" {
     void delay(unsigned int milliseconds);
     int Diminution (unsigned int vitesse);
     int Conversion(unsigned int a);
+    void marche (void);
     //int intensite();
     
 #ifdef	__cplusplus

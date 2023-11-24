@@ -11411,140 +11411,145 @@ draw_string(2);
 
 while(1)
 {
-
-
-goto_lico(0,0);
+goto_lico(0, 0);
 draw_string("Marche:");
-goto_lico(7,0);
-if (PORTEbits.RE4==0){
+goto_lico(7, 0);
+if (PORTEbits.RE4 == 0)
+{
 draw_string("((!))");
 _delay((unsigned long)((5)*(48000000/4000.0)));
-vitesse=Diminution(vitesse);
+vitesse = Diminution(vitesse);
 }
-else{
+else
+{
 draw_string("     ");
 }
 
-goto_lico(1,0);
+goto_lico(1, 0);
 draw_string("Siege:");
-if (PORTBbits.RB2==0){
+if (PORTBbits.RB2 == 0)
+{
 {draw_char('1');}
 marche();
 }
-else{
+else
+{
 {draw_char('0');}
 _delay((unsigned long)((50)*(48000000/4000.0)));
-vitesse=Diminution(vitesse);
+vitesse = Diminution(vitesse);
 }
-goto_lico(2,0);
-draw_string("Temp. Eau:");
 
+goto_lico(2, 0);
+draw_string("Temp. Eau:");
 draw_dec8(Conversion(lecture_8bit_analogique(2)));
 
-goto_lico(3,0);
+goto_lico(3, 0);
 draw_string("Temp. Huile:");
 draw_dec8(Conversion(lecture_8bit_analogique(3)));
 
-goto_lico(4,0);
+goto_lico(4, 0);
 draw_string("Choc:");
-
-
-if (PORTBbits.RB3==0)
-
+if (PORTBbits.RB3 == 0)
+{
 draw_char('1');
-
+}
 else
+{
 draw_char('0');
-
-if(Personne == 2) {
-vitesseAdmin(Personne);
-
 }
-else if(Personne ==1){
+
+if (Personne == 2)
+{
 vitesseAdmin(Personne);
 }
-else {
-
+else if (Personne == 1)
+{
+vitesseAdmin(Personne);
+}
+else
+{
 }
 
-goto_lico(5,0);
+goto_lico(5, 0);
 draw_string("Vitesse:");
 draw_dec8(vitesse);
 
-goto_lico(6,0);
+goto_lico(6, 0);
 draw_string("Batterie:");
-if (PORTEbits.RE2==0 && batterie < 100){
+if (PORTEbits.RE2 == 0 && batterie < 100)
+{
 batterie++;
 }
-if (PORTEbits.RE3==0 && batterie > 0){
+if (PORTEbits.RE3 == 0 && batterie > 0)
+{
 batterie--;
 }
 draw_dec8(batterie);
 
-
-
-goto_lico(8,0);
+goto_lico(8, 0);
 draw_string("Badge:");
-if (n_octet_badge==0)
+if (n_octet_badge == 0)
+{
 draw_string(" AUCUN              ");
+}
 else
 {
 
-# 121
-if(Personne==2)
+# 126
+if (Personne == 2)
 {
-
 draw_string("Operator");
-
 }
-else if(Personne==1)
+else if (Personne == 1)
 {
-
 draw_string(" ADMIN");
 }
-else if (Personne==0){
-
+else if (Personne == 0)
+{
 draw_string("AUCUN");
 }
 }
 
-# 144
-goto_lico(9,0);
+
+
+
+goto_lico(9, 0);
 draw_string("X-Joystick:");
 draw_hex8(lecture_8bit_analogique(10));
 
-goto_lico(10,0);
+goto_lico(10, 0);
 draw_string("Y-Joystick:");
 draw_hex8(lecture_8bit_analogique(11));
 
-
-goto_lico(5,22);
+goto_lico(5, 22);
 draw_string("VIDE");
-goto_lico(5,31);
+goto_lico(5, 31);
 draw_string("CHARGE");
 
-# 164
-if (TP_appui==1)
+
+
+if (TP_appui == 1)
 {
-goto_lico(0,20);
+goto_lico(0, 20);
 draw_string("x=");
 draw_hex8(TP_x);
 draw_string(" y=");
 draw_hex8(TP_y);
-plot1(TP_x,TP_y);
+plot1(TP_x, TP_y);
 }
 else
 {
 __nop();
 }
-if (TEST==1){
+if (TEST == 1)
+{
 charger();
 }
-if(TEST==0){
+if (TEST == 0)
+{
 clear_line(14);
 vide();
-TEST=3;
+TEST = 3;
 }
-
 }
 }

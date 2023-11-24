@@ -5,11 +5,11 @@ Linker command line:
 --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\TP_STR.X.production.sym \
   --cmf=dist/default/production\TP_STR.X.production.cmf -z -Q18F87K22 \
-  -oC:\Users\SOLNE~1\AppData\Local\Temp\xcAs80.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\SOLNE~1\AppData\Local\Temp\xcAshpc.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error -Mdist/default/production/TP_STR.X.production.map \
-  --md=C:\Users\SOLNE~1\AppData\Local\Temp\xcAs80.dat -E1 -ver=XC8 Compiler \
-  --acfsm=1493 -ASTACK=0642h-0F15h -pstack=STACK -ACODE=00h-01FFFFh \
-  -ACONST=00h-01FFFFh -ASMALLCONST=01000h-010FFhx496 \
+  --md=C:\Users\SOLNE~1\AppData\Local\Temp\xcAshpc.dat -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=0642h-0F15h -pstack=STACK \
+  -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh -ASMALLCONST=01000h-010FFhx496 \
   -AMEDIUMCONST=01000h-0FFFFh,011000h-01FFFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-0F15h -ABIGRAM=01h-0F15h \
   -ARAM=060h-0FFh,0100h-01FFhx14,0F00h-0F15h -ABANK0=060h-0FFh \
@@ -28,7 +28,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\SOLNE~1\AppData\Local\Temp\xcAs80.o \
+  C:\Users\SOLNE~1\AppData\Local\Temp\xcAshpc.o \
   dist/default/production\TP_STR.X.production.o 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Machine type is 18F87K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\SOLNE~1\AppData\Local\Temp\xcAs80.o
+C:\Users\SOLNE~1\AppData\Local\Temp\xcAshpc.o
                 stack                               642      642      8D4      642       2
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4

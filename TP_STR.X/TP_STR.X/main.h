@@ -47,7 +47,7 @@ extern "C" {
 #pragma config CONFIG6H = 0xE0 //No write protect config...
 #pragma config CONFIG7L = 0xFF //No table read protection
 #pragma config CONFIG7H = 0x40 //No table read protection
-
+//#pragma eeprom __EEPROM_DATA(0x01, 0x03, 0x20, 0x3A, 0x00, 0x78, 0xAA, 0x02)
     // Défintion des broches
 
 //PORTA

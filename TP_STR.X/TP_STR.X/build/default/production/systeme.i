@@ -11261,6 +11261,9 @@ unsigned char TEST __at(0x81);
 unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
 unsigned char valeur_convertie __at(0x84);
+unsigned char x1 __at(0x85);
+unsigned char y1 __at(0x86);
+unsigned char x2 __at(0x87);
 
 
 
@@ -11269,7 +11272,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 70
+# 73
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);

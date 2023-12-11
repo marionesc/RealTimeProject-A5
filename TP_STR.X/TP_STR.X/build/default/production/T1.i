@@ -11265,6 +11265,9 @@ unsigned char TEST __at(0x81);
 unsigned char Personne __at(0x82);
 unsigned char Valeur __at(0x83);
 unsigned char valeur_convertie __at(0x84);
+unsigned char x1 __at(0x85);
+unsigned char y1 __at(0x86);
+unsigned char x2 __at(0x87);
 
 
 
@@ -11273,7 +11276,7 @@ unsigned short int val_tos;
 unsigned char * puc;
 unsigned char tc[3];
 
-# 70
+# 73
 unsigned char contexte1[66] __at(0x100);
 unsigned char contexte2[66] __at(0x200);
 unsigned char contexte3[66] __at(0x300);
@@ -11404,13 +11407,29 @@ goto_lico(14,34);draw_char('0');draw_char(' ');draw_char('0');draw_char(' ');dra
 goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
 TP_appui=0;
+
+
+x1=160;
+x2=190;
+y1=100;
+
+goto_lico(12, 19);
+draw_string("0----0-");
+goto_lico(11, 20);
+draw_string("|_o");
+goto_lico(10, 19);
+draw_string("/^^^-");
 draw_square(180,20,230,60);
 draw_square(120,20,170,60);
+draw_square(160,80,160,100);
+draw_square(x1,y1,x2,y1);
+
 
 draw_string(2);
 
 while(1)
 {
+
 goto_lico(0, 0);
 draw_string("Marche:");
 goto_lico(7, 0);
@@ -11495,7 +11514,7 @@ draw_string(" AUCUN              ");
 else
 {
 
-# 126
+# 142
 if (Personne == 2)
 {
 draw_string("Operator");
@@ -11527,6 +11546,37 @@ goto_lico(5, 31);
 draw_string("CHARGE");
 
 
+if(lecture_8bit_analogique(11)>180){
+
+
+
+
+if(y1>80){
+clear_square(x1,y1,x2+1,y1);
+y1=y1--;
+
+draw_square(x1,y1,x2,y1);
+}
+
+goto_lico(9, 31);
+draw_string("up  ");
+}else {
+}
+
+if(lecture_8bit_analogique(11)<100){
+
+
+
+
+if(y1<100){
+clear_square(x1,y1,x2+1,y1);
+y1=y1++;
+draw_square(x1,y1,x2,y1);
+}
+goto_lico(9, 31);
+draw_string("down");
+}else{
+}
 
 if (TP_appui == 1)
 {
@@ -11544,6 +11594,7 @@ __nop();
 if (TEST == 1)
 {
 charger();
+
 }
 if (TEST == 0)
 {

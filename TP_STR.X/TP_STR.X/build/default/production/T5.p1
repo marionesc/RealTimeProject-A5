@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6359 `(v ~T0 @X0 0 tf ]
+[v F6362 `(v ~T0 @X0 0 tf ]
 "11292 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
 [s S485 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S485 . TMR1IF TMR2IF TMR1GIF SSP1IF TX1IF RC1IF ADIF PSPIF ]
@@ -7258,54 +7258,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 "55
 [v _valeur_convertie `uc ~T0 @X0 1 e@132 ]
 [; ;variables_globales.h: 55: unsigned char valeur_convertie __at(0x84);
-"59
-[v _fptr `*F6359 ~T0 @X0 1 e ]
-[; ;variables_globales.h: 59: void (*fptr)(void);
-"60
-[v _val_tos `us ~T0 @X0 1 e ]
-[; ;variables_globales.h: 60: unsigned short int val_tos;
-"61
-[v _puc `*uc ~T0 @X0 1 e ]
-[; ;variables_globales.h: 61: unsigned char * puc;
+"56
+[v _x1 `uc ~T0 @X0 1 e@133 ]
+[; ;variables_globales.h: 56: unsigned char x1 __at(0x85);
+"57
+[v _y1 `uc ~T0 @X0 1 e@134 ]
+[; ;variables_globales.h: 57: unsigned char y1 __at(0x86);
+"58
+[v _x2 `uc ~T0 @X0 1 e@135 ]
+[; ;variables_globales.h: 58: unsigned char x2 __at(0x87);
 "62
+[v _fptr `*F6362 ~T0 @X0 1 e ]
+[; ;variables_globales.h: 62: void (*fptr)(void);
+"63
+[v _val_tos `us ~T0 @X0 1 e ]
+[; ;variables_globales.h: 63: unsigned short int val_tos;
+"64
+[v _puc `*uc ~T0 @X0 1 e ]
+[; ;variables_globales.h: 64: unsigned char * puc;
+"65
 [v _tc `uc ~T0 @X0 -> 3 `i e ]
-[; ;variables_globales.h: 62: unsigned char tc[3];
-"70
-[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
-[; ;variables_globales.h: 70: unsigned char contexte1[66] __at(0x100);
-"71
-[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
-[; ;variables_globales.h: 71: unsigned char contexte2[66] __at(0x200);
-"72
-[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
-[; ;variables_globales.h: 72: unsigned char contexte3[66] __at(0x300);
+[; ;variables_globales.h: 65: unsigned char tc[3];
 "73
-[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
-[; ;variables_globales.h: 73: unsigned char contexte4[66] __at(0x400);
+[v _contexte1 `uc ~T0 @X0 -> 66 `i e@256 ]
+[; ;variables_globales.h: 73: unsigned char contexte1[66] __at(0x100);
 "74
-[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
-[; ;variables_globales.h: 74: unsigned char contexte5[66] __at(0x500);
+[v _contexte2 `uc ~T0 @X0 -> 66 `i e@512 ]
+[; ;variables_globales.h: 74: unsigned char contexte2[66] __at(0x200);
 "75
-[v _contexte6 `uc ~T0 @X0 -> 66 `i e@1536 ]
-[; ;variables_globales.h: 75: unsigned char contexte6[66] __at(0x600);
+[v _contexte3 `uc ~T0 @X0 -> 66 `i e@768 ]
+[; ;variables_globales.h: 75: unsigned char contexte3[66] __at(0x300);
+"76
+[v _contexte4 `uc ~T0 @X0 -> 66 `i e@1024 ]
+[; ;variables_globales.h: 76: unsigned char contexte4[66] __at(0x400);
+"77
+[v _contexte5 `uc ~T0 @X0 -> 66 `i e@1280 ]
+[; ;variables_globales.h: 77: unsigned char contexte5[66] __at(0x500);
 "78
-[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
-[; ;variables_globales.h: 78: unsigned char STKPTR_T1 __at(0x103);
-"79
-[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
-[; ;variables_globales.h: 79: unsigned char STKPTR_T2 __at(0x203);
-"80
-[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
-[; ;variables_globales.h: 80: unsigned char STKPTR_T3 __at(0x303);
+[v _contexte6 `uc ~T0 @X0 -> 66 `i e@1536 ]
+[; ;variables_globales.h: 78: unsigned char contexte6[66] __at(0x600);
 "81
-[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
-[; ;variables_globales.h: 81: unsigned char STKPTR_T4 __at(0x403);
+[v _STKPTR_T1 `uc ~T0 @X0 1 e@259 ]
+[; ;variables_globales.h: 81: unsigned char STKPTR_T1 __at(0x103);
 "82
-[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
-[; ;variables_globales.h: 82: unsigned char STKPTR_T5 __at(0x503);
+[v _STKPTR_T2 `uc ~T0 @X0 1 e@515 ]
+[; ;variables_globales.h: 82: unsigned char STKPTR_T2 __at(0x203);
 "83
+[v _STKPTR_T3 `uc ~T0 @X0 1 e@771 ]
+[; ;variables_globales.h: 83: unsigned char STKPTR_T3 __at(0x303);
+"84
+[v _STKPTR_T4 `uc ~T0 @X0 1 e@1027 ]
+[; ;variables_globales.h: 84: unsigned char STKPTR_T4 __at(0x403);
+"85
+[v _STKPTR_T5 `uc ~T0 @X0 1 e@1283 ]
+[; ;variables_globales.h: 85: unsigned char STKPTR_T5 __at(0x503);
+"86
 [v _STKPTR_T6 `uc ~T0 @X0 1 e@1539 ]
-[; ;variables_globales.h: 83: unsigned char STKPTR_T6 __at(0x603);
+[; ;variables_globales.h: 86: unsigned char STKPTR_T6 __at(0x603);
 [; ;afficheur.h: 32: void write_d_aff(unsigned char data);
 [; ;afficheur.h: 33: void write_c_aff(unsigned char command);
 [; ;afficheur.h: 34: unsigned char check_status_ok();

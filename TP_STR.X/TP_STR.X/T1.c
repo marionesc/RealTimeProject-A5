@@ -27,13 +27,29 @@ void tache1(void)
     goto_lico(15,34);draw_char('1');draw_char(' ');draw_char('1');draw_char(' ');draw_char('1');
 
     TP_appui=0;
+
+   // int y2=100;
+    x1=160;
+    x2=190;
+    y1=100;
+    
+    goto_lico(12, 19);
+    draw_string("0----0-");
+    goto_lico(11, 20);
+    draw_string("|_o");
+    goto_lico(10, 19);
+    draw_string("/^^^-");
     draw_square(180,20,230,60);
     draw_square(120,20,170,60);
+    draw_square(160,80,160,100);
+    draw_square(x1,y1,x2,y1); 
+
     //draw_filled_square(90,30,190,90);
     draw_string(2);
 
 while(1)
 {
+
     goto_lico(0, 0);
     draw_string("Marche:");
     goto_lico(7, 0);
@@ -154,7 +170,38 @@ while(1)
     draw_string("CHARGE");
     //draw_square(90, 30, 190, 90);
     //draw_filled_square(90, 30, 190, 90);
+    if(lecture_8bit_analogique(JOYSTICK_Y)>180){
+        
 
+        //x1=x1--;
+        //x2=x2--;
+        if(y1>80){        
+        clear_square(x1,y1,x2+1,y1);
+        y1=y1--;
+        
+        draw_square(x1,y1,x2,y1);
+        }
+        //draw_square(160,150,190,150);
+            goto_lico(9, 31);
+            draw_string("up  ");
+    }else {
+    }
+    
+    if(lecture_8bit_analogique(JOYSTICK_Y)<100){
+        
+        
+        //x1=x1--;
+        //x2=x2--;
+        if(y1<100){
+        clear_square(x1,y1,x2+1,y1);
+        y1=y1++;
+        draw_square(x1,y1,x2,y1);
+        }
+            goto_lico(9, 31);
+            draw_string("down");
+    }else{
+    }
+    
     if (TP_appui == 1)
     {
         goto_lico(0, 20);
@@ -171,6 +218,7 @@ while(1)
     if (TEST == 1)
     {
         charger();
+        //clear_square(160,80,160,100);
     }
     if (TEST == 0)
     {

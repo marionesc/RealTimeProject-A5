@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6359 `(v ~T0 @X0 0 tf ]
+[v F6360 `(v ~T0 @X0 0 tf ]
 "10662 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
 [s S462 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S462 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
@@ -7177,6 +7177,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic18.h: 193: unsigned char __t3rd16on(void);
 [; ;systeme.h: 20: void __interrupt(high_priority) fonction_d_interruption(void);
 [; ;systeme.h: 21: void initialisation_du_systeme(void);
+[; ;systeme.h: 22: void initInterrupt();
 "29 variables_globales.h
 [v _W_TEMPORAIRE `uc ~T0 @X0 1 e@96 ]
 [; ;variables_globales.h: 29: unsigned char W_TEMPORAIRE __at(0x60);
@@ -7244,7 +7245,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _valeur_convertie `uc ~T0 @X0 1 e@132 ]
 [; ;variables_globales.h: 55: unsigned char valeur_convertie __at(0x84);
 "59
-[v _fptr `*F6359 ~T0 @X0 1 e ]
+[v _fptr `*F6360 ~T0 @X0 1 e ]
 [; ;variables_globales.h: 59: void (*fptr)(void);
 "60
 [v _val_tos `us ~T0 @X0 1 e ]
@@ -7322,6 +7323,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 60: int Diminution (unsigned int vitesse);
 [; ;afficheur.h: 61: int Conversion(unsigned int a);
 [; ;afficheur.h: 62: void marche (void);
+[; ;afficheur.h: 63: void afficheur_texte(unsigned char message);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;

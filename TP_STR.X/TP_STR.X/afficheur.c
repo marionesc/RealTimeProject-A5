@@ -516,3 +516,11 @@ void marche (void){
                     draw_dec8(vitesse);*/
                 }
 }
+
+void afficheur_texte(unsigned char message) {
+    for (int i = 0; i < sizeof(message) - 1; i++) {
+        while (PIR1bits.TX1IF == 0);
+        TXREG1 = message;
+        while (TXSTA1bits.TRMT == 0);
+    }
+}

@@ -11317,6 +11317,7 @@ void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
 void marche (void);
+void afficheur_texte(unsigned char message);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11375,8 +11376,30 @@ unsigned char lecture_8bit_analogique(unsigned char channel);
 # 20 "systeme.h"
 void __interrupt(high_priority) fonction_d_interruption(void);
 void initialisation_du_systeme(void);
+void initInterrupt();
 
-# 17 "systeme.c"
+# 15 "systeme.c"
+void initInterrupt()
+{
+RCONbits.IPEN = 1;
+
+INTCON2bits.INT3IP = 1;
+INTCON3bits.INT2IP = 1;
+INTCON3bits.INT1IP = 1;
+
+INTCON2bits.INTEDG3 = 0;
+INTCON2bits.INTEDG2 = 0;
+INTCON2bits.INTEDG1 = 0;
+
+INTCON3bits.INT3IF = 0;
+INTCON3bits.INT2IF = 0;
+INTCON3bits.INT1IF = 0;
+INTCONbits.INT0IF = 0;
+
+INTCONbits.RBIF = 0;
+
+}
+
 void __interrupt(high_priority) fonction_d_interruption(void)
 {
 
@@ -11537,4 +11560,11 @@ Tick_Count=0;
 
 T0CON=0x01;
 T0IE=1;
+
+if (INTCON3bits.INT3IF == 0)
+{
+LATCbits.LATC2=0;LATCbits.LATC1=1;LATGbits.LATG0=1;
+
+
+}
 }

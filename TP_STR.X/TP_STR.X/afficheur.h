@@ -60,6 +60,7 @@ extern "C" {
     int Diminution (unsigned int vitesse);
     int Conversion(unsigned int a);
     void marche (void);
+    void afficheur_texte(unsigned char message);
     //void Eeprom_write(unsigned char addr, unsigned char data);
     //int Eeprom_read(unsigned char addr);
     //int intensite();

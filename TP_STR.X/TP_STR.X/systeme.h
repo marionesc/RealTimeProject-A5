@@ -19,6 +19,7 @@ extern "C" {
 // Prototypes
     void __interrupt(high_priority) fonction_d_interruption(void);
     void initialisation_du_systeme(void);
+    void initInterrupt();
 
 #ifdef	__cplusplus
 }

@@ -11236,6 +11236,7 @@ unsigned char __t3rd16on(void);
 # 20 "systeme.h"
 void __interrupt(high_priority) fonction_d_interruption(void);
 void initialisation_du_systeme(void);
+void initInterrupt();
 
 # 29 "variables_globales.h"
 unsigned char W_TEMPORAIRE __at(0x60);
@@ -11321,6 +11322,7 @@ void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
 void marche (void);
+void afficheur_texte(unsigned char message);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;

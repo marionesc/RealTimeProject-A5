@@ -12,7 +12,26 @@
                         TOSL=*puc;puc++;\
                         TOSH=*puc;puc++;\
                         TOSU=*puc
-
+void initInterrupt()
+{
+    RCONbits.IPEN = 1;
+    
+    INTCON2bits.INT3IP = 1;
+    INTCON3bits.INT2IP = 1;
+    INTCON3bits.INT1IP = 1;
+    
+    INTCON2bits.INTEDG3 = 0;
+    INTCON2bits.INTEDG2 = 0;
+    INTCON2bits.INTEDG1 = 0;
+    
+    INTCON3bits.INT3IF = 0;
+    INTCON3bits.INT2IF = 0;
+    INTCON3bits.INT1IF = 0;
+    INTCONbits.INT0IF = 0;
+    
+    INTCONbits.RBIF = 0;
+    
+}
 
 void __interrupt(high_priority) fonction_d_interruption(void)
 {
@@ -174,4 +193,11 @@ void initialisation_du_systeme(void)
     //T0CON=0x08;//16 bit, no prescaler, OFF, 5.46ms period
     T0CON=0x01;//16 bit, 1:4 Prescaler, 22ms period
     T0IE=1; // Autorisation IT Ordonnanceur
+    
+    if (INTCON3bits.INT3IF == 0)
+    {
+        LED_R=0;LED_G=1;LED_B=1; //RED
+        // mettre l'écran rouge 
+        //INTCON3bits.INT3IF = 0;
+    }
 }

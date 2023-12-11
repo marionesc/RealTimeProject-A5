@@ -11236,6 +11236,7 @@ unsigned char __t3rd16on(void);
 # 20 "systeme.h"
 void __interrupt(high_priority) fonction_d_interruption(void);
 void initialisation_du_systeme(void);
+void initInterrupt();
 
 # 29 "variables_globales.h"
 unsigned char W_TEMPORAIRE __at(0x60);
@@ -11375,6 +11376,7 @@ void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
 void marche (void);
+void afficheur_texte(unsigned char message);
 
 # 4 "afficheur.c"
 void write_d_aff(unsigned char data)
@@ -11885,5 +11887,13 @@ _delay((unsigned long)((50)*(48000000/4000.0)));
 vitesse=Diminution(vitesse);
 
 # 517
+}
+}
+
+void afficheur_texte(unsigned char message) {
+for (int i = 0; i < sizeof(message) - 1; i++) {
+while (PIR1bits.TX1IF == 0);
+TXREG1 = message;
+while (TXSTA1bits.TRMT == 0);
 }
 }

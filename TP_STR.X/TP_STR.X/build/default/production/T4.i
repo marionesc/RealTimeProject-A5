@@ -11236,6 +11236,7 @@ unsigned char __t3rd16on(void);
 # 20 "systeme.h"
 void __interrupt(high_priority) fonction_d_interruption(void);
 void initialisation_du_systeme(void);
+void initInterrupt();
 
 # 29 "variables_globales.h"
 unsigned char W_TEMPORAIRE __at(0x60);
@@ -11321,6 +11322,7 @@ void delay(unsigned int milliseconds);
 int Diminution (unsigned int vitesse);
 int Conversion(unsigned int a);
 void marche (void);
+void afficheur_texte(unsigned char message);
 
 # 22 "semaphore.h"
 unsigned char Val_sem_cna;
@@ -11380,29 +11382,20 @@ void tache4(void);
 void tache4(void)
 {
 unsigned int a;
+char message= "Test";
+
 while(1)
 {
 
 
 
-while (PIR1bits.TX1IF==0); TXREG1='T';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='A';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='C';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='H';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='E';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='4';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='_';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='E';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='N';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='_';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='C';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='O';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='U';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='R';while (TXSTA1bits.TRMT==0);
-while (PIR1bits.TX1IF==0); TXREG1='S';while (TXSTA1bits.TRMT==0);
+
+afficheur_texte(message);
 
 
-for (a=0;a<65000;a++)
+
+
+for (a = 0; a < 65000; a++)
 ;
 }
 }

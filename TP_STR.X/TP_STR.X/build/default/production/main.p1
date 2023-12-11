@@ -1,10 +1,12 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F6359 `(v ~T0 @X0 0 tf ]
+[v F6360 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
 "4 main.c
 [v _initialisation_des_ports `(v ~T0 @X0 0 ef ]
 "21 systeme.h
 [v _initialisation_du_systeme `(v ~T0 @X0 0 ef ]
+"22
+[v _initInterrupt `(v ~T0 @X0 0 ef ]
 "26 semaphore.h
 [v _Init `(v ~T0 @X0 0 ef1`uc ]
 "16728 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f87k22.h
@@ -7336,6 +7338,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic18.h: 193: unsigned char __t3rd16on(void);
 [; ;systeme.h: 20: void __interrupt(high_priority) fonction_d_interruption(void);
 [; ;systeme.h: 21: void initialisation_du_systeme(void);
+[; ;systeme.h: 22: void initInterrupt();
 "29 variables_globales.h
 [v _W_TEMPORAIRE `uc ~T0 @X0 1 e@96 ]
 [; ;variables_globales.h: 29: unsigned char W_TEMPORAIRE __at(0x60);
@@ -7403,7 +7406,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _valeur_convertie `uc ~T0 @X0 1 e@132 ]
 [; ;variables_globales.h: 55: unsigned char valeur_convertie __at(0x84);
 "59
-[v _fptr `*F6359 ~T0 @X0 1 e ]
+[v _fptr `*F6360 ~T0 @X0 1 e ]
 [; ;variables_globales.h: 59: void (*fptr)(void);
 "60
 [v _val_tos `us ~T0 @X0 1 e ]
@@ -7481,6 +7484,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;afficheur.h: 60: int Diminution (unsigned int vitesse);
 [; ;afficheur.h: 61: int Conversion(unsigned int a);
 [; ;afficheur.h: 62: void marche (void);
+[; ;afficheur.h: 63: void afficheur_texte(unsigned char message);
 "22 semaphore.h
 [v _Val_sem_cna `uc ~T0 @X0 1 e ]
 [; ;semaphore.h: 22: unsigned char Val_sem_cna;
@@ -7586,171 +7590,174 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 9: initialisation_du_systeme();
 "9
 [e ( _initialisation_du_systeme ..  ]
-[; ;main.c: 10: Init(1);
+[; ;main.c: 10: initInterrupt();
 "10
+[e ( _initInterrupt ..  ]
+[; ;main.c: 11: Init(1);
+"11
 [e ( _Init (1 -> -> 1 `i `uc ]
-[; ;main.c: 13: T0CONbits.TMR0ON=1;
-"13
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 14: T0IF=1;
-"14
-[e = _T0IF -> -> 1 `i `b ]
-[; ;main.c: 15: (INTCONbits.GIE = 1);
+[; ;main.c: 15: T0CONbits.TMR0ON=1;
 "15
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 16: T0IF=1;
+"16
+[e = _T0IF -> -> 1 `i `b ]
+[; ;main.c: 17: (INTCONbits.GIE = 1);
+"17
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;main.c: 18: while(1)
-"18
+[; ;main.c: 20: while(1)
+"20
 [e :U 825 ]
-[; ;main.c: 19: __nop();
-"19
+[; ;main.c: 21: __nop();
+"21
 [e ( ___nop ..  ]
 [e :U 824 ]
-"18
+"20
 [e $U 825  ]
 [e :U 826 ]
-[; ;main.c: 20: }
-"20
+[; ;main.c: 22: }
+"22
 [e :UE 823 ]
 }
-"23
+"25
 [v _initialisation_des_ports `(v ~T0 @X0 1 ef ]
-"24
+"26
 {
-[; ;main.c: 23: void initialisation_des_ports(void)
-[; ;main.c: 24: {
+[; ;main.c: 25: void initialisation_des_ports(void)
+[; ;main.c: 26: {
 [e :U _initialisation_des_ports ]
 [f ]
-[; ;main.c: 26: MEMCON=0xA0;
-"26
+[; ;main.c: 28: MEMCON=0xA0;
+"28
 [e = _MEMCON -> -> 160 `i `uc ]
-[; ;main.c: 29: ANCON0=0x00;
-"29
-[e = _ANCON0 -> -> 0 `i `uc ]
-[; ;main.c: 30: ANCON1=0x00;
-"30
-[e = _ANCON1 -> -> 0 `i `uc ]
-[; ;main.c: 31: ANCON2=0x00;
+[; ;main.c: 31: ANCON0=0x00;
 "31
-[e = _ANCON2 -> -> 0 `i `uc ]
-[; ;main.c: 32: ANCON0bits.ANSEL0=1;
+[e = _ANCON0 -> -> 0 `i `uc ]
+[; ;main.c: 32: ANCON1=0x00;
 "32
-[e = . . _ANCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 33: ANCON0bits.ANSEL1=1;
+[e = _ANCON1 -> -> 0 `i `uc ]
+[; ;main.c: 33: ANCON2=0x00;
 "33
-[e = . . _ANCON0bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 34: ANCON0bits.ANSEL2=1;
+[e = _ANCON2 -> -> 0 `i `uc ]
+[; ;main.c: 34: ANCON0bits.ANSEL0=1;
 "34
-[e = . . _ANCON0bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 35: ANCON0bits.ANSEL3=1;
+[e = . . _ANCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 35: ANCON0bits.ANSEL1=1;
 "35
-[e = . . _ANCON0bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 36: ANCON1bits.ANSEL10=1;
+[e = . . _ANCON0bits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 36: ANCON0bits.ANSEL2=1;
 "36
-[e = . . _ANCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 37: ANCON1bits.ANSEL11=1;
+[e = . . _ANCON0bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 37: ANCON0bits.ANSEL3=1;
 "37
+[e = . . _ANCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 38: ANCON1bits.ANSEL10=1;
+"38
+[e = . . _ANCON1bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 39: ANCON1bits.ANSEL11=1;
+"39
 [e = . . _ANCON1bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 41: LATCbits.LATC2=1;
-"41
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 42: LATCbits.LATC1=1;
-"42
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 43: LATGbits.LATG0=1;
+[; ;main.c: 43: LATCbits.LATC2=1;
 "43
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 44: LATCbits.LATC1=1;
+"44
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 45: LATGbits.LATG0=1;
+"45
 [e = . . _LATGbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 46: TRISCbits.TRISC2=0;
-"46
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 47: TRISCbits.TRISC1=0;
-"47
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 48: TRISGbits.TRISG0=0;
+[; ;main.c: 48: TRISCbits.TRISC2=0;
 "48
-[e = . . _TRISGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 49: TRISGbits.TRISG3=0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 49: TRISCbits.TRISC1=0;
 "49
-[e = . . _TRISGbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 50: TRISGbits.TRISG4=0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 50: TRISGbits.TRISG0=0;
 "50
-[e = . . _TRISGbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 51: TRISDbits.TRISD2=0;
+[e = . . _TRISGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 51: TRISGbits.TRISG3=0;
 "51
-[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 52: TRISDbits.TRISD3=0;
+[e = . . _TRISGbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 52: TRISGbits.TRISG4=0;
 "52
+[e = . . _TRISGbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 53: TRISDbits.TRISD2=0;
+"53
+[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 54: TRISDbits.TRISD3=0;
+"54
 [e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 55: INTCON2bits.RBPU=0;
-"55
+[; ;main.c: 57: INTCON2bits.RBPU=0;
+"57
 [e = . . _INTCON2bits 2 4 -> -> 0 `i `uc ]
-[; ;main.c: 56: PADCFG1bits.REPU=1;
-"56
-[e = . . _PADCFG1bits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 58: }
+[; ;main.c: 58: PADCFG1bits.REPU=1;
 "58
+[e = . . _PADCFG1bits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 60: }
+"60
 [e :UE 827 ]
 }
-"60
-[v _lecture_8bit_analogique `(uc ~T0 @X0 1 ef1`uc ]
-"61
-{
-[; ;main.c: 60: unsigned char lecture_8bit_analogique(unsigned char channel)
-[; ;main.c: 61: {
-[e :U _lecture_8bit_analogique ]
-"60
-[v _channel `uc ~T0 @X0 1 r1 ]
-"61
-[f ]
 "62
+[v _lecture_8bit_analogique `(uc ~T0 @X0 1 ef1`uc ]
+"63
+{
+[; ;main.c: 62: unsigned char lecture_8bit_analogique(unsigned char channel)
+[; ;main.c: 63: {
+[e :U _lecture_8bit_analogique ]
+"62
+[v _channel `uc ~T0 @X0 1 r1 ]
+"63
+[f ]
+"64
 [v _ret `uc ~T0 @X0 1 a ]
-[; ;main.c: 62: unsigned char ret;
-[; ;main.c: 65: ADCON1=0;
-"65
-[e = _ADCON1 -> -> 0 `i `uc ]
-[; ;main.c: 66: ADCON2=0x16;
-"66
-[e = _ADCON2 -> -> 22 `i `uc ]
-[; ;main.c: 67: channel=channel&0x1F;
+[; ;main.c: 64: unsigned char ret;
+[; ;main.c: 67: ADCON1=0;
 "67
-[e = _channel -> & -> _channel `i -> 31 `i `uc ]
-[; ;main.c: 68: channel=channel<<2;
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;main.c: 68: ADCON2=0x16;
 "68
-[e = _channel -> << -> _channel `i -> 2 `i `uc ]
-[; ;main.c: 69: ADCON0=channel|0x01;
+[e = _ADCON2 -> -> 22 `i `uc ]
+[; ;main.c: 69: channel=channel&0x1F;
 "69
-[e = _ADCON0 -> | -> _channel `i -> 1 `i `uc ]
-[; ;main.c: 71: ADCON0bits.GO=1;
+[e = _channel -> & -> _channel `i -> 31 `i `uc ]
+[; ;main.c: 70: channel=channel<<2;
+"70
+[e = _channel -> << -> _channel `i -> 2 `i `uc ]
+[; ;main.c: 71: ADCON0=channel|0x01;
 "71
+[e = _ADCON0 -> | -> _channel `i -> 1 `i `uc ]
+[; ;main.c: 73: ADCON0bits.GO=1;
+"73
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-[; ;main.c: 72: while(ADCON0bits.DONE==1)
-"72
+[; ;main.c: 74: while(ADCON0bits.DONE==1)
+"74
 [e $U 829  ]
 [e :U 830 ]
-[; ;main.c: 73: ;
-"73
+[; ;main.c: 75: ;
+"75
 [e :U 829 ]
-"72
+"74
 [e $ == -> . . _ADCON0bits 2 1 `i -> 1 `i 830  ]
 [e :U 831 ]
-[; ;main.c: 75: if ((ADRESL&0x01)==0x01)
-"75
+[; ;main.c: 77: if ((ADRESL&0x01)==0x01)
+"77
 [e $ ! == & -> _ADRESL `i -> 1 `i -> 1 `i 832  ]
-[; ;main.c: 76: ret=0;
-"76
+[; ;main.c: 78: ret=0;
+"78
 [e = _ret -> -> 0 `i `uc ]
 [e $U 833  ]
-"77
+"79
 [e :U 832 ]
-[; ;main.c: 77: else
-[; ;main.c: 78: ret=ADRESH;
-"78
+[; ;main.c: 79: else
+[; ;main.c: 80: ret=ADRESH;
+"80
 [e = _ret _ADRESH ]
 [e :U 833 ]
-[; ;main.c: 82: return ret;
-"82
+[; ;main.c: 84: return ret;
+"84
 [e ) _ret ]
 [e $UE 828  ]
-[; ;main.c: 83: }
-"83
+[; ;main.c: 85: }
+"85
 [e :UE 828 ]
 }
